@@ -7,6 +7,7 @@ import Index from './containers/Index/Index';
 import Index2 from './containers/Index2/Index2';
 import About from './containers/About/About';
 import Pages from './containers/Pages-404/Pages';
+import Cart from './containers/Cart/Cart';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path={'/index2'} exact component={Index2}></Route>
         <Route path={'/about'} exact component={About}></Route>
         <Route path={'/pages1'} exact component={Pages}></Route>
+        <Route path={'/cart'} exact component={Cart}></Route>
       </Switch>
       <Footer />
     </div>

@@ -35,7 +35,7 @@ function Header(props) {
                                             <ul className="sub-menu">
                                                 <li><NavLink to={'/pages1'}>404 page</NavLink></li>
                                                 <li><NavLink to={'/about'}>About</NavLink></li>
-                                                <li><a href="cart.html">Cart</a></li>
+                                                <li><NavLink to={'/cart'}>Cart</NavLink></li>
                                                 <li><a href="checkout.html">Check Out</a></li>
                                                 <li><a href="contact.html">Contact</a></li>
                                                 <li><a href="news.html">News</a></li>
@@ -54,12 +54,12 @@ function Header(props) {
                                                 <li><a href="shop.html">Shop</a></li>
                                                 <li><a href="checkout.html">Check Out</a></li>
                                                 <li><a href="single-product.html">Single Product</a></li>
-                                                <li><a href="cart.html">Cart</a></li>
+                                                <li><NavLink to={'/cart'}>Cart</NavLink></li>
                                             </ul>
                                         </li>
                                         <li>
                                             <div className="header-icons">
-                                                <a className="shopping-cart" href="cart.html"><i className="fas fa-shopping-cart" /></a>
+                                            <NavLink className="shopping-cart" to={'/cart'}><i className="fas fa-shopping-cart" /></NavLink>
                                                 <a className="mobile-hide search-bar-icon" href="#"><i className="fas fa-search" /></a>
                                             </div>
                                         </li>
