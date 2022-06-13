@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 function Header(props) {
     return (
@@ -10,25 +11,30 @@ function Header(props) {
                             <div className="main-menu-wrap">
                                 {/* logo */}
                                 <div className="site-logo">
-                                    <a href="index.html">
+                                    <NavLink className="current-list-item" to={'/index'}>
                                         <img src="assets/img/logo.png" alt />
-                                    </a>
+                                    </NavLink>
                                 </div>
                                 {/* logo */}
                                 {/* menu start */}
                                 <nav className="main-menu">
                                     <ul>
-                                        <li className="current-list-item"><a href="#">Home</a>
+                                        <li className="current-list-item">
+                                            <NavLink className="current-list-item" to={'/index'}>Home</NavLink>
                                             <ul className="sub-menu">
-                                                <li><a href="index.html">Static Home</a></li>
-                                                <li><a href="index_2.html">Slider Home</a></li>
+                                                <li>
+                                                    <NavLink to={'/index'}>Static Home</NavLink>
+                                                </li>
+                                                <li>
+                                                    <NavLink to={'/index2'}>Static Home</NavLink>
+                                                </li>
                                             </ul>
                                         </li>
-                                        <li><a href="about.html">About</a></li>
+                                        <li><NavLink to={'/about'}>About</NavLink></li>
                                         <li><a href="#">Pages</a>
                                             <ul className="sub-menu">
-                                                <li><a href="404.html">404 page</a></li>
-                                                <li><a href="about.html">About</a></li>
+                                                <li><NavLink to={'/pages1'}>404 page</NavLink></li>
+                                                <li><NavLink to={'/about'}>About</NavLink></li>
                                                 <li><a href="cart.html">Cart</a></li>
                                                 <li><a href="checkout.html">Check Out</a></li>
                                                 <li><a href="contact.html">Contact</a></li>
