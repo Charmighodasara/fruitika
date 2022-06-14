@@ -1,4 +1,6 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
+
 
 function Footer(props) {
     return (
@@ -27,11 +29,11 @@ function Footer(props) {
           <div className="footer-box pages">
             <h2 className="widget-title">Pages</h2>
             <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="services.html">Shop</a></li>
-              <li><a href="news.html">News</a></li>
-              <li><a href="contact.html">Contact</a></li>
+              <li><NavLink to={'/index'}>Home</NavLink></li>
+              <li><NavLink to={'/about'}>About</NavLink></li>
+              <li><NavLink to={'/shop'}>Shop</NavLink></li>
+              <li><NavLink to={'/news'}>News</NavLink></li>
+              <li><NavLink to={'/contact'}>Contact</NavLink></li>
             </ul>
           </div>
         </div>
