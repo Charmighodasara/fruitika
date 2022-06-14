@@ -26,7 +26,7 @@ function Header(props) {
                                                     <NavLink to={'/index'}>Static Home</NavLink>
                                                 </li>
                                                 <li>
-                                                    <NavLink to={'/index2'}>Static Home</NavLink>
+                                                    <NavLink to={'/index2'}>Slider Home</NavLink>
                                                 </li>
                                             </ul>
                                         </li>
@@ -36,30 +36,31 @@ function Header(props) {
                                                 <li><NavLink to={'/pages1'}>404 page</NavLink></li>
                                                 <li><NavLink to={'/about'}>About</NavLink></li>
                                                 <li><NavLink to={'/cart'}>Cart</NavLink></li>
-                                                <li><a href="checkout.html">Check Out</a></li>
-                                                <li><a href="contact.html">Contact</a></li>
-                                                <li><a href="news.html">News</a></li>
-                                                <li><a href="shop.html">Shop</a></li>
+                                                <li><NavLink to={'/checkout'}>Check Out</NavLink></li>
+                                                <li><NavLink to={'/contact'}>Contact</NavLink></li>
+                                                <li><NavLink to={'/news'}>News</NavLink></li>
+                                                <li><NavLink to={'/shop'}>Shop</NavLink></li>
                                             </ul>
                                         </li>
-                                        <li><a href="news.html">News</a>
+                                        <li><NavLink to={'/news'}>News</NavLink>
                                             <ul className="sub-menu">
-                                                <li><a href="news.html">News</a></li>
-                                                <li><a href="single-news.html">Single News</a></li>
+                                                <li><NavLink to={'/news'}>News</NavLink></li>
+                                                <li><NavLink to={'/single-new'}>Single News</NavLink></li>
                                             </ul>
                                         </li>
-                                        <li><a href="contact.html">Contact</a></li>
-                                        <li><a href="shop.html">Shop</a>
+                                        <li><NavLink to={'/contact'}>Contact</NavLink></li>
+                                        <li><NavLink to={'/shop'}>Shop</NavLink>
                                             <ul className="sub-menu">
-                                                <li><a href="shop.html">Shop</a></li>
-                                                <li><a href="checkout.html">Check Out</a></li>
-                                                <li><a href="single-product.html">Single Product</a></li>
+                                                <li><NavLink to={'/shop'}>Shop</NavLink></li>
+                                                <li><NavLink to={'/checkout'}>Check Out</NavLink>
+                                                </li>
+                                                <li><NavLink to={'/single-product'}>Single Product</NavLink></li>
                                                 <li><NavLink to={'/cart'}>Cart</NavLink></li>
                                             </ul>
                                         </li>
                                         <li>
                                             <div className="header-icons">
-                                            <NavLink className="shopping-cart" to={'/cart'}><i className="fas fa-shopping-cart" /></NavLink>
+                                                <NavLink className="shopping-cart" to={'/cart'}><i className="fas fa-shopping-cart" /></NavLink>
                                                 <a className="mobile-hide search-bar-icon" href="#"><i className="fas fa-search" /></a>
                                             </div>
                                         </li>
