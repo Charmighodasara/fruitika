@@ -3,6 +3,7 @@ import React from 'react';
 function Index(props) {
     return (
         <div>
+            
             <div>
                 {/* search area */}
                 <div className="search-area">
