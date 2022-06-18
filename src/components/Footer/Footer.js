@@ -34,6 +34,7 @@ function Footer(props) {
               <li><NavLink to={'/shop'}>Shop</NavLink></li>
               <li><NavLink to={'/news'}>News</NavLink></li>
               <li><NavLink to={'/contact'}>Contact</NavLink></li>
+              <li><NavLink to={'/fruit'}>fruit</NavLink></li>
             </ul>
           </div>
         </div>
