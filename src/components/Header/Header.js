@@ -53,7 +53,7 @@ function Header(props) {
                                         <li><NavLink to={'/contact'}>Contact</NavLink></li>
                                         <li><NavLink to={'/shop'}>Shop</NavLink>
                                             <ul className="sub-menu">
-                                                <li><li><NavLink to={'/fruit'}>fruit</NavLink></li></li>
+                                                <li><li><NavLink to={'/fruit'}>Fruit</NavLink></li></li>
                                                 <li><NavLink to={'/checkout'}>Check Out</NavLink> </li>
                                                 <li><NavLink to={'/single-product'}>Single Product</NavLink></li>
                                                 <li><NavLink to={'/cart'}>Cart</NavLink></li>
