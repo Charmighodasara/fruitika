@@ -63,6 +63,7 @@ function Header(props) {
                                             <div className="header-icons">
                                                 <NavLink className="shopping-cart" to={'/cart'}><i className="fas fa-shopping-cart" /></NavLink>
                                                 <a className="mobile-hide search-bar-icon" href="#"><i className="fas fa-search" /></a>
+                                                <NavLink className="shopping-cart" to={'/login-signup'}><i className="fas fa-user" /></NavLink>
                                             </div>
                                         </li>
                                     </ul>
