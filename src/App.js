@@ -14,7 +14,6 @@ import News from './containers/News/News';
 import Shop from './containers/Shop/Shop';
 import Single_news from './containers/Single-news/Single_news';
 import Single_product from './containers/Single-product/Single_product';
-import Fruit from './containers/Fruit/Fruit';
 import Login_signup from './containers/Login_signup/Login_signup';
 
 function App() {
@@ -31,7 +30,6 @@ function App() {
         <Route path={'/contact'} exact component={Contact}></Route>
         <Route path={'/news'} exact component={News}></Route>
         <Route path={'/shop'} exact component={Shop}></Route>
-        <Route path={'/fruit'} exact component={Fruit}></Route>
         <Route path={'/single-new'} exact component={Single_news}></Route>
         <Route path={'/single-product'} exact component={Single_product}></Route>
         <Route path={'/login-signup'} exact component={Login_signup}></Route>
