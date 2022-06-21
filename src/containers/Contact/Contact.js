@@ -1,6 +1,31 @@
 import React from 'react';
+import * as yup from 'yup';
+import { Form, Formik, useFormik } from 'formik';
 
 function Contact(props) {
+
+    let schema = yup.object().shape({
+        name: yup.string().required("please enter your name."),
+        email: yup.string().required("please enter your email id.").email("please enter valid email id."),
+        phone: yup.string().required("please enter your mobile number."),
+        subject: yup.string().required("please enter subject."),
+
+    });
+    const formik = useFormik({
+        initialValues: {
+            name: '',
+            email: '',
+            phone:'',
+            subject:'',
+        },
+        validationSchema : schema,
+        onSubmit: values => {
+            alert(JSON.stringify(values, null, 2));
+        },
+    });
+
+    const {errors , handleBlur , handleSubmit , handleChange , touched } = formik;
+
     return (
         <div>
             {/* search area */}
@@ -46,19 +71,32 @@ function Contact(props) {
                             </div>
                             <div id="form_status" />
                             <div className="contact-form">
-                                <form type="POST" id="fruitkha-contact" onsubmit="return valid_datas( this );">
+                            <Formik values={formik}>
+                                <Form type="POST" id="fruitkha-contact" onSubmit={handleSubmit}>
                                     <p>
-                                        <input type="text" placeholder="Name" name="name" id="name" />
-                                        <input type="email" placeholder="Email" name="email" id="email" />
+                                        <input type="text" placeholder="Name" name="name" id="name" onChange={handleChange} onBlur={handleBlur}/>
+                                        <p>{errors.name && touched.name ? errors.name : ''}</p>
                                     </p>
                                     <p>
-                                        <input type="tel" placeholder="Phone" name="phone" id="phone" />
-                                        <input type="text" placeholder="Subject" name="subject" id="subject" />
+                                        <input type="email" placeholder="Email" name="email" id="email"  onChange={handleChange} onBlur={handleBlur}/>
+                                        <p>{errors.email && touched.email ? errors.email : ''}</p>
+
+                                    </p>
+                                    <p>
+                                        <input type="tel" placeholder="Phone" name="phone" id="phone" maxLength={10} onChange={handleChange} onBlur={handleBlur}/>
+                                        <p>{errors.phone && touched.phone ? errors.phone : ''}</p>
+
+                                    </p>
+                                    <p>
+                                        <input type="text" placeholder="Subject" name="subject" id="subject"  onChange={handleChange} onBlur={handleBlur} />
+                                        <p>{errors.subject && touched.subject ? errors.subject : ''}</p>
+
                                     </p>
                                     <p><textarea name="message" id="message" cols={30} rows={10} placeholder="Message" defaultValue={""} /></p>
-                                    <input type="hidden" name="token" defaultValue="FsWga4&@f6aw" />
+
                                     <p><input type="submit" defaultValue="Submit" /></p>
-                                </form>
+                                </Form>
+                                </Formik>
                             </div>
                         </div>
                         <div className="col-lg-4">

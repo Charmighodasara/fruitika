@@ -20,7 +20,7 @@ function Header(props) {
                                 <nav className="main-menu">
                                     <ul>
                                         <li className="current-list-item">
-                                            <NavLink className="current-list-item" to={'/index'}>Home</NavLink>
+                                            <NavLink className="current-list-item" to={'/'}>Home</NavLink>
                                             <ul className="sub-menu">
                                                 <li>
                                                     <NavLink to={'/index'}>Static Home</NavLink>

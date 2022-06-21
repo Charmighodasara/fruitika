@@ -22,6 +22,7 @@ function App() {
     <div >
       <Header />
       <Switch>
+        <Route path={'/'} exact component={Index}></Route>
         <Route path={'/index'} exact component={Index}></Route>
         <Route path={'/index2'} exact component={Index2}></Route>
         <Route path={'/about'} exact component={About}></Route>
