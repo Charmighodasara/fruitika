@@ -94,7 +94,7 @@ function Contact(props) {
                                     </p>
                                     <p><textarea name="message" id="message" cols={30} rows={10} placeholder="Message" defaultValue={""} /></p>
 
-                                    <p><input type="submit" defaultValue="Submit" /></p>
+                                    <p><button type="submit" defaultValue="Submit" >Submit</button></p>
                                 </Form>
                                 </Formik>
                             </div>

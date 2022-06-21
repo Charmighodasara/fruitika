@@ -1,10 +1,56 @@
 import React, { useState } from 'react';
-import { Button } from 'reactstrap';
+import * as yup from 'yup';
+import { Form, Formik, useFormik } from 'formik';
 
 function Login_signup(props) {
     const [user, setUser] = useState('login')
     const [forgot, setForgot] = useState('flase')
 
+    let schemaobj, initialval;
+    if (forgot === 'true') {
+        schemaobj = {
+            email: yup.string().required("please enter email.").email("please enter valid email."),
+        }
+        initialval = {
+            email: '',
+        }
+    } else if (user === 'login') {
+        schemaobj = {
+            email: yup.string().required("please enter email.").email("please enter valid email."),
+            password: yup.string().required("please enter password."),
+
+        }
+        initialval = {
+            password: '',
+            email: '',
+
+        }
+    } else if (user === 'signup') {
+        schemaobj = {
+            name: yup.string().required("please enter name."),
+            email: yup.string().required("please enter email id.").email("please enter valid email."),
+            password: yup.string().required("please enter password.")
+        }
+        initialval = {
+            name: '',
+            password: '',
+            email: '',
+        }
+
+    }
+
+    let schema = yup.object().shape(schemaobj);
+
+    const formikobj = useFormik({
+        initialValues: initialval,
+        validationSchema: schema,
+        onSubmit: values => {
+            alert(JSON.stringify(values, null, 2));
+        },
+        enableReinitialize: true,
+    });
+
+    const { handleChange, errors, handleSubmit, touched, handleBlur } = formikobj;
     return (
         <div>
             <div className="search-area">
@@ -51,69 +97,88 @@ function Login_signup(props) {
 
                             <div id="form_status m-auto" />
                             <div className="contact-form ">
-                                <div id="fruitkha-contact">
-                                    {
-                                        forgot === 'true' ?
+                                <Formik values={formikobj}>
+                                    <Form id="fruitkha-contact" onSubmit={handleSubmit}>
+                                        {
+                                            forgot === 'true' ?
+                                                null
+                                                :
+                                                user === 'login' ?
+                                                    null
+                                                    :
+                                                    <p>
+                                                        <input type="text" placeholder="Name" name="name" id="name" onChange={handleChange} onBlur={handleBlur} />
+                                                        <p>{errors.name && touched.name ? errors.name : ''}</p>
+                                                    </p>
+                                        }
+                                        {
+                                            forgot === 'true' ?
+                                                <p>
+                                                    <input type="email" placeholder="Email" name="email" id="email" onChange={handleChange} onBlur={handleBlur} />
+                                                    <p>{errors.email && touched.email ? errors.email : ''}</p>
+                                                </p>
+                                                :
+                                                user === 'login' ?
+                                                    <p>
+                                                        <input type="email" placeholder="Email" name="email" id="email" onChange={handleChange} onBlur={handleBlur} />
+                                                        <p>{errors.email && touched.email ? errors.email : ''}</p>
+                                                    </p>
+                                                    :
+                                                    <p>
+                                                        <input type="email" placeholder="Email" name="email" id="email" onChange={handleChange} onBlur={handleBlur} />
+                                                        <p>{errors.email && touched.email ? errors.email : ''}</p>
+                                                    </p>
+                                        }
+                                        {forgot === 'true' ?
                                             null
                                             :
                                             user === 'login' ?
-                                                null
+                                                < >
+                                                    <p>
+                                                        <input type="password" placeholder="password" name="password" id="password" onChange={handleChange} onBlur={handleBlur} />
+                                                        <p>{errors.password && touched.password ? errors.password : ''}</p>
+                                                    </p>
+                                                    <div>
+                                                        <input id="checkbox2" type="checkbox" onClick={() => setForgot('true')} /> <label > Forgot your password ? </label>
+                                                    </div>
+                                                </>
                                                 :
                                                 <p>
-                                                    <input type="text" placeholder="Name" name="name" id="name" />
+                                                    <input type="password" placeholder="password" name="password" id="password" onChange={handleChange} onBlur={handleBlur} />
+                                                    <p>{errors.password && touched.password ? errors.password : ''}</p>
                                                 </p>
-                                    }
-
-                                    <p>
-                                        <input type="email" placeholder="Email" name="email" id="email" />
-                                    </p>
-                                    {forgot === 'true' ?
-                                        null
-                                        :
-                                        user === 'login' ?
-                                            < >
-                                                <p>
-                                                    <input type="password" placeholder="password" name="password" id="password" />
-                                                </p>
-                                                <div>
-                                                    <input id="checkbox2" type="checkbox" onClick={() => setForgot('true')} /> <label > Forgot your password ? </label>
-                                                </div>
-                                            </>
-                                            :
-                                            <p>
-                                                <input type="password" placeholder="password" name="password" id="password" />
+                                        }
+                                        {
+                                            forgot === 'true' ?
+                                                <p><button type="submit">Submit</button></p>
+                                                :
+                                                user === 'login' ?
+                                                    <p><button type="submit">Login</button></p>
+                                                    :
+                                                    <p><button type="submit">Signup</button></p>
+                                        }
+                                        {forgot === 'true' ?
+                                            <p>Go back to login / signup <a type="submit" onClick={() => setForgot('false')}> back</a>
                                             </p>
-                                    }
-                                    {
-                                        forgot === 'true' ?
-                                            <p><button type="submit">Submit</button></p>
                                             :
                                             user === 'login' ?
-                                                <p><button type="submit">Login</button></p>
+                                                <p>create an new account <a type="submit" onClick={() => setUser('signup')}> signup</a>
+                                                </p>
                                                 :
-                                                <p><button type="submit">Signup</button></p>
-                                    }
-                                    {forgot === 'true' ?
-                                   <p>Go back to login / signup <button type="submit" onClick={() => setForgot('false')}> back</button>
-                                    </p>
-                                    :
-                                    user === 'login' ?
-                                        <p>create an new account <button type="submit" onClick={() => setUser('signup')}> signup</button>
-                                        </p>
-                                        :
-                                        <p>already an account <button type="submit" onClick={() => setUser('login')}> login</button>
-                                        </p>
-                                }
-                                </div>
+                                                <p>already an account <a type="submit" onClick={() => setUser('login')}> login</a>
+                                                </p>
+                                        }
+                                    </Form>
+                                </Formik>
                             </div>
                         </div>
 
                     </div>
                 </div>
             </div>
-            
+
             {/* end contact form */}
-        </div>
+        </div >
     );
 }
 
