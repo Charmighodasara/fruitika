@@ -18,6 +18,7 @@ import Fruit from './containers/Fruit/Fruit';
 import Login_signup from './containers/Login_signup/Login_signup';
 import Publicroute from './Route/Publicroute';
 import Privateroute from './Route/Privateroute';
+import Search from './containers/search/Search';
 
 function App() {
   return (
@@ -35,7 +36,7 @@ function App() {
         <Publicroute path={'/shop'} exact component={Shop} />
         <Publicroute path={'/fruit'} exact component={Fruit} />
         <Publicroute path={'/single-new'} exact component={Single_news} />
-        <Publicroute path={'/single-product'} exact component={Single_product} />
+        <Publicroute path={'/search'} exact component={Search} />
         <Publicroute path={'/login-signup'} exact restricted={true} component={Login_signup} />
         <Privateroute path={'/cart'} exact component={Cart} />
       </Switch>
