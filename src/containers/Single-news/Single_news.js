@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 function Single_news(props) {
     return (
@@ -94,7 +95,8 @@ function Single_news(props) {
                                             <input type="email" placeholder="Your Email" />
                                         </p>
                                         <p><textarea name="comment" id="comment" cols={30} rows={10} placeholder="Your Message" defaultValue={""} /></p>
-                                        <p><input type="submit" defaultValue="Submit" /></p>
+                                        <p></p>
+                                        <NavLink className="current-list-item" to={'/'}><input type="submit" defaultValue="Submit" /></NavLink>
                                     </form>
                                 </div>
                             </div>

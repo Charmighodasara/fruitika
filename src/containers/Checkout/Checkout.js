@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 function Checkout(props) {
     return (
@@ -142,7 +143,8 @@ function Checkout(props) {
                                             </tr>
                                         </tbody>
                                     </table>
-                                    <a href="#" className="boxed-btn">Place Order</a>
+                                    <NavLink className="current-list-item " to={'/'}><a href="#" className="boxed-btn mt-4">Place Order</a></NavLink>
+                                    
                                 </div>
                             </div>
                         </div>

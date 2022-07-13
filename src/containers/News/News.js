@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 function News(props) {
     return (
@@ -49,7 +50,7 @@ function News(props) {
                                         <span className="date"><i className="fas fa-calendar" /> 27 December, 2019</span>
                                     </p>
                                     <p className="excerpt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus laborum autem, dolores inventore, beatae nam.</p>
-                                    <a href="single-news.html" className="read-more-btn">read more <i className="fas fa-angle-right" /></a>
+                                    <NavLink to={'/single-new'} className="read-more-btn">read more <i className="fas fa-angle-right" /></NavLink>
                                 </div>
                             </div>
                         </div>
@@ -63,7 +64,7 @@ function News(props) {
                                         <span className="date"><i className="fas fa-calendar" /> 27 December, 2019</span>
                                     </p>
                                     <p className="excerpt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus laborum autem, dolores inventore, beatae nam.</p>
-                                    <a href="single-news.html" className="read-more-btn">read more <i className="fas fa-angle-right" /></a>
+                                    <NavLink to={'/single-new'} className="read-more-btn">read more <i className="fas fa-angle-right" /></NavLink>
                                 </div>
                             </div>
                         </div>
@@ -77,7 +78,7 @@ function News(props) {
                                         <span className="date"><i className="fas fa-calendar" /> 27 December, 2019</span>
                                     </p>
                                     <p className="excerpt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus laborum autem, dolores inventore, beatae nam.</p>
-                                    <a href="single-news.html" className="read-more-btn">read more <i className="fas fa-angle-right" /></a>
+                                    <NavLink to={'/single-new'} className="read-more-btn">read more <i className="fas fa-angle-right" /></NavLink>
                                 </div>
                             </div>
                         </div>
@@ -91,7 +92,7 @@ function News(props) {
                                         <span className="date"><i className="fas fa-calendar" /> 27 December, 2019</span>
                                     </p>
                                     <p className="excerpt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus laborum autem, dolores inventore, beatae nam.</p>
-                                    <a href="single-news.html" className="read-more-btn">read more <i className="fas fa-angle-right" /></a>
+                                    <NavLink to={'/single-new'} className="read-more-btn">read more <i className="fas fa-angle-right" /></NavLink>
                                 </div>
                             </div>
                         </div>
@@ -105,7 +106,7 @@ function News(props) {
                                         <span className="date"><i className="fas fa-calendar" /> 27 December, 2019</span>
                                     </p>
                                     <p className="excerpt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus laborum autem, dolores inventore, beatae nam.</p>
-                                    <a href="single-news.html" className="read-more-btn">read more <i className="fas fa-angle-right" /></a>
+                                    <NavLink to={'/single-new'} className="read-more-btn">read more <i className="fas fa-angle-right" /></NavLink>
                                 </div>
                             </div>
                         </div>
@@ -119,7 +120,7 @@ function News(props) {
                                         <span className="date"><i className="fas fa-calendar" /> 27 December, 2018</span>
                                     </p>
                                     <p className="excerpt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus laborum autem, dolores inventore, beatae nam.</p>
-                                    <a href="single-news.html" className="read-more-btn">read more <i className="fas fa-angle-right" /></a>
+                                    <NavLink to={'/single-new'} className="read-more-btn">read more <i className="fas fa-angle-right" /></NavLink>
                                 </div>
                             </div>
                         </div>

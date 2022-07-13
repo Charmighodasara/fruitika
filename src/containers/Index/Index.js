@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 function Index(props) {
     return (
@@ -33,8 +34,8 @@ function Index(props) {
                                         <p className="subtitle">Fresh &amp; Organic</p>
                                         <h1>Delicious Seasonal Fruits</h1>
                                         <div className="hero-btns">
-                                            <a href="shop.html" className="boxed-btn">Fruit Collection</a>
-                                            <a href="contact.html" className="bordered-btn">Contact Us</a>
+                                            <NavLink to={'/shop'} className="boxed-btn"> Fruit Collection</NavLink>
+                                            <NavLink to={'/contact'} className="bordered-btn">Contact Us</NavLink>
                                         </div>
                                     </div>
                                 </div>
@@ -103,7 +104,7 @@ function Index(props) {
                                     </div>
                                     <h3>Strawberry</h3>
                                     <p className="product-price"><span>Per Kg</span> 85$ </p>
-                                    <a href="cart.html" className="cart-btn"><i className="fas fa-shopping-cart" /> Add to Cart</a>
+                                    <NavLink to={'/cart'} className="cart-btn"><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>
                                 </div>
                             </div>
                             <div className="col-lg-4 col-md-6 text-center">
@@ -113,7 +114,7 @@ function Index(props) {
                                     </div>
                                     <h3>Berry</h3>
                                     <p className="product-price"><span>Per Kg</span> 70$ </p>
-                                    <a href="cart.html" className="cart-btn"><i className="fas fa-shopping-cart" /> Add to Cart</a>
+                                    <NavLink to={'/cart'} className="cart-btn"><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>
                                 </div>
                             </div>
                             <div className="col-lg-4 col-md-6 offset-md-3 offset-lg-0 text-center">
@@ -123,7 +124,7 @@ function Index(props) {
                                     </div>
                                     <h3>Lemon</h3>
                                     <p className="product-price"><span>Per Kg</span> 35$ </p>
-                                    <a href="cart.html" className="cart-btn"><i className="fas fa-shopping-cart" /> Add to Cart</a>
+                                    <NavLink to={'/cart'} className="cart-btn"><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>
                                 </div>
                             </div>
                         </div>
@@ -154,7 +155,7 @@ function Index(props) {
                                 <div className="text">Quisquam minus maiores repudiandae nobis, minima saepe id, fugit ullam similique! Beatae, minima quisquam molestias facere ea. Perspiciatis unde omnis iste natus error sit voluptatem accusant</div>
                                 {/*Countdown Timer*/}
                                 <div className="time-counter"><div className="time-countdown clearfix" data-countdown="2020/2/01"><div className="counter-column"><div className="inner"><span className="count">00</span>Days</div></div> <div className="counter-column"><div className="inner"><span className="count">00</span>Hours</div></div>  <div className="counter-column"><div className="inner"><span className="count">00</span>Mins</div></div>  <div className="counter-column"><div className="inner"><span className="count">00</span>Secs</div></div></div></div>
-                                <a href="cart.html" className="cart-btn mt-3"><i className="fas fa-shopping-cart" /> Add to Cart</a>
+                                <NavLink to={'/cart'} className="cart-btn mt-3"><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>
                             </div>
                         </div>
                     </div>
@@ -229,7 +230,7 @@ function Index(props) {
                                     <h2>We are <span className="orange-text">Fruitkha</span></h2>
                                     <p>Etiam vulputate ut augue vel sodales. In sollicitudin neque et massa porttitor vestibulum ac vel nisi. Vestibulum placerat eget dolor sit amet posuere. In ut dolor aliquet, aliquet sapien sed, interdum velit. Nam eu molestie lorem.</p>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente facilis illo repellat veritatis minus, et labore minima mollitia qui ducimus.</p>
-                                    <a href="about.html" className="boxed-btn mt-4">know more</a>
+                                    <NavLink to={'/about'} className="boxed-btn mt-4">know more</NavLink>
                                 </div>
                             </div>
                         </div>
@@ -241,7 +242,7 @@ function Index(props) {
                     <div className="container">
                         <h3>December sale is on! <br /> with big <span className="orange-text">Discount...</span></h3>
                         <div className="sale-percent"><span>Sale! <br /> Upto</span>50% <span>off</span></div>
-                        <a href="shop.html" className="cart-btn btn-lg">Shop Now</a>
+                        <NavLink to={'/shop'} className="boxed-btn"> Shop Now</NavLink>
                     </div>
                 </section>
                 {/* end shop banner */}
@@ -267,7 +268,7 @@ function Index(props) {
                                             <span className="date"><i className="fas fa-calendar" /> 27 December, 2019</span>
                                         </p>
                                         <p className="excerpt">Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus nisi. Praesent vitae mattis nunc, egestas viverra eros.</p>
-                                        <a href="single-news.html" className="read-more-btn">read more <i className="fas fa-angle-right" /></a>
+                                        <NavLink to={'/single-new'} className="read-more-btn">read more <i className="fas fa-angle-right" /></NavLink>
                                     </div>
                                 </div>
                             </div>
@@ -281,7 +282,7 @@ function Index(props) {
                                             <span className="date"><i className="fas fa-calendar" /> 27 December, 2019</span>
                                         </p>
                                         <p className="excerpt">Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus nisi. Praesent vitae mattis nunc, egestas viverra eros.</p>
-                                        <a href="single-news.html" className="read-more-btn">read more <i className="fas fa-angle-right" /></a>
+                                        <NavLink to={'/single-new'} className="read-more-btn">read more <i className="fas fa-angle-right" /></NavLink>
                                     </div>
                                 </div>
                             </div>
@@ -295,14 +296,15 @@ function Index(props) {
                                             <span className="date"><i className="fas fa-calendar" /> 27 December, 2019</span>
                                         </p>
                                         <p className="excerpt">Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus nisi. Praesent vitae mattis nunc, egestas viverra eros.</p>
-                                        <a href="single-news.html" className="read-more-btn">read more <i className="fas fa-angle-right" /></a>
+                                        <NavLink to={'/single-new'} className="read-more-btn">read more <i className="fas fa-angle-right" /></NavLink>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div className="row">
                             <div className="col-lg-12 text-center">
-                                <a href="news.html" className="boxed-btn">More News</a>
+                                {/* <a href="news.html" className="boxed-btn">More News</a> */}
+                                <NavLink to={'/news'} className="boxed-btn">More News</NavLink>
                             </div>
                         </div>
                     </div>

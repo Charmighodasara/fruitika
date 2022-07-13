@@ -43,9 +43,9 @@ function Shop(props) {
                             <div className="product-filters">
                                 <ul>
                                     <li className="active" data-filter="*">All</li>
-                                    <li data-filter=".strawberry">Strawberry</li>
+                                    {/* <li data-filter=".strawberry">Strawberry</li>
                                     <li data-filter=".berry">Berry</li>
-                                    <li data-filter=".lemon">Lemon</li>
+                                    <li data-filter=".lemon">Lemon</li> */}
                                 </ul>
                             </div>
                         </div>

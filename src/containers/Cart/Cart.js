@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 function Cart(props) {
     return (
@@ -106,8 +107,8 @@ function Cart(props) {
                                     </tbody>
                                 </table>
                                 <div className="cart-buttons">
-                                    <a href="cart.html" className="boxed-btn">Update Cart</a>
-                                    <a href="checkout.html" className="boxed-btn black">Check Out</a>
+                                    <NavLink to={'/cart'} className="boxed-btn">Update Cart</NavLink>
+                                    <NavLink to={'/checkout'} className="boxed-btn black">Check Out</NavLink> 
                                 </div>
                             </div>
                             <div className="coupon-section">
@@ -115,7 +116,7 @@ function Cart(props) {
                                 <div className="coupon-form-wrap">
                                     <form action="index.html">
                                         <p><input type="text" placeholder="Coupon" /></p>
-                                        <p><input type="submit" defaultValue="Apply" /></p>
+                                        <p><NavLink className="current-list-item" to={'/'}><input type="submit" defaultValue="submit" /></NavLink></p>
                                     </form>
                                 </div>
                             </div>

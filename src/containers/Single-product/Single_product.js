@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 function Single_product(props) {
     return (
@@ -53,7 +54,7 @@ function Single_product(props) {
                                     <form action="index.html">
                                         <input type="number" placeholder={0} />
                                     </form>
-                                    <a href="cart.html" className="cart-btn"><i className="fas fa-shopping-cart" /> Add to Cart</a>
+                                    <NavLink to={'/cart'} className="cart-btn mt-3"><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>
                                     <p><strong>Categories: </strong>Fruits, Organic</p>
                                 </div>
                                 <h4>Share:</h4>
@@ -88,7 +89,7 @@ function Single_product(props) {
                                 </div>
                                 <h3>Strawberry</h3>
                                 <p className="product-price"><span>Per Kg</span> 85$ </p>
-                                <a href="cart.html" className="cart-btn"><i className="fas fa-shopping-cart" /> Add to Cart</a>
+                                <NavLink to={'/cart'} className="cart-btn mt-3"><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>
                             </div>
                         </div>
                         <div className="col-lg-4 col-md-6 text-center">
@@ -98,7 +99,7 @@ function Single_product(props) {
                                 </div>
                                 <h3>Berry</h3>
                                 <p className="product-price"><span>Per Kg</span> 70$ </p>
-                                <a href="cart.html" className="cart-btn"><i className="fas fa-shopping-cart" /> Add to Cart</a>
+                                <NavLink to={'/cart'} className="cart-btn mt-3"><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>
                             </div>
                         </div>
                         <div className="col-lg-4 col-md-6 offset-lg-0 offset-md-3 text-center">
@@ -108,7 +109,7 @@ function Single_product(props) {
                                 </div>
                                 <h3>Lemon</h3>
                                 <p className="product-price"><span>Per Kg</span> 35$ </p>
-                                <a href="cart.html" className="cart-btn"><i className="fas fa-shopping-cart" /> Add to Cart</a>
+                                <NavLink to={'/cart'} className="cart-btn mt-3"><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>
                             </div>
                         </div>
                     </div>

@@ -44,7 +44,8 @@ function Footer(props) {
             <p>Subscribe to our mailing list to get the latest updates.</p>
             <form action="index.html">
               <input type="email" placeholder="Email" />
-              <button type="submit"><i className="fas fa-paper-plane" /></button>
+              <NavLink to={'/index'}><button type="submit"><i className="fas fa-paper-plane" /> </button></NavLink>
+             
             </form>
           </div>
         </div>

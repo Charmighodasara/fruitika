@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 function Pages(props) {
     return (
@@ -41,12 +42,13 @@ function Pages(props) {
                     <div className="full-height-tablecell">
                         <div className="container">
                             <div className="row">
-                                <div className="col-lg-8 offset-lg-2 text-center">
+                                <div className="col-lg-8 offset-lg-2 text-center my-5">
                                     <div className="error-text">
                                         <i className="far fa-sad-cry" />
                                         <h1>Oops! Not Found.</h1>
                                         <p>The page you requested for is not found.</p>
-                                        <a href="index.html" className="boxed-btn">Back to Home</a>
+                                        <NavLink className="current-list-item" to={'/'}>
+                                            <button>Back to Home</button></NavLink>
                                     </div>
                                 </div>
                             </div>
