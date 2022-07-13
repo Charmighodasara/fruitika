@@ -40,12 +40,35 @@ function Login_signup(props) {
     }
 
     let schema = yup.object().shape(schemaobj);
+    const handledata = (values) => {
+        let localdata = JSON.parse(localStorage.getItem("Frutikha"))
+        // localdata.push(values)
+        // localStorage.setItem("user", JSON.stringify(localdata))
+
+        if (localdata === null) {
+            localStorage.setItem("Frutikha", JSON.stringify([values]))
+        } else {
+            localdata.push(values)
+            localStorage.setItem("Frutikha", JSON.stringify(localdata))
+        }
+        console.log(values);
+
+    }
+
+    const handleLogin = () => {
+        localStorage.setItem("Frutikha", "123")
+    }
 
     const formikobj = useFormik({
         initialValues: initialval,
         validationSchema: schema,
         onSubmit: values => {
-            alert(JSON.stringify(values, null, 2));
+            // alert(JSON.stringify(values, null, 2));
+            if (user === 'login') {
+                handleLogin()
+            } else {
+                handledata(values)
+            }
         },
         enableReinitialize: true,
     });

@@ -16,26 +16,28 @@ import Single_news from './containers/Single-news/Single_news';
 import Single_product from './containers/Single-product/Single_product';
 import Fruit from './containers/Fruit/Fruit';
 import Login_signup from './containers/Login_signup/Login_signup';
+import Publicroute from './Route/Publicroute';
+import Privateroute from './Route/Privateroute';
 
 function App() {
   return (
     <div >
       <Header />
       <Switch>
-        <Route path={'/'} exact component={Index}></Route>
-        <Route path={'/index'} exact component={Index}></Route>
-        <Route path={'/index2'} exact component={Index2}></Route>
-        <Route path={'/about'} exact component={About}></Route>
-        <Route path={'/pages1'} exact component={Pages}></Route>
-        <Route path={'/cart'} exact component={Cart}></Route>
-        <Route path={'/checkout'} exact component={Checkout}></Route>
-        <Route path={'/contact'} exact component={Contact}></Route>
-        <Route path={'/news'} exact component={News}></Route>
-        <Route path={'/shop'} exact component={Shop}></Route>
-        <Route path={'/fruit'} exact component={Fruit}></Route>
-        <Route path={'/single-new'} exact component={Single_news}></Route>
-        <Route path={'/single-product'} exact component={Single_product}></Route>
-        <Route path={'/login-signup'} exact component={Login_signup}></Route>
+        <Publicroute path={'/'} exact component={Index} />
+        <Publicroute path={'/index'} exact component={Index} />
+        <Publicroute path={'/index2'} exact component={Index2} />
+        <Publicroute path={'/about'} exact component={About} />
+        <Publicroute path={'/pages1'} exact component={Pages} />
+        <Publicroute path={'/checkout'} exact component={Checkout} />
+        <Publicroute path={'/contact'} exact component={Contact} />
+        <Publicroute path={'/news'} exact component={News} />
+        <Publicroute path={'/shop'} exact component={Shop} />
+        <Publicroute path={'/fruit'} exact component={Fruit} />
+        <Publicroute path={'/single-new'} exact component={Single_news} />
+        <Publicroute path={'/single-product'} exact component={Single_product} />
+        <Publicroute path={'/login-signup'} exact restricted={true} component={Login_signup} />
+        <Privateroute path={'/cart'} exact component={Cart} />
       </Switch>
       <Footer />
     </div>
