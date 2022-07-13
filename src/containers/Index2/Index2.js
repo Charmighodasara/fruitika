@@ -152,7 +152,7 @@ function Index2(props) {
                                     <div className="product-image">
                                         <a href="single-product.html"><img src="assets/img/products/product-img-2.jpg" alt /></a>
                                     </div>
-                                    <h3>Berry</h3>
+                                    <h3>Grapes</h3>
                                     <p className="product-price"><span>Per Kg</span> 70$ </p>
                                     <NavLink to={'/cart'} className="cart-btn"><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>
                                 </div>

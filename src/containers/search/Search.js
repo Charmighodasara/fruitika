@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Input } from 'reactstrap';
-import TextField from '@mui/material/TextField';
+
 
 function Search(props) {
     const [search, setSearch] = useState([])
@@ -14,13 +14,13 @@ function Search(props) {
         },
         {
             id: 402,
-            name: "Berry",
+            name: "Grapes",
             quantity: "100",
             price: "70"
         },
         {
             id: 403,
-            name: "apple",
+            name: "raspberry",
             quantity: "100",
             price: "50"
         },
@@ -38,20 +38,23 @@ function Search(props) {
         },
         {
             id: 406,
-            name: "Avocado",
+            name: "kiwi",
             quantity: "20",
             price: "50"
         },
     ]
+
     const hancleSearch = (val) => {
         let fData = frutika.filter((f) => (
             f.name.toLowerCase().includes(val.toLowerCase()) ||
             f.quantity.toString().includes(val) ||
             f.price.toString().includes(val)
         ))
-        console.log(fData)
+        console.log(val)
         setSearch(fData)
     }
+
+    const finalData = search.length > 0 ? search : frutika
 
     return (
         <div>
@@ -91,18 +94,19 @@ function Search(props) {
             <div className="col-lg-12 col-md-12" >
             </div>
             <div>
-                <div className="cart-section mt-150 mb-150">
+                <div className="cart-section mt-100 mb-100">
                     <div className='container'>
                         <div className='row'>
                             <div className="col-lg-12 col-md-12">
-                                <div className='search col-lg-8 mx-auto my-5' >
-                                    <TextField
+                                <div className='search col-lg-8 mx-auto mb-3 ' >
+                                    <Input
                                         margin="dense"
                                         name="search"
                                         label="Search Medicine "
                                         type="text"
                                         fullWidth
                                         variant="standard"
+                                        placeholder='Search Here'
                                         onChange={(e) => hancleSearch(e.target.value)}
                                     />
                                 </div>
@@ -110,6 +114,7 @@ function Search(props) {
                                     <table className="cart-table">
                                         <thead className="cart-table-head">
                                             <tr className="table-head-row">
+                                                <th className="product-select" />
                                                 <th className="product-id">id</th>
                                                 <th className="product-name">Name</th>
                                                 <th className="product-quantity">Quantity</th>
@@ -117,10 +122,12 @@ function Search(props) {
                                             </tr>
                                         </thead>
                                         {
-                                            frutika.map((f, i) => {
+                                            finalData.map((f, i) => {
                                                 return (
                                                     <tbody key={i}>
                                                         <tr className="table-body-row">
+                                                            <td className="product-remove"><input id="checkbox2" type="checkbox" />
+                                                            </td>
                                                             <td className="product-id">{f.id}</td>
                                                             <td className="product-name">{f.name}</td>
                                                             <td className="product-price">{f.quantity}</td>
@@ -131,6 +138,10 @@ function Search(props) {
                                             })
                                         }
                                     </table>
+                                </div>
+
+                                <div className="col-2 mx-auto my-3">
+                                <NavLink to={'/shop'} className="boxed-btn">Shop Now</NavLink>
                                 </div>
                             </div>
                         </div>
