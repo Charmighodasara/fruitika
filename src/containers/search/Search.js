@@ -9,37 +9,37 @@ function Search(props) {
         {
             id: 401,
             name: "Strawberry",
-            quantity: "10",
+            quantity: "1Kg",
             price: "50"
         },
         {
             id: 402,
             name: "Grapes",
-            quantity: "100",
+            quantity: "1Kg",
             price: "70"
         },
         {
             id: 403,
             name: "raspberry",
-            quantity: "100",
+            quantity: "1Kg",
             price: "50"
         },
         {
             id: 404,
             name: "Lemon",
-            quantity: "10",
+            quantity: "1Kg",
             price: "35"
         },
         {
             id: 405,
             name: "Green Apple",
-            quantity: "10",
+            quantity: "1Kg",
             price: "45"
         },
         {
             id: 406,
             name: "kiwi",
-            quantity: "20",
+            quantity: "1Kg",
             price: "50"
         },
     ]
