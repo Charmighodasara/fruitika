@@ -44,7 +44,7 @@ function Search(props) {
         },
     ]
 
-    const hancleSearch = (val) => {
+    const handleSearch = (val) => {
         let fData = frutika.filter((f) => (
             f.name.toLowerCase().includes(val.toLowerCase()) ||
             f.quantity.toString().includes(val) ||
@@ -107,7 +107,7 @@ function Search(props) {
                                         fullWidth
                                         variant="standard"
                                         placeholder='Search Here'
-                                        onChange={(e) => hancleSearch(e.target.value)}
+                                        onChange={(e) => handleSearch(e.target.value)}
                                     />
                                 </div>
                                 <div className="cart-table-wrap">
