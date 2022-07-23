@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 function Shop(props) {
     return (
@@ -58,7 +59,7 @@ function Shop(props) {
                                 </div>
                                 <h3>Strawberry</h3>
                                 <p className="product-price"><span>Per Kg</span> 85$ </p>
-                                <a href="cart.html" className="cart-btn"><i className="fas fa-shopping-cart" /> Add to Cart</a>
+                                <NavLink to={'/cart'} className="cart-btn"><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>
                             </div>
                         </div>
                         <div className="col-lg-4 col-md-6 text-center berry">
@@ -68,7 +69,7 @@ function Shop(props) {
                                 </div>
                                 <h3>Grapes</h3>
                                 <p className="product-price"><span>Per Kg</span> 70$ </p>
-                                <a href="cart.html" className="cart-btn"><i className="fas fa-shopping-cart" /> Add to Cart</a>
+                                <NavLink to={'/cart'} className="cart-btn"><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>
                             </div>
                         </div>
                         <div className="col-lg-4 col-md-6 text-center lemon">
@@ -78,7 +79,7 @@ function Shop(props) {
                                 </div>
                                 <h3>Lemon</h3>
                                 <p className="product-price"><span>Per Kg</span> 35$ </p>
-                                <a href="cart.html" className="cart-btn"><i className="fas fa-shopping-cart" /> Add to Cart</a>
+                                <NavLink to={'/cart'} className="cart-btn"><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>
                             </div>
                         </div>
                         <div className="col-lg-4 col-md-6 text-center">
@@ -88,7 +89,7 @@ function Shop(props) {
                                 </div>
                                 <h3>kiwi</h3>
                                 <p className="product-price"><span>Per Kg</span> 50$ </p>
-                                <a href="cart.html" className="cart-btn"><i className="fas fa-shopping-cart" /> Add to Cart</a>
+                                <NavLink to={'/cart'} className="cart-btn"><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>
                             </div>
                         </div>
                         <div className="col-lg-4 col-md-6 text-center">
@@ -98,8 +99,7 @@ function Shop(props) {
                                 </div>
                                 <h3>Green Apple</h3>
                                 <p className="product-price"><span>Per Kg</span> 45$ </p>
-                                <a href="cart.html" className="cart-btn"><i className="fas fa-shopping-cart" /> Add to Cart</a>
-                            </div>
+                                <NavLink to={'/cart'} className="cart-btn"><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>                            </div>
                         </div>
                         <div className="col-lg-4 col-md-6 text-center strawberry">
                             <div className="single-product-item">
@@ -108,8 +108,7 @@ function Shop(props) {
                                 </div>
                                 <h3>Raspberry</h3>
                                 <p className="product-price"><span>Per Kg</span> 80$ </p>
-                                <a href="cart.html" className="cart-btn"><i className="fas fa-shopping-cart" /> Add to Cart</a>
-                            </div>
+                                <NavLink to={'/cart'} className="cart-btn"><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>                            </div>
                         </div>
                     </div>
                     <div className="row">
