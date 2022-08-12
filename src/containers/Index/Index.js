@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
+import { themeContext } from '../../context/ThemeContext';
 
 function Index(props) {
+    const value = useContext(themeContext);
     return (
         <div>
-
             <div>
                 {/* search area */}
                 <div className="search-area">
@@ -45,8 +46,8 @@ function Index(props) {
                 </div>
                 {/* end hero area */}
                 {/* features list section */}
-                <div className="list-section pt-80 pb-80">
-                    <div className="container">
+                <div className={`list-section pt-80 pb-80 ${value.them}`}>
+                    <div className={`container ${value.them}`}>
                         <div className="row">
                             <div className="col-lg-4 col-md-6 mb-4 mb-lg-0">
                                 <div className="list-box d-flex align-items-center">

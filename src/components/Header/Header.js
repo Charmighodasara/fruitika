@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
+import { Button } from 'reactstrap';
+import { themeContext } from '../../context/ThemeContext';
 
 function Header(props) {
+    const value = useContext(themeContext);
+    console.log(value);
     return (
         <div>
             <div className="top-header-area" id="sticker">
@@ -28,11 +32,11 @@ function Header(props) {
                                                 <li>
                                                     <NavLink to={'/index2'}>Slider Home</NavLink>
                                                 </li>
-                                             
+
                                             </ul>
                                         </li>
                                         <li><NavLink to={'/about'}>About</NavLink></li>
-                                        
+
                                         <li><a href="#">Pages</a>
                                             <ul className="sub-menu">
                                                 <li><NavLink to={'/pages1'}>404 page</NavLink></li>
@@ -59,11 +63,12 @@ function Header(props) {
                                                 <li><NavLink to={'/cart'}>Cart</NavLink></li>
                                             </ul>
                                         </li>
-                                        <li>
+                                        <li><i class="fa-solid fa-moon-over-sun"></i>
                                             <div className="header-icons">
                                                 <NavLink className="shopping-cart" to={'/cart'}><i className="fas fa-shopping-cart" /></NavLink>
-                                                <NavLink  className="mobile-hide search-bar-icon" to={'/search'}><i className="fas fa-search" /></NavLink>
+                                                <NavLink className="mobile-hide search-bar-icon" to={'/search'}><i className="fas fa-search" /></NavLink>
                                                 <NavLink className="shopping-cart" to={'/login-signup'}><i className="fas fa-user" /></NavLink>
+                                                <button onClick={()=>value.toggleTheme(value.theme)} >THEME TOGGLE</button>
                                             </div>
                                         </li>
                                     </ul>
