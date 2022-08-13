@@ -6,7 +6,7 @@ function Index(props) {
     const value = useContext(themeContext);
     return (
         <div>
-            <div>
+            <div className={` ${value.them}`}>
                 {/* search area */}
                 <div className="search-area">
                     <div className="container">
@@ -47,7 +47,7 @@ function Index(props) {
                 {/* end hero area */}
                 {/* features list section */}
                 <div className={`list-section pt-80 pb-80 ${value.them}`}>
-                    <div className={`container ${value.them}`}>
+                    <div className="container">
                         <div className="row">
                             <div className="col-lg-4 col-md-6 mb-4 mb-lg-0">
                                 <div className="list-box d-flex align-items-center">
@@ -87,7 +87,7 @@ function Index(props) {
                 </div>
                 {/* end features list section */}
                 {/* product section */}
-                <div className="product-section mt-150 mb-150">
+                <div className= {`product-section mt-150 mb-150 ${value.them}`}>
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-8 offset-lg-2 text-center">

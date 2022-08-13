@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
+import { themeContext } from '../../context/ThemeContext';
 
 
 function Footer(props) {
+  const value = useContext(themeContext);
     return (
         <div>
     <div>
-  <div className="footer-area">
+  <div className={`footer-area ${value.theme}`}>
     <div className="container">
       <div className="row">
         <div className="col-lg-3 col-md-6">
