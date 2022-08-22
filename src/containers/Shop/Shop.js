@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 function Shop(props) {
     return (
@@ -58,7 +59,7 @@ function Shop(props) {
                                 </div>
                                 <h3>Strawberry</h3>
                                 <p className="product-price"><span>Per Kg</span> 85$ </p>
-                                <a href="cart.html" className="cart-btn"><i className="fas fa-shopping-cart" /> Add to Cart</a>
+                                <NavLink to={'/cart'} className="cart-btn"><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>
                             </div>
                         </div>
                         <div className="col-lg-4 col-md-6 text-center berry">
@@ -66,9 +67,9 @@ function Shop(props) {
                                 <div className="product-image">
                                     <a href="single-product.html"><img src="assets/img/products/product-img-2.jpg" alt /></a>
                                 </div>
-                                <h3>Berry</h3>
+                                <h3>Grapes</h3>
                                 <p className="product-price"><span>Per Kg</span> 70$ </p>
-                                <a href="cart.html" className="cart-btn"><i className="fas fa-shopping-cart" /> Add to Cart</a>
+                                <NavLink to={'/cart'} className="cart-btn"><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>
                             </div>
                         </div>
                         <div className="col-lg-4 col-md-6 text-center lemon">
@@ -78,7 +79,7 @@ function Shop(props) {
                                 </div>
                                 <h3>Lemon</h3>
                                 <p className="product-price"><span>Per Kg</span> 35$ </p>
-                                <a href="cart.html" className="cart-btn"><i className="fas fa-shopping-cart" /> Add to Cart</a>
+                                <NavLink to={'/cart'} className="cart-btn"><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>
                             </div>
                         </div>
                         <div className="col-lg-4 col-md-6 text-center">
@@ -86,9 +87,9 @@ function Shop(props) {
                                 <div className="product-image">
                                     <a href="single-product.html"><img src="assets/img/products/product-img-4.jpg" alt /></a>
                                 </div>
-                                <h3>Avocado</h3>
+                                <h3>kiwi</h3>
                                 <p className="product-price"><span>Per Kg</span> 50$ </p>
-                                <a href="cart.html" className="cart-btn"><i className="fas fa-shopping-cart" /> Add to Cart</a>
+                                <NavLink to={'/cart'} className="cart-btn"><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>
                             </div>
                         </div>
                         <div className="col-lg-4 col-md-6 text-center">
@@ -98,18 +99,16 @@ function Shop(props) {
                                 </div>
                                 <h3>Green Apple</h3>
                                 <p className="product-price"><span>Per Kg</span> 45$ </p>
-                                <a href="cart.html" className="cart-btn"><i className="fas fa-shopping-cart" /> Add to Cart</a>
-                            </div>
+                                <NavLink to={'/cart'} className="cart-btn"><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>                            </div>
                         </div>
                         <div className="col-lg-4 col-md-6 text-center strawberry">
                             <div className="single-product-item">
                                 <div className="product-image">
                                     <a href="single-product.html"><img src="assets/img/products/product-img-6.jpg" alt /></a>
                                 </div>
-                                <h3>Strawberry</h3>
+                                <h3>Raspberry</h3>
                                 <p className="product-price"><span>Per Kg</span> 80$ </p>
-                                <a href="cart.html" className="cart-btn"><i className="fas fa-shopping-cart" /> Add to Cart</a>
-                            </div>
+                                <NavLink to={'/cart'} className="cart-btn"><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>                            </div>
                         </div>
                     </div>
                     <div className="row">
@@ -129,7 +128,7 @@ function Shop(props) {
             </div>
             {/* end products */}
             {/* logo carousel */}
-            <div className="logo-carousel-section">
+            {/* <div className="logo-carousel-section">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-12">
@@ -153,7 +152,7 @@ function Shop(props) {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
             {/* end logo carousel */}
         </div>
 

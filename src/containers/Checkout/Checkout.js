@@ -120,7 +120,7 @@ function Checkout(props) {
                                                 <td>$85.00</td>
                                             </tr>
                                             <tr>
-                                                <td>Berry</td>
+                                                <td>Grapes</td>
                                                 <td>$70.00</td>
                                             </tr>
                                             <tr>

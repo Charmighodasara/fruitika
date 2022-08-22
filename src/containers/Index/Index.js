@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 function Index(props) {
     return (
         <div>
-            
+
             <div>
                 {/* search area */}
                 <div className="search-area">
@@ -112,7 +112,7 @@ function Index(props) {
                                     <div className="product-image">
                                         <a href="single-product.html"><img src="assets/img/products/product-img-2.jpg" alt /></a>
                                     </div>
-                                    <h3>Berry</h3>
+                                    <h3>Grapes</h3>
                                     <p className="product-price"><span>Per Kg</span> 70$ </p>
                                     <NavLink to={'/cart'} className="cart-btn"><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>
                                 </div>
@@ -260,9 +260,9 @@ function Index(props) {
                         <div className="row">
                             <div className="col-lg-4 col-md-6">
                                 <div className="single-latest-news">
-                                    <a href="single-news.html"><div className="latest-news-bg news-bg-1" /></a>
+                                    <NavLink to={'/single-new'}><div className="latest-news-bg news-bg-1" /></NavLink>
                                     <div className="news-text-box">
-                                        <h3><a href="single-news.html">You will vainly look for fruit on it in autumn.</a></h3>
+                                        <h3><NavLink to={'/single-new'}>You will vainly look for fruit on it in autumn.</NavLink></h3>
                                         <p className="blog-meta">
                                             <span className="author"><i className="fas fa-user" /> Admin</span>
                                             <span className="date"><i className="fas fa-calendar" /> 27 December, 2019</span>
@@ -274,9 +274,9 @@ function Index(props) {
                             </div>
                             <div className="col-lg-4 col-md-6">
                                 <div className="single-latest-news">
-                                    <a href="single-news.html"><div className="latest-news-bg news-bg-2" /></a>
+                                    <NavLink to={'/single-new'}><div className="latest-news-bg news-bg-2" /></NavLink>
                                     <div className="news-text-box">
-                                        <h3><a href="single-news.html">A man's worth has its season, like tomato.</a></h3>
+                                        <h3><NavLink to={'/single-new'}>A man's worth has its season, like tomato.</NavLink></h3>
                                         <p className="blog-meta">
                                             <span className="author"><i className="fas fa-user" /> Admin</span>
                                             <span className="date"><i className="fas fa-calendar" /> 27 December, 2019</span>
@@ -288,9 +288,9 @@ function Index(props) {
                             </div>
                             <div className="col-lg-4 col-md-6 offset-md-3 offset-lg-0">
                                 <div className="single-latest-news">
-                                    <a href="single-news.html"><div className="latest-news-bg news-bg-3" /></a>
+                                    <NavLink to={'/single-new'}><div className="latest-news-bg news-bg-3" /></NavLink>
                                     <div className="news-text-box">
-                                        <h3><a href="single-news.html">Good thoughts bear good fresh juicy fruit.</a></h3>
+                                        <h3><NavLink to={'/single-new'}>Good thoughts bear good fresh juicy fruit.</NavLink></h3>
                                         <p className="blog-meta">
                                             <span className="author"><i className="fas fa-user" /> Admin</span>
                                             <span className="date"><i className="fas fa-calendar" /> 27 December, 2019</span>

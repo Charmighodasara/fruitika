@@ -65,7 +65,7 @@ function Cart(props) {
                                         <tr className="table-body-row">
                                             <td className="product-remove"><a href="#"><i className="far fa-window-close" /></a></td>
                                             <td className="product-image"><img src="assets/img/products/product-img-2.jpg" alt /></td>
-                                            <td className="product-name">Berry</td>
+                                            <td className="product-name">Grapes</td>
                                             <td className="product-price">$70</td>
                                             <td className="product-quantity"><input type="number" placeholder={0} /></td>
                                             <td className="product-total">1</td>
