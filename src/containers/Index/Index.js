@@ -311,7 +311,7 @@ function Index(props) {
                     </div>
                 </div>
                 {/* end latest news */}
-                {/* logo carousel */}
+                {/* logo carousel
                 <div className="logo-carousel-section">
                     <div className="container">
                         <div className="row">
@@ -338,7 +338,7 @@ function Index(props) {
                     </div>
                 </div>
                 {/* end logo carousel */}
-            </div>
+            </div> 
 
         </div>
     );

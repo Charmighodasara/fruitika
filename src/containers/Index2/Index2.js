@@ -350,7 +350,7 @@ function Index2(props) {
                 </div>
                 {/* end latest news */}
                 {/* logo carousel */}
-                <div className="logo-carousel-section">
+                {/* <div className="logo-carousel-section">
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-12">
@@ -375,7 +375,7 @@ function Index2(props) {
                         </div>
                     </div>
                 </div>
-                {/* end logo carousel */}
+                end logo carousel */}
             </div>
 
         </div>

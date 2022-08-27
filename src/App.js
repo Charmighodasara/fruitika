@@ -38,6 +38,7 @@ function App() {
           <Publicroute path={'/shop'} exact component={Shop} />
           <Publicroute path={'/fruit'} exact component={Fruit} />
           <Publicroute path={'/single-new'} exact component={Single_news} />
+          <Publicroute path={'/single-product'} exact component={Single_product} />
           <Publicroute path={'/search'} exact component={Search} />
           <Publicroute path={'/login-signup'} exact restricted={true} component={Login_signup} />
           <Privateroute path={'/cart'} exact component={Cart} />
