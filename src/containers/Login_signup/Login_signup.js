@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import * as yup from 'yup';
 import { Form, Formik, useFormik } from 'formik';
 import { useDispatch } from 'react-redux';
-import { singUpAction } from '../../redux/Action/auth.action';
+import { singInAction, singUpAction } from '../../redux/Action/auth.action';
 
 function Login_signup(props) {
     const [user, setUser] = useState('login')
@@ -59,8 +59,9 @@ function Login_signup(props) {
         dispath(singUpAction(values))
     }
 
-    const handleLogin = () => {
-        localStorage.setItem("Frutikha", "123")
+    const handleLogin = (values) => {
+        // localStorage.setItem("Frutikha", "123")
+        dispath(singInAction(values))
     }
 
     const formikobj = useFormik({
@@ -69,7 +70,7 @@ function Login_signup(props) {
         onSubmit: values => {
             // alert(JSON.stringify(values, null, 2));
             if (user === 'login') {
-                handleLogin()
+                handleLogin(values)
             } else {
                 handledata(values)
             }

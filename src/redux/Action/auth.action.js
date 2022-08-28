@@ -5,3 +5,6 @@ import * as ActionTypes from '../ActionTypes'
 export const singUpAction = (data) => (dispath) => {
     dispath({ type: ActionTypes.SIGNUP_USER, payload: data })
 }
+export const singInAction = (data) => (dispath) => {
+    dispath({ type: ActionTypes.SIGNIN_USER, payload: data })
+}
