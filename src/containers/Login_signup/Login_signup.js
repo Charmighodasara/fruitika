@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import * as yup from 'yup';
 import { Form, Formik, useFormik } from 'formik';
+import { useDispatch } from 'react-redux';
+import { singUpAction } from '../../redux/Action/auth.action';
 
 function Login_signup(props) {
     const [user, setUser] = useState('login')
@@ -40,19 +42,21 @@ function Login_signup(props) {
     }
 
     let schema = yup.object().shape(schemaobj);
+
+    const dispath = useDispatch()
     const handledata = (values) => {
-        let localdata = JSON.parse(localStorage.getItem("Frutikha"))
-        // localdata.push(values)
-        // localStorage.setItem("user", JSON.stringify(localdata))
+        // let localdata = JSON.parse(localStorage.getItem("Frutikha"))
+        // // localdata.push(values)
+        // // localStorage.setItem("user", JSON.stringify(localdata))
 
-        if (localdata === null) {
-            localStorage.setItem("Frutikha", JSON.stringify([values]))
-        } else {
-            localdata.push(values)
-            localStorage.setItem("Frutikha", JSON.stringify(localdata))
-        }
-        console.log(values);
-
+        // if (localdata === null) {
+        //     localStorage.setItem("Frutikha", JSON.stringify([values]))
+        // } else {
+        //     localdata.push(values)
+        //     localStorage.setItem("Frutikha", JSON.stringify(localdata))
+        // }
+        // console.log(values);
+        dispath(singUpAction(values))
     }
 
     const handleLogin = () => {

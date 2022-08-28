@@ -20,31 +20,36 @@ import Publicroute from './Route/Publicroute';
 import Privateroute from './Route/Privateroute';
 import Search from './containers/search/Search';
 import ToggleContext from './context/ThemeContext';
+import { store } from './redux/store';
+import { Provider } from 'react-redux';
+
 
 function App() {
   return (
     <div >
-      <ToggleContext>
-        <Header />
-        <Switch>
-          <Publicroute path={'/'} exact component={Index} />
-          <Publicroute path={'/index'} exact component={Index} />
-          <Publicroute path={'/index2'} exact component={Index2} />
-          <Publicroute path={'/about'} exact component={About} />
-          <Publicroute path={'/pages1'} exact component={Pages} />
-          <Publicroute path={'/checkout'} exact component={Checkout} />
-          <Publicroute path={'/contact'} exact component={Contact} />
-          <Publicroute path={'/news'} exact component={News} />
-          <Publicroute path={'/shop'} exact component={Shop} />
-          <Publicroute path={'/fruit'} exact component={Fruit} />
-          <Publicroute path={'/single-new'} exact component={Single_news} />
-          <Publicroute path={'/single-product'} exact component={Single_product} />
-          <Publicroute path={'/search'} exact component={Search} />
-          <Publicroute path={'/login-signup'} exact restricted={true} component={Login_signup} />
-          <Privateroute path={'/cart'} exact component={Cart} />
-        </Switch>
-        <Footer />
-      </ToggleContext>
+      <Provider store = {store}>
+        <ToggleContext>
+          <Header />
+          <Switch>
+            <Publicroute path={'/'} exact component={Index} />
+            <Publicroute path={'/index'} exact component={Index} />
+            <Publicroute path={'/index2'} exact component={Index2} />
+            <Publicroute path={'/about'} exact component={About} />
+            <Publicroute path={'/pages1'} exact component={Pages} />
+            <Publicroute path={'/checkout'} exact component={Checkout} />
+            <Publicroute path={'/contact'} exact component={Contact} />
+            <Publicroute path={'/news'} exact component={News} />
+            <Publicroute path={'/shop'} exact component={Shop} />
+            <Publicroute path={'/fruit'} exact component={Fruit} />
+            <Publicroute path={'/single-new'} exact component={Single_news} />
+            <Publicroute path={'/single-product'} exact component={Single_product} />
+            <Publicroute path={'/search'} exact component={Search} />
+            <Publicroute path={'/login-signup'} exact restricted={true} component={Login_signup} />
+            <Privateroute path={'/cart'} exact component={Cart} />
+          </Switch>
+          <Footer />
+        </ToggleContext>
+      </Provider>
     </div>
   );
 }
