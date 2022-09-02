@@ -1,5 +1,6 @@
 
-import { getAuth, createUserWithEmailAndPassword, sendEmailVerification, onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth"; import { auth } from "../../firebase";
+import { WrongLocation } from "@mui/icons-material";
+import { getAuth, createUserWithEmailAndPassword, sendEmailVerification, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth"; import { auth } from "../../firebase";
 
 export const signUpApi = (data) => {
     console.log("signUpApi", data);
@@ -61,4 +62,18 @@ export const signInApi = (data)=>{
                 }
             });
     })
+}
+
+export const signOutApi = ()=>{
+        console.log("signOutApi");
+
+        return new Promise((resolve, reject) => {
+
+            signOut(auth)
+                .then(() => {
+                    resolve({ payload: "Sign-out successfull." })
+                }).catch((error) => {
+                    reject({ payload:" something wents Wrong." })
+                });
+        })
 }

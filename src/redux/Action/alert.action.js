@@ -6,3 +6,8 @@ export const setAlert = (data) => (dispatch) => {
 export const resetAlert = () => (dispatch) => {
     dispatch({ type: ActionTypes.RESET_ALERT })
 }
+
+export const SignOutAction = () => (dispatch) => {
+    dispatch({ type: ActionTypes.SIGNOUT_USER })
+    console.log("hyy");
+}

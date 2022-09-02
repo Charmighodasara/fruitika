@@ -1,12 +1,15 @@
 import React, { useContext } from 'react';
+import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { Button } from 'reactstrap';
 import { themeContext } from '../../context/ThemeContext';
+import { SignOutAction } from '../../redux/Action/alert.action';
 import Alert from '../Alert/Alert';
 
 function Header(props) {
     const value = useContext(themeContext);
     console.log(value);
+    const dispatch = useDispatch()
     return (
         <div>
             <div className="top-header-area" id="sticker">
@@ -71,8 +74,10 @@ function Header(props) {
 
                                                 <NavLink className="mobile-hide search-bar-icon" to={'/search'}><i className="fas fa-search" /></NavLink>
 
-                                                <NavLink className="shopping-cart" to={'/login-signup'} title="SignUp/Login"><i className="fas fa-user" /></NavLink>
-                                                <NavLink className="shopping-cart" to={'/login-signup'} title="LogOut"><i className="fas fa-user-slash" /></NavLink>
+                                                <NavLink className="shopping-cart" to={'/login-signup'} title="SignUp/Login"><i className="fas fa-user"/></NavLink>
+
+                                                <NavLink className="shopping-cart" to={'/'} title="LogOut" onClick={() => { dispatch(SignOutAction()) }}><i className="fas fa-user-slash" /></NavLink>
+
                                                 <button onClick={()=>value.toggleTheme(value.theme)} >THEME TOGGLE</button>
                                             </div>
                                         </li>
