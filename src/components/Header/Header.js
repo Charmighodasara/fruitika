@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Button } from 'reactstrap';
 import { themeContext } from '../../context/ThemeContext';
+import Alert from '../Alert/Alert';
 
 function Header(props) {
     const value = useContext(themeContext);
@@ -63,16 +64,21 @@ function Header(props) {
                                                 <li><NavLink to={'/cart'}>Cart</NavLink></li>
                                             </ul>
                                         </li>
+                                   
                                         <li><i class="fa-solid fa-moon-over-sun"></i>
                                             <div className="header-icons">
                                                 <NavLink className="shopping-cart" to={'/cart'}><i className="fas fa-shopping-cart" /></NavLink>
+
                                                 <NavLink className="mobile-hide search-bar-icon" to={'/search'}><i className="fas fa-search" /></NavLink>
-                                                <NavLink className="shopping-cart" to={'/login-signup'}><i className="fas fa-user" /></NavLink>
+
+                                                <NavLink className="shopping-cart" to={'/login-signup'} title="SignUp/Login"><i className="fas fa-user" /></NavLink>
+                                                <NavLink className="shopping-cart" to={'/login-signup'} title="LogOut"><i className="fas fa-user-slash" /></NavLink>
                                                 <button onClick={()=>value.toggleTheme(value.theme)} >THEME TOGGLE</button>
                                             </div>
                                         </li>
                                     </ul>
                                 </nav>
+                                <Alert />
                                 <a className="mobile-show search-bar-icon" href="#"><i className="fas fa-search" /></a>
                                 <div className="mobile-menu" />
                                 {/* menu end */}
