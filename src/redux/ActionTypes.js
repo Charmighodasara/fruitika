@@ -8,3 +8,5 @@ export const RESET_ALERT = "RESET_ALERT"
 
 export const SIGNEDIN_USER = "SIGNEDIN_USER"
 export const SIGNEDOUT_USER = "SIGNEDOUT_USER"
+
+export const FORGOT_USER= "FORGOT_USER"

@@ -1,6 +1,6 @@
 
 import { WrongLocation } from "@mui/icons-material";
-import { getAuth, createUserWithEmailAndPassword, sendEmailVerification, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth"; import { auth } from "../../firebase";
+import { getAuth, createUserWithEmailAndPassword, sendEmailVerification, onAuthStateChanged, signInWithEmailAndPassword, signOut, sendPasswordResetEmail } from "firebase/auth"; import { auth } from "../../firebase";
 
 export const signUpApi = (data) => {
     console.log("signUpApi", data);
@@ -34,7 +34,7 @@ export const signUpApi = (data) => {
     })
 }
 
-export const signInApi = (data)=>{
+export const signInApi = (data) => {
     console.log("signInApi", data);
 
     return new Promise((resolve, reject) => {
@@ -43,16 +43,16 @@ export const signInApi = (data)=>{
                 const user = userCredential.user;
                 console.log(user);
                 if (user.emailVerified) {
-                    resolve({payload :"signIn succesfull"});
+                    resolve({ payload: "signIn succesfull" });
                 } else {
-                    resolve({payload :"please varify your email."});
+                    resolve({ payload: "please varify your email." });
                 }
             })
             .catch((error) => {
 
                 const errorCode = error.code;
                 const errorMessage = error.message;
-                
+
                 if (errorCode.localeCompare("auth/wrong-password") === 0) {
                     reject({ payload: " password was wrong." });
                 } else if (errorCode.localeCompare("auth/user-not-found") === 0) {
@@ -64,16 +64,33 @@ export const signInApi = (data)=>{
     })
 }
 
-export const signOutApi = ()=>{
-        console.log("signOutApi");
+export const signOutApi = () => {
+    console.log("signOutApi");
 
-        return new Promise((resolve, reject) => {
+    return new Promise((resolve, reject) => {
 
-            signOut(auth)
-                .then(() => {
-                    resolve({ payload: "Sign-out successfull." })
-                }).catch((error) => {
-                    reject({ payload:" something wents Wrong." })
-                });
-        })
+        signOut(auth)
+            .then(() => {
+                resolve({ payload: "Sign-out successfull." })
+            }).catch((error) => {
+                reject({ payload: " something wents Wrong." })
+            });
+    })
+}
+
+export const forgotApi = (data) => {
+    console.log('forgotApi', data);
+    return new Promise((resolve, reject) => {
+        sendPasswordResetEmail(auth, data.email)
+            .then(() => {
+                resolve({ payload: "Please check your email." })
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                // reject({ payload: errorCode })
+                    reject({ payload:" something went wrong "  });
+
+            });
+    })
 }

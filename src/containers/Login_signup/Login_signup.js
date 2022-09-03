@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import * as yup from 'yup';
 import { Form, Formik, useFormik } from 'formik';
 import { useDispatch } from 'react-redux';
-import { singInAction, singUpAction } from '../../redux/Action/auth.action';
+import { forgotAction, singInAction, singUpAction } from '../../redux/Action/auth.action';
 
 function Login_signup(props) {
     const [user, setUser] = useState('login')
-    const [forgot, setForgot] = useState('flase')
+    const [forgot, setForgot] = useState('false')
 
     let schemaobj, initialval;
     if (forgot === 'true') {
@@ -69,10 +69,13 @@ function Login_signup(props) {
         validationSchema: schema,
         onSubmit: values => {
             // alert(JSON.stringify(values, null, 2));
-            if (user === 'login') {
+            if (user === 'login' && forgot === 'false') {
                 handleLogin(values)
-            } else {
+            } else if(user === 'signup' && forgot === 'false'){
                 handledata(values)
+            }else if(forgot === 'true'){
+                dispath(forgotAction(values))
+                console.log("hyy");
             }
         },
         enableReinitialize: true,

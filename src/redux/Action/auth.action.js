@@ -1,5 +1,4 @@
 
-
 import * as ActionTypes from '../ActionTypes'
 
 export const singUpAction = (data) => (dispath) => {
@@ -12,7 +11,6 @@ export const singInAction = (data) => (dispath) => {
 
 export const SignOutAction = () => (dispatch) => {
     dispatch({ type: ActionTypes.SIGNOUT_USER })
-    console.log("SignOutAction");
 }
 
 export const signedInAction = (data) => (dispatch) => {
@@ -21,5 +19,8 @@ export const signedInAction = (data) => (dispatch) => {
 
 export const signedoutInAction = () => (dispatch) => {
     dispatch({ type: ActionTypes.SIGNEDOUT_USER })
-    
+}
+
+export const forgotAction = (data) => (dispatch) => {
+    dispatch({ type : ActionTypes.FORGOT_USER , payload : data})
 }
