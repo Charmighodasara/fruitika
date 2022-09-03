@@ -5,3 +5,5 @@ export const SIGNOUT_USER = "SIGNOUT_USER"
 
 export const SET_ALERT = "SET_ALERT"
 export const RESET_ALERT = "RESET_ALERT"
+
+export const SIGNEDIN_USER = "SIGNEDIN_USER"

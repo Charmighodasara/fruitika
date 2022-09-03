@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { Button } from 'reactstrap';
 import { themeContext } from '../../context/ThemeContext';
@@ -10,6 +10,8 @@ function Header(props) {
     const value = useContext(themeContext);
     console.log(value);
     const dispatch = useDispatch()
+
+    const auth = useSelector(state => state.auth)
     return (
         <div>
             <div className="top-header-area" id="sticker">
@@ -67,18 +69,24 @@ function Header(props) {
                                                 <li><NavLink to={'/cart'}>Cart</NavLink></li>
                                             </ul>
                                         </li>
-                                   
+
                                         <li><i class="fa-solid fa-moon-over-sun"></i>
                                             <div className="header-icons">
                                                 <NavLink className="shopping-cart" to={'/cart'}><i className="fas fa-shopping-cart" /></NavLink>
 
                                                 <NavLink className="mobile-hide search-bar-icon" to={'/search'}><i className="fas fa-search" /></NavLink>
 
-                                                <NavLink className="shopping-cart" to={'/login-signup'} title="SignUp/Login"><i className="fas fa-user"/></NavLink>
+                                                {
+                                                    auth.user === null ?
+                                                        <NavLink className="shopping-cart" to={'/login-signup'} title="SignUp/Login"><i className="fas fa-user" /></NavLink>
+                                                        :
 
-                                                <NavLink className="shopping-cart" to={'/'} title="LogOut" onClick={() => { dispatch(SignOutAction()) }}><i className="fas fa-user-slash" /></NavLink>
+                                                        <NavLink className="shopping-cart" to={'/login-signup'} title="LogOut" onClick={() => { dispatch(SignOutAction()) }}><i className="fas fa-user-slash" /></NavLink>
 
-                                                <a onClick={()=>value.toggleTheme(value.theme)} >THEME TOGGLE</a>
+
+                                                }
+
+                                                <a onClick={() => value.toggleTheme(value.theme)} >THEME TOGGLE</a>
                                             </div>
                                         </li>
                                     </ul>

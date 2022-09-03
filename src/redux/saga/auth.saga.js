@@ -1,6 +1,8 @@
 import { call, put, takeEvery, takeLatest, all } from 'redux-saga/effects'
 import { signInApi, signOutApi, signUpApi } from '../../commen/apis/auth.api';
+import { history } from '../../history';
 import { setAlert } from '../Action/alert.action';
+import { signedInAction } from '../Action/auth.action';
 import * as ActionTypes from '../ActionTypes'
 
 function* signUp(action) {
@@ -19,11 +21,15 @@ function* signin(action) {
     const user = yield call(signInApi, action.payload);
     console.log(user);
     yield put(setAlert({ text: user.payload, color: "success" }))
+    yield put(signedInAction(user))
+    history.push('/')
+    
   } catch (e) {
     console.log(e);
     yield put(setAlert({ text: e.payload, color: "error" }))
   }
 }
+
 function* signOut(action) {
   try {
     const user = yield call(signOutApi);
