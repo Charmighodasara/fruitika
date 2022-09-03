@@ -22,5 +22,10 @@ export const signedoutInAction = () => (dispatch) => {
 }
 
 export const forgotAction = (data) => (dispatch) => {
-    dispatch({ type : ActionTypes.FORGOT_USER , payload : data})
+    dispatch({ type: ActionTypes.FORGOT_USER, payload: data })
+}
+
+export const goggleSignInAction = () => (dispatch) => {
+    dispatch({ type : ActionTypes.GOOGLESIGNIN_USER })
+    console.log("hyyy");
 }

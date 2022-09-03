@@ -2827,3 +2827,7 @@ table.order-details tbody td {
   background-color: #051922 !important;
   color: #fff !important;
 }
+
+a span {
+  color: #F28123;
+}

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import * as yup from 'yup';
 import { Form, Formik, useFormik } from 'formik';
 import { useDispatch } from 'react-redux';
-import { forgotAction, singInAction, singUpAction } from '../../redux/Action/auth.action';
+import { forgotAction, goggleSignInAction, singInAction, singUpAction } from '../../redux/Action/auth.action';
 
 function Login_signup(props) {
     const [user, setUser] = useState('login')
@@ -71,15 +71,19 @@ function Login_signup(props) {
             // alert(JSON.stringify(values, null, 2));
             if (user === 'login' && forgot === 'false') {
                 handleLogin(values)
-            } else if(user === 'signup' && forgot === 'false'){
+            } else if (user === 'signup' && forgot === 'false') {
                 handledata(values)
-            }else if(forgot === 'true'){
+            } else if (forgot === 'true') {
                 dispath(forgotAction(values))
                 console.log("hyy");
             }
         },
         enableReinitialize: true,
     });
+
+    const googleSignIn = () => {
+        dispath(goggleSignInAction())
+    }
 
     const { handleChange, errors, handleSubmit, touched, handleBlur } = formikobj;
     return (
@@ -184,16 +188,20 @@ function Login_signup(props) {
                                                 <p><button type="submit">Submit</button></p>
                                                 :
                                                 user === 'login' ?
-                                                    <p><button type="submit">Login</button></p>
+                                                    <>
+                                                        <p><button type="submit">Login</button></p>
+                                                        <p >or</p>
+                                                        <div><a type="submit" onClick={() => {googleSignIn()}}>Login With <span>Google</span> </a></div>
+                                                    </>
                                                     :
                                                     <p><button type="submit">Signup</button></p>
                                         }
                                         {forgot === 'true' ?
-                                            <p>Go back to login / signup <a type="submit" onClick={() => setForgot('false')}> back</a>
+                                            <p>Go back to login / signup <a type="submit" onClick={() => setForgot('false')}><span> back</span></a>
                                             </p>
                                             :
                                             user === 'login' ?
-                                                <p>create an new account <a type="submit" onClick={() => setUser('signup')}> signup</a>
+                                                <p>create an new account <a type="submit" onClick={() => setUser('signup')}><span>signup</span> </a>
                                                 </p>
                                                 :
                                                 <p>already an account <a type="submit" onClick={() => setUser('login')}> login</a>
