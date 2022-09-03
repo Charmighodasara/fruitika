@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { Button } from 'reactstrap';
 import { themeContext } from '../../context/ThemeContext';
-import { SignOutAction } from '../../redux/Action/alert.action';
+import { SignOutAction } from '../../redux/Action/auth.action';
 import Alert from '../Alert/Alert';
 
 function Header(props) {
@@ -77,12 +77,11 @@ function Header(props) {
                                                 <NavLink className="mobile-hide search-bar-icon" to={'/search'}><i className="fas fa-search" /></NavLink>
 
                                                 {
-                                                    auth.user === null ?
+                                                    auth.user === '' ?
                                                         <NavLink className="shopping-cart" to={'/login-signup'} title="SignUp/Login"><i className="fas fa-user" /></NavLink>
                                                         :
 
                                                         <NavLink className="shopping-cart" to={'/login-signup'} title="LogOut" onClick={() => { dispatch(SignOutAction()) }}><i className="fas fa-user-slash" /></NavLink>
-
 
                                                 }
 
