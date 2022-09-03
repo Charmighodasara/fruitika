@@ -78,7 +78,7 @@ function Header(props) {
 
                                                 <NavLink className="shopping-cart" to={'/'} title="LogOut" onClick={() => { dispatch(SignOutAction()) }}><i className="fas fa-user-slash" /></NavLink>
 
-                                                <button onClick={()=>value.toggleTheme(value.theme)} >THEME TOGGLE</button>
+                                                <a onClick={()=>value.toggleTheme(value.theme)} >THEME TOGGLE</a>
                                             </div>
                                         </li>
                                     </ul>

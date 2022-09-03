@@ -8,3 +8,7 @@ export const singUpAction = (data) => (dispath) => {
 export const singInAction = (data) => (dispath) => {
     dispath({ type: ActionTypes.SIGNIN_USER, payload: data })
 }
+
+export const SignOutAction = () => (dispatch) => {
+    dispatch({ type: ActionTypes.SIGNOUT_USER })
+}

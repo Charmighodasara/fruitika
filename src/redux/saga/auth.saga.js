@@ -43,7 +43,7 @@ export function* watchSignin() {
   yield takeEvery(ActionTypes.SIGNIN_USER, signin);
 }
 export function* watchSignout() {
-  yield takeEvery(ActionTypes.SIGNOUT_USER, signOut);
+  yield takeEvery(ActionTypes.SIGNOUT_USER , signOut);
 }
 
 export function* authsaga() {
