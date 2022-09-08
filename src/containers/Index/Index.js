@@ -108,7 +108,7 @@ function Index(props) {
                                     <NavLink to={'/cart'} className="cart-btn"><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>
                                 </div>
                             </div>
-                            <div className="col-lg-4 col-md-6 text-center">
+                        <div className={`col-lg-4 col-md-6 text-center ${value.them}`}>
                                 <div className="single-product-item">
                                     <div className="product-image">
                                         <a href="single-product.html"><img src="assets/img/products/product-img-2.jpg" alt /></a>

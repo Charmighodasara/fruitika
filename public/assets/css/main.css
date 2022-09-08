@@ -26,6 +26,7 @@ body {
   line-height: 1.8;
   color: #051922;
   overflow-x: hidden;
+  background-color: #ffffff !important;
 }
 
 body img {
@@ -2830,4 +2831,14 @@ table.order-details tbody td {
 
 a span {
   color: #F28123;
+}
+.dark.list-section {
+  background-color: #000000 !important;
+}
+
+.dark .body{
+  background-color: #000 !important;
+}
+.dark.single-product-item{
+background-color: #000;
 }
