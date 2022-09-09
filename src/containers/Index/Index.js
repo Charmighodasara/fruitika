@@ -6,7 +6,7 @@ function Index(props) {
     const value = useContext(themeContext);
     return (
         <div>
-            <div className={` ${value.them}`}>
+            <div className={` ${value.theme}`}>
                 {/* search area */}
                 <div className="search-area">
                     <div className="container">
@@ -46,10 +46,10 @@ function Index(props) {
                 </div>
                 {/* end hero area */}
                 {/* features list section */}
-                <div className={`list-section pt-80 pb-80 ${value.them}`}>
+                <div className={`list-section pt-80 pb-80 ${value.theme}`}>
                     <div className="container">
                         <div className="row">
-                            <div className="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                            <div className="col-lg-4 col-md-6 mb-4 mb-lg-0 ">
                                 <div className="list-box d-flex align-items-center">
                                     <div className="list-icon">
                                         <i className="fas fa-shipping-fast" />
@@ -87,7 +87,7 @@ function Index(props) {
                 </div>
                 {/* end features list section */}
                 {/* product section */}
-                <div className= {`product-section mt-150 mb-150 ${value.them}`}>
+                <div className={`product-section mt-150 mb-150 ${value.theme}`}>
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-8 offset-lg-2 text-center">
@@ -99,7 +99,7 @@ function Index(props) {
                         </div>
                         <div className="row">
                             <div className="col-lg-4 col-md-6 text-center">
-                                <div className="single-product-item">
+                                <div className={`single-product-item ${value.theme}`}>
                                     <div className="product-image">
                                         <a href="single-product.html"><img src="assets/img/products/product-img-1.jpg" alt /></a>
                                     </div>
@@ -108,8 +108,8 @@ function Index(props) {
                                     <NavLink to={'/cart'} className="cart-btn"><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>
                                 </div>
                             </div>
-                        <div className={`col-lg-4 col-md-6 text-center ${value.them}`}>
-                                <div className="single-product-item">
+                        <div className={`col-lg-4 col-md-6 text-center ${value.theme}`}>
+                                <div className={`single-product-item ${value.theme}`}>
                                     <div className="product-image">
                                         <a href="single-product.html"><img src="assets/img/products/product-img-2.jpg" alt /></a>
                                     </div>
@@ -119,7 +119,7 @@ function Index(props) {
                                 </div>
                             </div>
                             <div className="col-lg-4 col-md-6 offset-md-3 offset-lg-0 text-center">
-                                <div className="single-product-item">
+                                <div className={`single-product-item ${value.theme}`}>
                                     <div className="product-image">
                                         <a href="single-product.html"><img src="assets/img/products/product-img-3.jpg" alt /></a>
                                     </div>
@@ -239,7 +239,7 @@ function Index(props) {
                 </div>
                 {/* end advertisement section */}
                 {/* shop banner */}
-                <section className="shop-banner">
+                <section className={`shop-banner ${value.theme}`}>
                     <div className="container">
                         <h3>December sale is on! <br /> with big <span className="orange-text">Discount...</span></h3>
                         <div className="sale-percent"><span>Sale! <br /> Upto</span>50% <span>off</span></div>
@@ -260,7 +260,8 @@ function Index(props) {
                         </div>
                         <div className="row">
                             <div className="col-lg-4 col-md-6">
-                                <div className="single-latest-news">
+                                
+                                <div className={`single-latest-news ${value.theme}`}>
                                     <NavLink to={'/single-new'}><div className="latest-news-bg news-bg-1" /></NavLink>
                                     <div className="news-text-box">
                                         <h3><NavLink to={'/single-new'}>You will vainly look for fruit on it in autumn.</NavLink></h3>

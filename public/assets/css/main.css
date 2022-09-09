@@ -755,7 +755,7 @@ nav.main-menu li a {
 }
 
 .sticky-wrapper {
-  position: absolute;
+  position: absolute !important;
   left: 0;
   top: 0;
   width: 100%;
@@ -2165,8 +2165,8 @@ a.video-play-btn {
 ----------------------------------------------------------------------------- */
 .shop-banner {
   position: relative;
-  background-color: #f5f5f5;
   background-image: url(../img/1.jpg);
+  background-color: #f5f5f5;
   background-size: cover;
   padding: 110px 0px 115px;
 }
@@ -2833,12 +2833,39 @@ a span {
   color: #F28123;
 }
 .dark.list-section {
-  background-color: #000000 !important;
+  background-color: #202020 !important;
 }
 
+.dark h3 , .dark p , .dark h4, .dark h2{
+  color: #fff;
+}
 .dark .body{
   background-color: #000 !important;
 }
-.dark.single-product-item{
-background-color: #000;
+.dark .cart-banner{
+  background-color: #000000 !important;
+}
+.dark .single-product-item , .dark .single-latest-news{
+  -webkit-box-shadow: 0 0 20px #0e0c0c ;
+  box-shadow: 0 0 20px #0e0c0c;
+}
+.dark .single-product-item:hover , .dark .single-latest-news:hover{
+  -webkit-box-shadow: 0 0 20px #201f1f ;
+  box-shadow: 0 0 20px #201f1f;
+}
+
+.dark .shop-banner{
+  background-color: #202020 !important;
+}
+.dark .shop-banner h3{
+  color: #051922;
+}
+/* .dark h1, .dark .h1,.dark h2,.dark .h2,.dark h3,.dark .h3,.dark h4,.dark .h4,.dark h5,.dark .h5,.dark h6,.dark .h6 {
+  color: #fff;
+} */
+.dark p.blog-meta span {
+  color: #f7f7f7;
+}
+.dark .single-latest-news h3 a , .dark a.read-more-btn{
+  color: #fff;
 }
