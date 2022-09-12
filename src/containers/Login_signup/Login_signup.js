@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import * as yup from 'yup';
 import { Form, Formik, useFormik } from 'formik';
 import { useDispatch } from 'react-redux';
 import { forgotAction, goggleSignInAction, singInAction, singUpAction } from '../../redux/Action/auth.action';
+import { themeContext } from '../../context/ThemeContext';
 
 function Login_signup(props) {
     const [user, setUser] = useState('login')
@@ -86,9 +87,10 @@ function Login_signup(props) {
     }
 
     const { handleChange, errors, handleSubmit, touched, handleBlur } = formikobj;
+    const value = useContext(themeContext);
     return (
         <div>
-            <div > 
+            <div className={`${value.theme}`}> 
                 <div className="search-area">
                     <div className="container">
                         <div className="row">
