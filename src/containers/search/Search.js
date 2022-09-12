@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Input } from 'reactstrap';
+import { themeContext } from '../../context/ThemeContext';
 
 
 function Search(props) {
@@ -55,10 +56,10 @@ function Search(props) {
     }
 
     const finalData = search.length > 0 ? search : frutika
-
+    const value = useContext(themeContext);
     return (
         <div>
-            <div>
+            <div className={`${value.theme}`}>
                 {/* search area */}
                 <div className="search-area">
                     <div className="container">
@@ -93,8 +94,8 @@ function Search(props) {
             </div>
             <div className="col-lg-12 col-md-12" >
             </div>
-            <div>
-                <div className="cart-section mt-100 mb-100">
+            <div className={`${value.theme}`}>
+                <div className= {`cart-section mt-100 mb-100 ${value.theme}`}>
                     <div className='container'>
                         <div className='row'>
                             <div className="col-lg-12 col-md-12">

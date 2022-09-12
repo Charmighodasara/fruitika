@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
+import { themeContext } from '../../context/ThemeContext';
 
 function About(props) {
+    const value = useContext(themeContext);
+
     return (
         <div>
-            <div>
+            <div className={`${value.theme}`}>
                 {/* search area */}
                 <div className="search-area">
                     <div className="container">

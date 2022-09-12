@@ -2819,8 +2819,8 @@ table.order-details tbody td {
   color: #ffffff !important;
 }
 
-.dark .footer-area {
-  background-color: #000000 !important;
+.dark.footer-area {
+  background-color: #202020 !important;
   color: #fff;
 }
 
@@ -2849,9 +2849,9 @@ a span {
   -webkit-box-shadow: 0 0 20px #0e0c0c ;
   box-shadow: 0 0 20px #0e0c0c;
 }
-.dark .single-product-item:hover , .dark .single-latest-news:hover{
-  -webkit-box-shadow: 0 0 20px #201f1f ;
-  box-shadow: 0 0 20px #201f1f;
+.dark .single-product-item:hover , .dark .single-latest-news:hover , .dark .feature-bg:after{
+  -webkit-box-shadow: 0 0 20px #242121 ;
+  box-shadow: 0 0 20px #313030;
 }
 
 .dark .shop-banner{
@@ -2868,4 +2868,24 @@ a span {
 }
 .dark .single-latest-news h3 a , .dark a.read-more-btn{
   color: #fff;
+}
+.dark .mb-150{
+  /* margin-bottom: 0px; */
+  background-color: #000;
+}
+.dark .error-text h1 , .dark .single-product-content p.single-product-pricing{
+  color: #fff;
+}
+.dark td.product-remove a , .dark .cart-table-wrap tbody tr td , .dark .card-title , .dark ul.product-share li a{
+  color: #fff;
+}
+.dark thead.cart-table-head tr, .dark tr.table-total-row , .dark table.order-details thead tr th{
+  background-color: #000;
+}
+.dark .contact-form-wrap{
+  background-color: #000;
+  border: 1px solid #fff;
+}
+.dark .card-body{
+  background-color: #000000;
 }
