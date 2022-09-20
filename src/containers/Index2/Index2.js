@@ -47,44 +47,7 @@ function Index2(props) {
                             </div>
                         </div>
                     </div>
-                    {/* single home slider */}
-                    {/* <div className="single-homepage-slider homepage-bg-2">
-                        <div className="container">
-                            <div className="row">
-                                <div className="col-lg-10 offset-lg-1 text-center">
-                                    <div className="hero-text">
-                                        <div className="hero-text-tablecell">
-                                            <p className="subtitle">Fresh Everyday</p>
-                                            <h1>100% Organic Collection</h1>
-                                            <div className="hero-btns">
-                                                <a href="shop.html" className="boxed-btn">Visit Shop</a>
-                                                <a href="contact.html" className="bordered-btn">Contact Us</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> */}
-                    {/* single home slider */}
-                    {/* <div className="single-homepage-slider homepage-bg-3">
-                        <div className="container">
-                            <div className="row">
-                                <div className="col-lg-10 offset-lg-1 text-right">
-                                    <div className="hero-text">
-                                        <div className="hero-text-tablecell">
-                                            <p className="subtitle">Mega Sale Going On!</p>
-                                            <h1>Get December Discount</h1>
-                                            <div className="hero-btns">
-                                                <a href="shop.html" className="boxed-btn">Visit Shop</a>
-                                                <a href="contact.html" className="bordered-btn">Contact Us</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> */}
+                    
                 </div>
                 {/* end home page slider */}
                 {/* features list section */}
@@ -192,7 +155,7 @@ function Index2(props) {
                                 </div>
                             </div>
                             {/*Content Column*/}
-                            <div className="content-column col-lg-6">
+                            <div className="content-column col-lg-6 ">
                                 <h3><span className="orange-text">Deal</span> of the month</h3>
                                 <h4>Hikan Strwaberry</h4>
                                 <div className="text">Quisquam minus maiores repudiandae nobis, minima saepe id, fugit ullam similique! Beatae, minima quisquam molestias facere ea. Perspiciatis unde omnis iste natus error sit voluptatem accusant</div>
@@ -204,62 +167,9 @@ function Index2(props) {
                     </div>
                 </section>
                 {/* end cart banner section */}
-                {/* testimonail-section */}
-                <div className="testimonail-section mt-150 mb-150">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-lg-10 offset-lg-1 text-center">
-                                <div className="testimonial-sliders">
-                                    <div className="single-testimonial-slider">
-                                        <div className="client-avater">
-                                            <img src="assets/img/avaters/avatar1.png" alt />
-                                        </div>
-                                        <div className="client-meta">
-                                            <h3>Saira Hakim <span>Local shop owner</span></h3>
-                                            <p className="testimonial-body">
-                                                " Sed ut perspiciatis unde omnis iste natus error veritatis et  quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium "
-                                            </p>
-                                            <div className="last-icon">
-                                                <i className="fas fa-quote-right" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="single-testimonial-slider">
-                                        <div className="client-avater">
-                                            <img src="assets/img/avaters/avatar2.png" alt />
-                                        </div>
-                                        <div className="client-meta">
-                                            <h3>David Niph <span>Local shop owner</span></h3>
-                                            <p className="testimonial-body">
-                                                " Sed ut perspiciatis unde omnis iste natus error veritatis et  quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium "
-                                            </p>
-                                            <div className="last-icon">
-                                                <i className="fas fa-quote-right" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="single-testimonial-slider">
-                                        <div className="client-avater">
-                                            <img src="assets/img/avaters/avatar3.png" alt />
-                                        </div>
-                                        <div className="client-meta">
-                                            <h3>Jacob Sikim <span>Local shop owner</span></h3>
-                                            <p className="testimonial-body">
-                                                " Sed ut perspiciatis unde omnis iste natus error veritatis et  quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium "
-                                            </p>
-                                            <div className="last-icon">
-                                                <i className="fas fa-quote-right" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {/* end testimonail-section */}
+
                 {/* advertisement section */}
-                <div className="abt-section mb-150">
+                <div className="abt-section mb-150 mt-150">
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-6 col-md-12">
@@ -290,7 +200,7 @@ function Index2(props) {
                 </section>
                 {/* end shop banner */}
                 {/* latest news */}
-                <div className="latest-news pt-150 pb-150">
+                {/* <div className="latest-news pt-150 pb-150">
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-8 offset-lg-2 text-center">
@@ -350,35 +260,8 @@ function Index2(props) {
                             </div>
                         </div>
                     </div>
-                </div>
-                {/* end latest news */}
-                {/* logo carousel */}
-                {/* <div className="logo-carousel-section">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-lg-12">
-                                <div className="logo-carousel-inner">
-                                    <div className="single-logo-item">
-                                        <img src="assets/img/company-logos/1.png" alt />
-                                    </div>
-                                    <div className="single-logo-item">
-                                        <img src="assets/img/company-logos/2.png" alt />
-                                    </div>
-                                    <div className="single-logo-item">
-                                        <img src="assets/img/company-logos/3.png" alt />
-                                    </div>
-                                    <div className="single-logo-item">
-                                        <img src="assets/img/company-logos/4.png" alt />
-                                    </div>
-                                    <div className="single-logo-item">
-                                        <img src="assets/img/company-logos/5.png" alt />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                end logo carousel */}
+                </div> */}
+             
             </div>
 
         </div>

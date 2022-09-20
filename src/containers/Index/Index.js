@@ -101,17 +101,17 @@ function Index(props) {
                             <div className="col-lg-4 col-md-6 text-center">
                                 <div className={`single-product-item ${value.theme}`}>
                                     <div className="product-image">
-                                        <a href="single-product.html"><img src="assets/img/products/product-img-1.jpg" alt /></a>
+                                        <NavLink to={'/single-product'}><img src="assets/img/products/product-img-1.jpg" alt /></NavLink>
                                     </div>
                                     <h3>Strawberry</h3>
                                     <p className="product-price"><span>Per Kg</span> 85$ </p>
                                     <NavLink to={'/cart'} className="cart-btn"><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>
                                 </div>
                             </div>
-                        <div className={`col-lg-4 col-md-6 text-center ${value.theme}`}>
+                            <div className={`col-lg-4 col-md-6 text-center ${value.theme}`}>
                                 <div className={`single-product-item ${value.theme}`}>
                                     <div className="product-image">
-                                        <a href="single-product.html"><img src="assets/img/products/product-img-2.jpg" alt /></a>
+                                        <NavLink to={'/single-product'}><img src="assets/img/products/product-img-2.jpg" alt /></NavLink>
                                     </div>
                                     <h3>Grapes</h3>
                                     <p className="product-price"><span>Per Kg</span> 70$ </p>
@@ -121,7 +121,7 @@ function Index(props) {
                             <div className="col-lg-4 col-md-6 offset-md-3 offset-lg-0 text-center">
                                 <div className={`single-product-item ${value.theme}`}>
                                     <div className="product-image">
-                                        <a href="single-product.html"><img src="assets/img/products/product-img-3.jpg" alt /></a>
+                                        <NavLink to={'/single-product'}><img src="assets/img/products/product-img-3.jpg" alt /></NavLink>
                                     </div>
                                     <h3>Lemon</h3>
                                     <p className="product-price"><span>Per Kg</span> 35$ </p>
@@ -133,7 +133,7 @@ function Index(props) {
                 </div>
                 {/* end product section */}
                 {/* cart banner section */}
-                <section className="cart-banner pt-100 pb-100">
+                <section className="cart-banner pt-100 pb-100  mb-150">
                     <div className="container">
                         <div className="row clearfix">
                             {/*Image Column*/}
@@ -162,60 +162,7 @@ function Index(props) {
                     </div>
                 </section>
                 {/* end cart banner section */}
-                {/* testimonail-section */}
-                <div className="testimonail-section mt-150 mb-150">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-lg-10 offset-lg-1 text-center">
-                                <div className="testimonial-sliders">
-                                    <div className="single-testimonial-slider">
-                                        <div className="client-avater">
-                                            <img src="assets/img/avaters/avatar1.png" alt />
-                                        </div>
-                                        <div className="client-meta">
-                                            <h3>Saira Hakim <span>Local shop owner</span></h3>
-                                            <p className="testimonial-body">
-                                                " Sed ut perspiciatis unde omnis iste natus error veritatis et  quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium "
-                                            </p>
-                                            <div className="last-icon">
-                                                <i className="fas fa-quote-right" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="single-testimonial-slider">
-                                        <div className="client-avater">
-                                            <img src="assets/img/avaters/avatar2.png" alt />
-                                        </div>
-                                        <div className="client-meta">
-                                            <h3>David Niph <span>Local shop owner</span></h3>
-                                            <p className="testimonial-body">
-                                                " Sed ut perspiciatis unde omnis iste natus error veritatis et  quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium "
-                                            </p>
-                                            <div className="last-icon">
-                                                <i className="fas fa-quote-right" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="single-testimonial-slider">
-                                        <div className="client-avater">
-                                            <img src="assets/img/avaters/avatar3.png" alt />
-                                        </div>
-                                        <div className="client-meta">
-                                            <h3>Jacob Sikim <span>Local shop owner</span></h3>
-                                            <p className="testimonial-body">
-                                                " Sed ut perspiciatis unde omnis iste natus error veritatis et  quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium "
-                                            </p>
-                                            <div className="last-icon">
-                                                <i className="fas fa-quote-right" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {/* end testimonail-section */}
+
                 {/* advertisement section */}
                 <div className="abt-section mb-150">
                     <div className="container">
@@ -239,108 +186,15 @@ function Index(props) {
                 </div>
                 {/* end advertisement section */}
                 {/* shop banner */}
-                <section className={`shop-banner ${value.theme}`}>
-                    <div className="container">
+                <section className={`shop-banner mb-150 ${value.theme}`}>
+                    <div className="container ">
                         <h3>December sale is on! <br /> with big <span className="orange-text">Discount...</span></h3>
                         <div className="sale-percent"><span>Sale! <br /> Upto</span>50% <span>off</span></div>
                         <NavLink to={'/shop'} className="boxed-btn"> Shop Now</NavLink>
                     </div>
                 </section>
-                {/* end shop banner */}
-                {/* latest news */}
-                <div className="latest-news pt-150 pb-150">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-lg-8 offset-lg-2 text-center">
-                                <div className="section-title">
-                                    <h3><span className="orange-text">Our</span> News</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet beatae optio.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="row">
-                            <div className="col-lg-4 col-md-6">
-                                
-                                <div className={`single-latest-news ${value.theme}`}>
-                                    <NavLink to={'/single-new'}><div className="latest-news-bg news-bg-1" /></NavLink>
-                                    <div className="news-text-box">
-                                        <h3><NavLink to={'/single-new'}>You will vainly look for fruit on it in autumn.</NavLink></h3>
-                                        <p className="blog-meta">
-                                            <span className="author"><i className="fas fa-user" /> Admin</span>
-                                            <span className="date"><i className="fas fa-calendar" /> 27 December, 2019</span>
-                                        </p>
-                                        <p className="excerpt">Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus nisi. Praesent vitae mattis nunc, egestas viverra eros.</p>
-                                        <NavLink to={'/single-new'} className="read-more-btn">read more <i className="fas fa-angle-right" /></NavLink>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-lg-4 col-md-6">
-                                <div className="single-latest-news">
-                                    <NavLink to={'/single-new'}><div className="latest-news-bg news-bg-2" /></NavLink>
-                                    <div className="news-text-box">
-                                        <h3><NavLink to={'/single-new'}>A man's worth has its season, like tomato.</NavLink></h3>
-                                        <p className="blog-meta">
-                                            <span className="author"><i className="fas fa-user" /> Admin</span>
-                                            <span className="date"><i className="fas fa-calendar" /> 27 December, 2019</span>
-                                        </p>
-                                        <p className="excerpt">Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus nisi. Praesent vitae mattis nunc, egestas viverra eros.</p>
-                                        <NavLink to={'/single-new'} className="read-more-btn">read more <i className="fas fa-angle-right" /></NavLink>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-lg-4 col-md-6 offset-md-3 offset-lg-0">
-                                <div className="single-latest-news">
-                                    <NavLink to={'/single-new'}><div className="latest-news-bg news-bg-3" /></NavLink>
-                                    <div className="news-text-box">
-                                        <h3><NavLink to={'/single-new'}>Good thoughts bear good fresh juicy fruit.</NavLink></h3>
-                                        <p className="blog-meta">
-                                            <span className="author"><i className="fas fa-user" /> Admin</span>
-                                            <span className="date"><i className="fas fa-calendar" /> 27 December, 2019</span>
-                                        </p>
-                                        <p className="excerpt">Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus nisi. Praesent vitae mattis nunc, egestas viverra eros.</p>
-                                        <NavLink to={'/single-new'} className="read-more-btn">read more <i className="fas fa-angle-right" /></NavLink>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="row">
-                            <div className="col-lg-12 text-center">
-                                {/* <a href="news.html" className="boxed-btn">More News</a> */}
-                                <NavLink to={'/news'} className="boxed-btn">More News</NavLink>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {/* end latest news */}
-                {/* logo carousel
-                <div className="logo-carousel-section">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-lg-12">
-                                <div className="logo-carousel-inner">
-                                    <div className="single-logo-item">
-                                        <img src="assets/img/company-logos/1.png" alt />
-                                    </div>
-                                    <div className="single-logo-item">
-                                        <img src="assets/img/company-logos/2.png" alt />
-                                    </div>
-                                    <div className="single-logo-item">
-                                        <img src="assets/img/company-logos/3.png" alt />
-                                    </div>
-                                    <div className="single-logo-item">
-                                        <img src="assets/img/company-logos/4.png" alt />
-                                    </div>
-                                    <div className="single-logo-item">
-                                        <img src="assets/img/company-logos/5.png" alt />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {/* end logo carousel */}
-            </div> 
 
+            </div>
         </div>
     );
 }

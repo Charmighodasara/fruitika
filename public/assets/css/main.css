@@ -19,6 +19,7 @@ html {
 }
 
 body {
+  position: relative;
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
   font-size: 1rem;
@@ -2888,4 +2889,22 @@ a span {
 }
 .dark .card-body{
   background-color: #000000;
+}
+
+.back-to-top{
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  z-index: 100;
+  color: #000;
+  border: 2px solid #F28123;
+  animation: top 1s infinite alternate;
+}
+@keyframes top {
+  0%{
+    transform: translateY(0);
+  }
+  100%{
+    transform: translateY(-15px);
+  }
 }

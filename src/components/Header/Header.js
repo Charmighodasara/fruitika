@@ -31,44 +31,20 @@ function Header(props) {
                                     <ul>
                                         <li className="current-list-item">
                                             <NavLink className="current-list-item" to={'/'}>Home</NavLink>
-                                            <ul className="sub-menu">
-                                                <li>
-                                                    <NavLink to={'/index'}>Static Home</NavLink>
-                                                </li>
-                                                <li>
-                                                    <NavLink to={'/index2'}>Slider Home</NavLink>
-                                                </li>
-
-                                            </ul>
                                         </li>
                                         <li><NavLink to={'/about'}>About</NavLink></li>
 
-                                        <li><a href="#">Pages</a>
-                                            <ul className="sub-menu">
-                                                <li><NavLink to={'/pages1'}>404 page</NavLink></li>
-                                                <li><NavLink to={'/about'}>About</NavLink></li>
-                                                <li><NavLink to={'/cart'}>Cart</NavLink></li>
-                                                <li><NavLink to={'/checkout'}>Check Out</NavLink></li>
-                                                <li><NavLink to={'/contact'}>Contact</NavLink></li>
                                                 <li><NavLink to={'/news'}>News</NavLink></li>
-                                                <li><NavLink to={'/shop'}>Shop</NavLink></li>
-                                            </ul>
-                                        </li>
-                                        <li><NavLink to={'/news'}>News</NavLink>
-                                            <ul className="sub-menu">
-                                                <li><NavLink to={'/news'}>News</NavLink></li>
-                                                <li><NavLink to={'/single-new'}>Single News</NavLink></li>
-                                            </ul>
-                                        </li>
                                         <li><NavLink to={'/contact'}>Contact</NavLink></li>
                                         <li><NavLink to={'/shop'}>Shop</NavLink>
-                                            <ul className="sub-menu">
-                                                <li><li><NavLink to={'/fruit'}>Fruit</NavLink></li></li>
-                                                <li><NavLink to={'/checkout'}>Check Out</NavLink> </li>
-                                                <li><NavLink to={'/single-product'}>Single Product</NavLink></li>
-                                                <li><NavLink to={'/cart'}>Cart</NavLink></li>
-                                            </ul>
+                                            {/* <ul className="sub-menu"> */}
+                                                {/* <li><li><NavLink to={'/fruit'}>Fruit</NavLink></li></li> */}
+                                                {/* <li><NavLink to={'/single-product'}>Single Product</NavLink></li> */}
+                                            {/* </ul> */}
                                         </li>
+
+                                        {/* <li><NavLink to={'/checkout'}>Check Out</NavLink></li> */}
+
 
                                         <li><i class="fa-solid fa-moon-over-sun"></i>
                                             <div className="header-icons">
