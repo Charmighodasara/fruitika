@@ -6,7 +6,6 @@ import { Route, Router, Switch } from 'react-router-dom';
 import Index from './containers/Index/Index';
 import Index2 from './containers/Index2/Index2';
 import About from './containers/About/About';
-import Pages from './containers/Pages-404/Pages';
 import Cart from './containers/Cart/Cart';
 import Checkout from './containers/Checkout/Checkout';
 import Contact from './containers/Contact/Contact';
@@ -37,7 +36,6 @@ function App() {
                 <Publicroute path={'/index'} exact component={Index} />
                 <Publicroute path={'/index2'} exact component={Index2} />
                 <Publicroute path={'/about'} exact component={About} />
-                <Publicroute path={'/pages1'} exact component={Pages} />
                 <Publicroute path={'/checkout'} exact component={Checkout} />
                 <Publicroute path={'/contact'} exact component={Contact} />
                 <Publicroute path={'/news'} exact component={News} />
