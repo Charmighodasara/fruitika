@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { themeContext } from '../../context/ThemeContext';
 
@@ -75,7 +75,9 @@ function Footer(props) {
               </div>
             </div>
           </div>
-        <a href='#' className='btn btn-lg back-to-top'><i className="fas fa-angle-up" /></a>
+          <button href='#' className='btn btn-lg back-to-top' onClick={() => {
+            window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+          }}><i className="fas fa-angle-up" /></button>
         </div>
       </div>
 

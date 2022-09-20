@@ -21,7 +21,9 @@ function Header(props) {
                             <div className="main-menu-wrap">
                                 {/* logo */}
                                 <div className="site-logo">
-                                    <NavLink className="current-list-item" to={'/index'}>
+                                    <NavLink className="current-list-item" to={'/index'} onClick={() => {
+                                        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+                                    }}>
                                         <img src="assets/img/logo.png" alt />
                                     </NavLink>
                                 </div>
@@ -34,15 +36,11 @@ function Header(props) {
                                         </li>
                                         <li><NavLink to={'/about'}>About</NavLink></li>
 
-                                                <li><NavLink to={'/news'}>News</NavLink></li>
+                                        <li><NavLink to={'/news'}>News</NavLink></li>
                                         <li><NavLink to={'/contact'}>Contact</NavLink></li>
-                                        <li><NavLink to={'/shop'}>Shop</NavLink>
-                                            {/* <ul className="sub-menu"> */}
-                                                {/* <li><li><NavLink to={'/fruit'}>Fruit</NavLink></li></li> */}
-                                                {/* <li><NavLink to={'/single-product'}>Single Product</NavLink></li> */}
-                                            {/* </ul> */}
-                                        </li>
-
+                                        <li><NavLink to={'/shop'}>Shop</NavLink></li>
+                                        {/* <li><li><NavLink to={'/fruit'}>Fruit</NavLink></li></li> */}
+                                        {/* <li><NavLink to={'/single-product'}>Single Product</NavLink></li> */}
                                         {/* <li><NavLink to={'/checkout'}>Check Out</NavLink></li> */}
 
 

@@ -570,6 +570,14 @@ ul.navbar-nav li.nav-item.active a.nav-link {
   padding: 25px 0;
 }
 
+.fixed{
+  position: fixed;
+  top: 0px;
+  z-index: 99;
+  background-color: #000;
+  box-shadow: 0 0 20px #555555;
+}
+
 .top-header-area.white ul.navbar-nav li.nav-item a.nav-link,
 .top-header-area.white ul.navbar-nav li.nav-item.active a.nav-link {
   color: #fff;
@@ -2892,13 +2900,16 @@ a span {
 }
 
 .back-to-top{
+  color: #000;
+  border: 2px solid #F28123;
+  animation: top 1s infinite alternate;
+}
+.fixed2{
   position: fixed;
   right: 30px;
   bottom: 30px;
   z-index: 100;
-  color: #000;
-  border: 2px solid #F28123;
-  animation: top 1s infinite alternate;
+  display: block;
 }
 @keyframes top {
   0%{
