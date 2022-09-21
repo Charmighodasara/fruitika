@@ -2941,6 +2941,10 @@ a span {
   animation: top 1s infinite alternate;
 }
 
+.back-to-top i{
+  color: #F28123;
+}
+
 .fixed2 {
   position: fixed;
   right: 30px;

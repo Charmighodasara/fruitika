@@ -24,6 +24,8 @@ import { Provider } from 'react-redux';
 import { SnackbarProvider } from 'notistack';
 import { PersistGate } from 'redux-persist/integration/react'
 import WinterFruites from './containers/Categories/WinterFruites';
+import SpringFruites from './containers/Categories/SpringFruites';
+import SummerFruits from './containers/Categories/SummerFruits';
 function App() {
   return (
     <div >
@@ -48,7 +50,8 @@ function App() {
                 <Publicroute path={'/login-signup'} exact restricted={true} component={Login_signup} />
                 <Privateroute path={'/cart'} exact component={Cart} />
                 <Publicroute path={'/winter-fruits'} exact component={WinterFruites} />
-
+                <Publicroute path={'/spring-fruits'} exact component={SpringFruites} />
+                <Publicroute path={'/summer-fruits'} exact component={SummerFruits} />
               </Switch>
               <Footer />
             </PersistGate>

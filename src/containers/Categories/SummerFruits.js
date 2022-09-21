@@ -2,8 +2,11 @@ import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { themeContext } from '../../context/ThemeContext';
 
-function Shop(props) {
+function SummerFruits(props) {
     const value = useContext(themeContext);
+    const handleClick = () => {
+        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+    }
     return (
         <div>
             <div className={`${value.theme}`}>
@@ -32,7 +35,7 @@ function Shop(props) {
                             <div className="col-lg-8 offset-lg-2 text-center">
                                 <div className="breadcrumb-text">
                                     <p>Fresh and Organic</p>
-                                    <h1>Shop</h1>
+                                    <h1>Summer Season Fruits</h1>
                                 </div>
                             </div>
                         </div>
@@ -42,19 +45,8 @@ function Shop(props) {
                 {/* products */}
                 <div className="product-section mt-150 mb-150">
                     <div className="container">
-                        <div className="row">
-                            <div className="col-md-12">
-                                <div className="product-filters">
-                                    <ul>
-                                        <li className="active" data-filter="*">All</li>
-                                        {/* <li data-filter=".strawberry">Strawberry</li>
-                                    <li data-filter=".berry">Berry</li>
-                                    <li data-filter=".lemon">Lemon</li> */}
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
                         <div className="row product-lists">
+                            
                             <div className="col-lg-4 col-md-6 text-center strawberry">
                                 <div className="single-product-item">
                                     <div className="product-image">
@@ -247,4 +239,4 @@ function Shop(props) {
     );
 }
 
-export default Shop;
+export default SummerFruits;

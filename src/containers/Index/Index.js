@@ -72,7 +72,7 @@ function Index(props) {
                             <div className="col-lg-2 col-md-4 text-center">
                                 <div className={` category ${value.theme}`}>
                                     <div className=" category">
-                                        <NavLink to={'/'}><img src="assets/img/products/product-img-1.jpg" alt /></NavLink>
+                                        <NavLink to={'/spring-fruits'} onClick={() => handleClick()}><img src="assets/img/products/product-img-1.jpg" alt /></NavLink>
                                     </div>
                                 </div>
                                 <h5 className='mt-3'>Spring Season Fruits</h5>
@@ -81,7 +81,7 @@ function Index(props) {
                             <div className="col-lg-2 col-md-4 text-center">
                                 <div className={` category ${value.theme}`}>
                                     <div className=" category">
-                                        <NavLink to={'/'}><img src="assets/img/products/product-img-9.jpg" alt /></NavLink>
+                                        <NavLink to={'/summer-fruits'}><img src="assets/img/products/product-img-9.jpg" alt /></NavLink>
                                     </div>
                                 </div>
                                 <h5 className='mt-3'>Summer Season Fruits</h5>
