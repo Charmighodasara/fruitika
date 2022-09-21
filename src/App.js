@@ -26,6 +26,8 @@ import { PersistGate } from 'redux-persist/integration/react'
 import WinterFruites from './containers/Categories/WinterFruites';
 import SpringFruites from './containers/Categories/SpringFruites';
 import SummerFruits from './containers/Categories/SummerFruits';
+import FallFruits from './containers/Categories/FallFruits';
+import AllSeason from './containers/Categories/AllSeason';
 function App() {
   return (
     <div >
@@ -52,6 +54,8 @@ function App() {
                 <Publicroute path={'/winter-fruits'} exact component={WinterFruites} />
                 <Publicroute path={'/spring-fruits'} exact component={SpringFruites} />
                 <Publicroute path={'/summer-fruits'} exact component={SummerFruits} />
+                <Publicroute path={'/fall-fruits'} exact component={FallFruits} />
+                <Publicroute path={'/allseason-fruits'} exact component={AllSeason} />
               </Switch>
               <Footer />
             </PersistGate>

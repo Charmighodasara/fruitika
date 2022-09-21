@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { themeContext } from '../../context/ThemeContext';
 
-function SummerFruits(props) {
+function FallFruits(props) {
     const value = useContext(themeContext);
     const handleClick = () => {
         window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
@@ -35,7 +35,7 @@ function SummerFruits(props) {
                             <div className="col-lg-8 offset-lg-2 text-center">
                                 <div className="breadcrumb-text">
                                     <p>Fresh and Organic</p>
-                                    <h1>Summer Season Fruits</h1>
+                                    <h1>Fall Season Fruits</h1>
                                 </div>
                             </div>
                         </div>
@@ -50,51 +50,68 @@ function SummerFruits(props) {
                             <div className="col-lg-4 col-md-6 text-center strawberry">
                                 <div className="single-product-item">
                                     <div className="product-image">
-                                        <a href="single-product.html"><img src="assets/img/products/product-img-6.jpg" alt /></a>
+                                        <a href="single-product.html"><img src="assets/img/products/product-img-7.jpg" alt /></a>
                                     </div>
-                                    <h3>Raspberry</h3>
-                                    <p className="product-price"><span>Per Kg</span> 80$ </p>
-                                    <NavLink to={'/cart'} className="cart-btn"  onClick={() => handleClick()}><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>                            </div>
-                            </div>
-
-                            <div className="col-lg-4 col-md-6 text-center strawberry">
-                                <div className="single-product-item">
-                                    <div className="product-image">
-                                        <a href="single-product.html"><img src="assets/img/products/product-img-9.jpg" alt /></a>
-                                    </div>
-                                    <h3>Mango</h3>
-                                    <p className="product-price"><span>Per Kg</span> 90$ </p>
-                                    <NavLink to={'/cart'} className="cart-btn"  onClick={() => handleClick()}><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>                            </div>
-                            </div>
-
-                            <div className="col-lg-4 col-md-6 text-center strawberry">
-                                <div className="single-product-item">
-                                    <div className="product-image">
-                                        <a href="single-product.html"><img src="assets/img/products/product-img-11.jpg" alt /></a>
-                                    </div>
-                                    <h3>Watermelon</h3>
-                                    <p className="product-price"><span>Per Kg</span> 60$ </p>
-                                    <NavLink to={'/cart'} className="cart-btn"  onClick={() => handleClick()}><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>                            </div>
-                            </div>
-
-                            <div className="col-lg-4 col-md-6 text-center strawberry">
-                                <div className="single-product-item">
-                                    <div className="product-image">
-                                        <a href="single-product.html"><img src="assets/img/products/product-img-12.jpg" alt /></a>
-                                    </div>
-                                    <h3>Peach</h3>
+                                    <h3>Apple</h3>
                                     <p className="product-price"><span>Per Kg</span> 45$ </p>
-                                    <NavLink to={'/cart'} className="cart-btn"  onClick={() => handleClick()}><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>                            </div>
+                                    <NavLink to={'/cart'} className="cart-btn" onClick={() => handleClick()}><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>
+                                </div>
+                            </div>
+
+
+                            <div className="col-lg-4 col-md-6 text-center berry">
+                                <div className="single-product-item">
+                                    <div className="product-image">
+                                        <a href="single-product.html"><img src="assets/img/products/product-img-2.jpg" alt /></a>
+                                    </div>
+                                    <h3>Grapes</h3>
+                                    <p className="product-price"><span>Per Kg</span> 70$ </p>
+                                    <NavLink to={'/cart'} className="cart-btn" onClick={() => handleClick()}><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>
+                                </div>
+                            </div>
+
+                            <div className="col-lg-4 col-md-6 text-center">
+                                <div className="single-product-item">
+                                    <div className="product-image">
+                                        <a href="single-product.html"><img src="assets/img/products/product-img-5.jpg" alt /></a>
+                                    </div>
+                                    <h3>Green Apple</h3>
+                                    <p className="product-price"><span>Per Kg</span> 45$ </p>
+                                    <NavLink to={'/cart'} className="cart-btn" onClick={() => handleClick()}><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>
+                                </div>
                             </div>
 
                             <div className="col-lg-4 col-md-6 text-center strawberry">
                                 <div className="single-product-item">
                                     <div className="product-image">
-                                        <a href="single-product.html"><img src="assets/img/products/product-img-16.jpg" alt /></a>
+                                        <a href="single-product.html"><img src="assets/img/products/product-img-13.jpg" alt /></a>
                                     </div>
-                                    <h3>Lychee</h3>
-                                    <p className="product-price"><span>Per Kg</span> 50$ </p>
-                                    <NavLink to={'/cart'} className="cart-btn"  onClick={() => handleClick()}><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>                            </div>
+                                    <h3>Pomegranate</h3>
+                                    <p className="product-price"><span>Per Kg</span> 35$ </p>
+                                    <NavLink to={'/cart'} className="cart-btn" onClick={() => handleClick()}><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>
+                                </div>
+                            </div>
+
+                            <div className="col-lg-4 col-md-6 text-center strawberry">
+                                <div className="single-product-item">
+                                    <div className="product-image">
+                                        <a href="single-product.html"><img src="assets/img/products/product-img-14.jpg" alt /></a>
+                                    </div>
+                                    <h3>Cherry</h3>
+                                    <p className="product-price"><span>Per Kg</span> 45$ </p>
+                                    <NavLink to={'/cart'} className="cart-btn" onClick={() => handleClick()}><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>
+                                </div>
+                            </div>
+
+                            <div className="col-lg-4 col-md-6 text-center strawberry">
+                                <div className="single-product-item">
+                                    <div className="product-image">
+                                        <a href="single-product.html"><img src="assets/img/products/product-img-15.jpg" alt /></a>
+                                    </div>
+                                    <h3>Pineapple</h3>
+                                    <p className="product-price"><span>Per Kg</span> 40$ </p>
+                                    <NavLink to={'/cart'} className="cart-btn" onClick={() => handleClick()}><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>
+                                </div>
                             </div>
 
                             <div className="col-lg-4 col-md-6 text-center strawberry">
@@ -104,7 +121,8 @@ function SummerFruits(props) {
                                     </div>
                                     <h3>Star Fruit</h3>
                                     <p className="product-price"><span>Per Kg</span> 35$ </p>
-                                    <NavLink to={'/cart'} className="cart-btn"  onClick={() => handleClick()}><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>                            </div>
+                                    <NavLink to={'/cart'} className="cart-btn" onClick={() => handleClick()}><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>
+                                </div>
                             </div>
 
                             <div className="col-lg-4 col-md-6 text-center strawberry">
@@ -114,9 +132,10 @@ function SummerFruits(props) {
                                     </div>
                                     <h3>Papaya</h3>
                                     <p className="product-price"><span>Per Kg</span> 50$ </p>
-                                    <NavLink to={'/cart'} className="cart-btn"  onClick={() => handleClick()}><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>                            </div>
+                                    <NavLink to={'/cart'} className="cart-btn" onClick={() => handleClick()}><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>
+                                </div>
                             </div>
-                            
+
                             <div className="col-lg-4 col-md-6 text-center strawberry">
                                 <div className="single-product-item">
                                     <div className="product-image">
@@ -124,7 +143,8 @@ function SummerFruits(props) {
                                     </div>
                                     <h3>Banana</h3>
                                     <p className="product-price"><span>Per Kg</span> 40$ </p>
-                                    <NavLink to={'/cart'} className="cart-btn"  onClick={() => handleClick()}><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>                            </div>
+                                    <NavLink to={'/cart'} className="cart-btn" onClick={() => handleClick()}><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -135,4 +155,4 @@ function SummerFruits(props) {
     );
 }
 
-export default SummerFruits;
+export default FallFruits;
