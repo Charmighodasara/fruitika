@@ -12,6 +12,10 @@ function Header(props) {
     const dispatch = useDispatch()
 
     const auth = useSelector(state => state.auth)
+
+    const handleClick = () => {
+        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+    }
     return (
         <div>
             <div className="top-header-area" id="sticker">
@@ -32,13 +36,15 @@ function Header(props) {
                                 <nav className="main-menu">
                                     <ul>
                                         <li className="current-list-item">
-                                            <NavLink className="current-list-item" to={'/'}>Home</NavLink>
+                                            <NavLink className="current-list-item" to={'/'} onClick={() => handleClick()}>Home</NavLink>
                                         </li>
-                                        <li><NavLink to={'/about'}>About</NavLink></li>
+                                        <li><NavLink to={'/about'} onClick={() => handleClick()}>About</NavLink></li>
 
-                                        <li><NavLink to={'/news'}>News</NavLink></li>
-                                        <li><NavLink to={'/contact'}>Contact</NavLink></li>
-                                        <li><NavLink to={'/shop'}>Shop</NavLink></li>
+                                        <li><NavLink to={'/news'} onClick={() => handleClick()}>News</NavLink></li>
+
+                                        <li><NavLink to={'/contact'} onClick={() => handleClick()}>Contact</NavLink></li>
+
+                                        <li><NavLink to={'/shop'} onClick={() => handleClick()}>Shop</NavLink></li>
                                         {/* <li><li><NavLink to={'/fruit'}>Fruit</NavLink></li></li> */}
                                         {/* <li><NavLink to={'/single-product'}>Single Product</NavLink></li> */}
                                         {/* <li><NavLink to={'/checkout'}>Check Out</NavLink></li> */}
@@ -46,13 +52,13 @@ function Header(props) {
 
                                         <li><i class="fa-solid fa-moon-over-sun"></i>
                                             <div className="header-icons">
-                                                <NavLink className="shopping-cart" to={'/cart'}><i className="fas fa-shopping-cart" /></NavLink>
+                                                <NavLink className="shopping-cart" to={'/cart'} onClick={() => handleClick()}><i className="fas fa-shopping-cart" /></NavLink>
 
-                                                <NavLink className="mobile-hide search-bar-icon" to={'/search'}><i className="fas fa-search" /></NavLink>
+                                                <NavLink className="mobile-hide search-bar-icon" to={'/search'} onClick={() => handleClick()}><i className="fas fa-search" /></NavLink>
 
                                                 {
                                                     auth.user === '' ?
-                                                        <NavLink className="shopping-cart" to={'/login-signup'} title="SignUp/Login"><i className="fas fa-user" /></NavLink>
+                                                        <NavLink className="shopping-cart" to={'/login-signup'} title="SignUp/Login" onClick={() => handleClick()}><i className="fas fa-user" /></NavLink>
                                                         :
 
                                                         <NavLink className="shopping-cart" to={'/login-signup'} title="LogOut" onClick={() => { dispatch(SignOutAction()) }}><i className="fas fa-user-slash" /></NavLink>
@@ -65,7 +71,7 @@ function Header(props) {
                                     </ul>
                                 </nav>
                                 <Alert />
-                                <a className="mobile-show search-bar-icon" href="#"><i className="fas fa-search" /></a>
+                                {/* <a className="mobile-show search-bar-icon" href="#"><i className="fas fa-search" /></a> */}
                                 <div className="mobile-menu" />
                                 {/* menu end */}
                             </div>

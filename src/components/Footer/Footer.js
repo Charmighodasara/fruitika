@@ -5,6 +5,9 @@ import { themeContext } from '../../context/ThemeContext';
 
 function Footer(props) {
   const value = useContext(themeContext);
+  const handleClick = () => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+  }
   return (
     <div>
       <div>
@@ -31,12 +34,12 @@ function Footer(props) {
                 <div className="footer-box pages">
                   <h2 className="widget-title">Pages</h2>
                   <ul>
-                    <li><NavLink to={'/index'}>Home</NavLink></li>
-                    <li><NavLink to={'/about'}>About</NavLink></li>
-                    <li><NavLink to={'/shop'}>Shop</NavLink></li>
-                    <li><NavLink to={'/news'}>News</NavLink></li>
-                    <li><NavLink to={'/contact'}>Contact</NavLink></li>
-                    <li><NavLink to={'/fruit'}>fruit</NavLink></li>
+                    <li><NavLink to={'/index'} onClick={() => handleClick()}>Home</NavLink></li>
+                    <li><NavLink to={'/about'} onClick={() => handleClick()}>About</NavLink></li>
+                    <li><NavLink to={'/shop'} onClick={() => handleClick()}>Shop</NavLink></li>
+                    <li><NavLink to={'/news'} onClick={() => handleClick()}>News</NavLink></li>
+                    <li><NavLink to={'/contact'} onClick={() => handleClick()}>Contact</NavLink></li>
+                    {/* <li><NavLink to={'/fruit'}>fruit</NavLink></li> */}
                   </ul>
                 </div>
               </div>
