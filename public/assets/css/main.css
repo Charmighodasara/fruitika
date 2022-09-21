@@ -2899,7 +2899,7 @@ a span {
 }
 
 .dark .single-latest-news h3 a,
-.dark a.read-more-btn {
+.dark a.read-more-btn ,.dark .category .h5{
   color: #fff;
 }
 
@@ -2934,7 +2934,9 @@ a span {
 .dark .card-body {
   background-color: #000000;
 }
-
+.dark h5{
+  color: #fff !important;
+}
 .back-to-top {
   color: #000;
   border: 2px solid #F28123;
