@@ -34,9 +34,9 @@ function Header(props) {
                                 {/* logo */}
                                 {/* menu start */}
                                 <nav className="main-menu">
-                                    <ul>
-                                        <li className="current-list-item">
-                                            <NavLink className="current-list-item" to={'/'} onClick={() => handleClick()}>Home</NavLink>
+                                    <ul className="current-list-item">
+                                        <li >
+                                            <NavLink  to={'/'} onClick={() => handleClick()}>Home</NavLink>
                                         </li>
                                         <li><NavLink to={'/about'} onClick={() => handleClick()}>About</NavLink></li>
 

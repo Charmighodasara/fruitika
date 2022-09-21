@@ -612,6 +612,10 @@ nav.main-menu ul li a {
   padding: 15px;
 }
 
+nav.main-menu ul li a.active {
+  color: #F28123;
+}
+
 nav.main-menu ul>li {
   position: relative;
 }
@@ -740,7 +744,7 @@ nav.main-menu ul ul.sub-menu li a {
   font-weight: 600;
 }
 
-nav.main-menu ul li.current-list-item>a {
+nav.main-menu ul li.current-list-item  a.active {
   color: #F28123;
 }
 
@@ -2457,7 +2461,7 @@ ul.social-link-team li a {
   border-radius: 25px;
 }
 
-.product-filters ul li.active {
+.product-filters ul li.active  {
   border: 2px solid #F28123;
   background-color: #F28123;
   color: #fff;
@@ -2919,4 +2923,7 @@ a span {
   100%{
     transform: translateY(-15px);
   }
+}
+.nav.main-menu ul li a:active{
+  color: #F28123 !important;
 }
