@@ -4,6 +4,7 @@ import { Form, Formik, useFormik } from 'formik';
 import { useDispatch } from 'react-redux';
 import { forgotAction, goggleSignInAction, singInAction, singUpAction } from '../../redux/Action/auth.action';
 import { themeContext } from '../../context/ThemeContext';
+import GoogleIcon from '@mui/icons-material/Google';
 
 function Login_signup(props) {
     const [user, setUser] = useState('login')
@@ -128,10 +129,10 @@ function Login_signup(props) {
                     </div>
                 </div>
                 {/* contact form */}
-                <div className="contact-from-section mt-100 mb-100 ">
+                <div className="contact-from-section mt-100 mb-100 text-center">
                     <div className="container">
                         <div className="row">
-                            <div className="col-lg-6 mb-5 mb-lg-0 m-auto">
+                            <div className="col-lg-6 mb-5 mb-lg-0 m-auto" >
 
                                 <div id="form_status m-auto" />
                                 <div className="contact-form ">
@@ -193,8 +194,9 @@ function Login_signup(props) {
                                                     user === 'login' ?
                                                         <>
                                                             <p><button type="submit">Login</button></p>
-                                                            <p >or</p>
-                                                            <div><a type="submit" onClick={() => { googleSignIn() }}>Login With <span>Google</span> </a></div>
+                                                            <p >or Login With</p>
+                                                            <div><a type="submit" onClick={() => { googleSignIn() }}> <span  title='google'><GoogleIcon/></span></a></div>
+                                                            
                                                         </>
                                                         :
                                                         <p><button type="submit">Signup</button></p>

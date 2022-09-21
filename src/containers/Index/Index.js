@@ -4,6 +4,9 @@ import { themeContext } from '../../context/ThemeContext';
 
 function Index(props) {
     const value = useContext(themeContext);
+    const handleClick = () => {
+        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+    }
     return (
         <div>
             <div className={` ${value.theme}`}>
@@ -45,8 +48,70 @@ function Index(props) {
                     </div>
                 </div>
                 {/* end hero area */}
+
+                {/* Fruits Category */}
+                <div className={`product-section mt-100 ${value.theme}`}>
+                    <div className="container">
+                        {/* <div className="row">
+                            <div className="col-lg-8 offset-lg-2 text-center">
+                                <div className="section-title">
+                                    <h3><span className="orange-text">Fruits</span> Category</h3>
+                                </div>
+                            </div>
+                        </div> */}
+                        <div className="row justify-content-between">
+                            <div className="col-lg-2 col-md-4 text-center">
+                                <div className={` category ${value.theme}`}>
+                                    <div className=" category">
+                                        <NavLink to={'/winter-fruits'} onClick={() => handleClick()}><img src="assets/img/products/product-img-4.jpg" alt /></NavLink>
+                                    </div>
+                                </div>
+                                <h5 className='mt-3'>Winter Season Fruits</h5>
+                            </div>
+
+                            <div className="col-lg-2 col-md-4 text-center">
+                                <div className={` category ${value.theme}`}>
+                                    <div className=" category">
+                                        <NavLink to={'/'}><img src="assets/img/products/product-img-1.jpg" alt /></NavLink>
+                                    </div>
+                                </div>
+                                <h5 className='mt-3'>Spring Season Fruits</h5>
+                            </div>
+
+                            <div className="col-lg-2 col-md-4 text-center">
+                                <div className={` category ${value.theme}`}>
+                                    <div className=" category">
+                                        <NavLink to={'/'}><img src="assets/img/products/product-img-9.jpg" alt /></NavLink>
+                                    </div>
+                                </div>
+                                <h5 className='mt-3'>Summer Season Fruits</h5>
+                            </div>
+
+                            <div className="col-lg-2 col-md-4 text-center">
+                                <div className={` category ${value.theme}`}>
+                                    <div className=" category">
+                                        <NavLink to={'/'}><img src="assets/img/products/product-img-2.jpg" alt /></NavLink>
+                                    </div>
+                                </div>
+                                <h5 className='mt-3'>Fall Season Fruits</h5>
+                            </div>
+
+                            <div className="col-lg-2 col-md-4 text-center">
+                                <div className={` category ${value.theme}`}>
+                                    <div className=" category">
+                                        <NavLink to={'/'}><img src="assets/img/products/product-img-8.jpg" alt /></NavLink>
+                                    </div>
+                                </div>
+                                <h5 className='mt-3'>All Season Fruits</h5>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                {/* end Fruits Category */}
+
                 {/* features list section */}
-                <div className={`list-section pt-80 pb-80 ${value.theme}`}>
+                <div className={`list-section mt-100 ${value.theme}`}>
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-4 col-md-6 mb-4 mb-lg-0 ">
@@ -86,6 +151,7 @@ function Index(props) {
                     </div>
                 </div>
                 {/* end features list section */}
+
                 {/* product section */}
                 <div className={`product-section mt-150 mb-150 ${value.theme}`}>
                     <div className="container">
