@@ -13,6 +13,8 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import { useDispatch, useSelector } from 'react-redux';
 import { addProduct, deleteProduct, GetProduct, updateProduct } from '../../../redux/Action/Product.getaction';
+import { Autocomplete } from '@mui/material';
+
 
 function Product(props) {
     const [open, setOpen] = useState(false);
@@ -85,7 +87,7 @@ function Product(props) {
             name: '',
             quantity: '',
             price: '',
-            profile_img:''
+            profile_img: ''
         },
         validationSchema: schema,
         onSubmit: values => {
@@ -98,7 +100,7 @@ function Product(props) {
         },
     });
 
-    const { handleSubmit, handleBlur, handleChange, errors, touched, values , setFieldValue } = formik
+    const { handleSubmit, handleBlur, handleChange, errors, touched, values, setFieldValue } = formik
 
     const handleDelete = () => {
         // console.log(params.id);
@@ -120,14 +122,14 @@ function Product(props) {
     const columns = [
         { field: 'name', headerName: 'Product Name', width: 150 },
         { field: 'quantity', headerName: 'Quantity', width: 150 },
-        { field: 'price', headerName: 'Price', width:150 },
+        { field: 'price', headerName: 'Price', width: 150 },
         {
             field: 'profile_img',
             headerName: 'Profile Image',
             width: 100,
-            flex:1,
+            flex: 1,
             renderCell: (params) => (
-                    <img src={params.row.profile_img} width={50} height={50} />
+                <img src={params.row.profile_img} width={50} height={50} />
             )
         },
         {
@@ -176,6 +178,10 @@ function Product(props) {
     }
 
     const finalData = search.length > 0 ? search : data
+    const options = [category.category];
+console.log(options);
+    const [value, setValue] = useState(options['']);
+    const [inputValue, setInputValue] = useState('');
 
     return (
         <div>
@@ -221,7 +227,20 @@ function Product(props) {
                                     editData ? <DialogTitle> update Product Details</DialogTitle>
                                         : <DialogTitle> Add Product</DialogTitle>
                                 }
-                                
+                                <Autocomplete
+                                    value={value}
+                                    onChange={(event, newValue) => {
+                                        setValue(newValue);
+                                    }}
+                                    inputValue={inputValue}
+                                    onInputChange={(event, newInputValue) => {
+                                        setInputValue(newInputValue);
+                                    }}
+                                    id="controllable-states-demo"
+                                    options={options}
+                                    sx={{ width: 300 }}
+                                    renderInput={(params) => <TextField {...params} label="select Category" />}
+                                />
 
                                 <Formik values={formik} >
                                     <Form onSubmit={handleSubmit}>
@@ -265,10 +284,10 @@ function Product(props) {
                                                 onBlur={handleBlur}
                                             />
                                             {errors.price && touched.price ? <p>{errors.price}</p> : ''}
-                                            <input 
+                                            <input
                                                 type="file"
                                                 name="profile_img"
-                                                onChange={(e)=> setFieldValue('profile_img' , e.target.files[0])}
+                                                onChange={(e) => setFieldValue('profile_img', e.target.files[0])}
                                             />
                                             <DialogActions>
                                                 <Button onClick={handleClose}>Close</Button>
