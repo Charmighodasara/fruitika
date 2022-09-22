@@ -9,7 +9,7 @@ import storage from 'redux-persist/lib/storage'
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['auth'] 
+  whitelist: ['auth', 'counter']
 }
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)
@@ -17,10 +17,14 @@ const sagaMiddleware = createSagaMiddleware()
 
 const middleware = [thunk, sagaMiddleware]
 
-export const store = createStore(
-  persistedReducer,
-  applyMiddleware(...middleware)
-)
+export const configureStore = () => {
 
-export let persistor = persistStore(store)
-sagaMiddleware.run(rootSaga)
+  const store = createStore(
+    persistedReducer,
+    applyMiddleware(...middleware)
+  )
+  let persistor = persistStore(store)
+  sagaMiddleware.run(rootSaga)
+  
+  return { store, persistor };
+}

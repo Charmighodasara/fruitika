@@ -19,7 +19,6 @@ import Publicroute from './Route/Publicroute';
 import Privateroute from './Route/Privateroute';
 import Search from './containers/search/Search';
 import ToggleContext from './context/ThemeContext';
-import { persistor, store } from './redux/store';
 import { Provider } from 'react-redux';
 import { SnackbarProvider } from 'notistack';
 import { PersistGate } from 'redux-persist/integration/react'
@@ -28,8 +27,19 @@ import SpringFruites from './containers/Categories/SpringFruites';
 import SummerFruits from './containers/Categories/SummerFruits';
 import FallFruits from './containers/Categories/FallFruits';
 import AllSeason from './containers/Categories/AllSeason';
+
+//adminpanel
+import Layout from './admin/components/layout/Layout';
+import Product from './admin/containers/product/Product';
+import Counter from './admin/containers/Counter/Counter';
+import Category from './admin/containers/Category/Category';
+import { configureStore } from './redux/store';
+
 function App() {
+
+  const { store, persistor } = configureStore()
   return (
+
     <div >
       <SnackbarProvider maxSnack={3}>
         <Provider store={store}>
@@ -56,12 +66,22 @@ function App() {
                 <Publicroute path={'/summer-fruits'} exact component={SummerFruits} />
                 <Publicroute path={'/fall-fruits'} exact component={FallFruits} />
                 <Publicroute path={'/allseason-fruits'} exact component={AllSeason} />
+
+                {/* adminpanel */}
+                <Layout >
+                  <Switch>
+                    <Route path={'/product'} exact component={Product}></Route>
+                    <Route path={'/category'} exact component={Category}></Route>
+                    <Route path={'/counter'} exact component={Counter}></Route>
+                  </Switch>
+                </Layout>
               </Switch>
               <Footer />
             </PersistGate>
           </ToggleContext>
         </Provider>
       </SnackbarProvider>
+
     </div>
   );
 }

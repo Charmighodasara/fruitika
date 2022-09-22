@@ -1,4 +1,3 @@
-
 import { WrongLocation } from "@mui/icons-material";
 import { getAuth, createUserWithEmailAndPassword, sendEmailVerification, onAuthStateChanged, signInWithEmailAndPassword, signOut, sendPasswordResetEmail, GoogleAuthProvider, signInWithPopup } from "firebase/auth"; import { auth } from "../../firebase";
 
