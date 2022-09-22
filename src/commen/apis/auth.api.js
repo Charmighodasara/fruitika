@@ -1,5 +1,6 @@
 import { WrongLocation } from "@mui/icons-material";
-import { getAuth, createUserWithEmailAndPassword, sendEmailVerification, onAuthStateChanged, signInWithEmailAndPassword, signOut, sendPasswordResetEmail, GoogleAuthProvider, signInWithPopup } from "firebase/auth"; import { auth } from "../../firebase";
+import { getAuth, createUserWithEmailAndPassword, sendEmailVerification, onAuthStateChanged, signInWithEmailAndPassword, signOut, sendPasswordResetEmail, GoogleAuthProvider, signInWithPopup } from "firebase/auth"; 
+import { auth } from "../../firebase";
 
 export const signUpApi = (data) => {
     console.log("signUpApi", data);

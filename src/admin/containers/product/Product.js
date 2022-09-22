@@ -157,6 +157,7 @@ function Product(props) {
 
     const dispatch = useDispatch()
     const product = useSelector(state => state.product)
+    const category = useSelector(state => state.category)
     useEffect(() => {
         // loadData()
         dispatch(GetProduct())
@@ -220,6 +221,8 @@ function Product(props) {
                                     editData ? <DialogTitle> update Product Details</DialogTitle>
                                         : <DialogTitle> Add Product</DialogTitle>
                                 }
+                                
+
                                 <Formik values={formik} >
                                     <Form onSubmit={handleSubmit}>
                                         <DialogContent>
