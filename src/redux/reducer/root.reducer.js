@@ -6,9 +6,9 @@ import { counterReducer } from "./Counter_Reducer";
 import { productReducer } from "./ProductGet.reducer";
 
 export const rootReducer = combineReducers({
-    auth :  authReducer,
-    alert : alertReducer,
-    counter : counterReducer,
-    product : productReducer,
-    category : categoryReducer
+    auth: authReducer,
+    alert: alertReducer,
+    counter: counterReducer,
+    product: productReducer,
+    category: categoryReducer
 })
