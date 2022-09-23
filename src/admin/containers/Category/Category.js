@@ -14,6 +14,7 @@ import { addCategory, deleteCategory, GetCategory, updateCategory } from '../../
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
+import { InputLabel } from '@mui/material';
 
 
 function Category(props) {
@@ -21,7 +22,6 @@ function Category(props) {
     const [dopen, setDopen] = useState(false);          // delete popup box open close
     const [editData, setEditData] = useState(false)     // edit data 
     const [did, setDid] = useState(0)                   //delete data
-
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -113,8 +113,8 @@ function Category(props) {
         // loadData()
         dispatch(GetCategory())
     }, [])
-
     const category = useSelector(state => state.category)
+    // console.log(category.category);
     const { handleSubmit, handleBlur, handleChange, errors, touched, values, setFieldValue } = formik
     return (
         <div>
@@ -161,6 +161,7 @@ function Category(props) {
                                 onBlur={handleBlur}
                             />
                             {errors.name && touched.name ? <p>{errors.name}</p> : ''}
+                            <InputLabel >choose category image</InputLabel>
                             <TextField
                                 type="file"
                                 name="profile_img"

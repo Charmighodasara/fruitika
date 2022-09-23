@@ -13,6 +13,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import { useDispatch, useSelector } from 'react-redux';
 import { addProduct, deleteProduct, GetProduct, updateProduct } from '../../../redux/Action/Product.getaction';
+import { InputLabel, MenuItem, Select } from '@mui/material';
 
 function Product(props) {
     const [open, setOpen] = useState(false);
@@ -22,7 +23,10 @@ function Product(props) {
     const [editData, setEditData] = useState(false)
     const [search, setSearch] = useState([])
 
+    const dispatch = useDispatch()
+    const product = useSelector(state => state.product)
     const count = useSelector(state => state.counter)
+    const category = useSelector(state => state.category)
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -74,6 +78,7 @@ function Product(props) {
         loadData()
     }
     let schema = yup.object().shape({
+        category: yup.string().required("please select product categoty"),
         name: yup.string().required("please enter Product Name"),
         quantity: yup.string().required("Please Enter Product Quantity"),
         price: yup.number().required("please enter Product price").positive().integer(),
@@ -82,6 +87,7 @@ function Product(props) {
 
     const formik = useFormik({
         initialValues: {
+            category: '',
             name: '',
             quantity: '',
             price: '',
@@ -116,20 +122,19 @@ function Product(props) {
         console.log(params.row);
         setEditData(true)
     }
-    const category = useSelector(state => state.category)
-    console.log(category.category);
-    // console.log(category.category);
+
+
     const columns = [
-        // {
-        //     field: 'category', headerName: 'Product', width: 150,
-        //     renderCell: (params) => {
-        //         c.category.map((c) => {
-        //             if (c.id === params.row.category) {
-        //                 return c.category
-        //             }
-        //         })
-        //     }
-        // },
+        {
+            field: 'category', headerName: 'Product', width: 150,
+            renderCell: (params) => {
+                category.category.map((c) => {
+                    if (c.id === params.row.category) {
+                        return c.category
+                    }
+                })
+            }
+        },
         { field: 'name', headerName: 'Product Name', width: 150 },
         { field: 'quantity', headerName: 'Quantity', width: 150 },
         { field: 'price', headerName: 'Price', width: 150 },
@@ -166,9 +171,6 @@ function Product(props) {
         }
         // console.log(localData);
     }
-
-    const dispatch = useDispatch()
-    const product = useSelector(state => state.product)
 
     useEffect(() => {
         // loadData()
@@ -239,6 +241,28 @@ function Product(props) {
                                 <Formik values={formik} >
                                     <Form onSubmit={handleSubmit}>
                                         <DialogContent>
+                                            <InputLabel >Select Product Category</InputLabel>
+                                            <Select
+                                                name='category'
+
+                                                fullWidth
+                                                variant="standard"
+                                                onBlur={handleBlur}
+                                                onChange={(e) => setFieldValue('category', e.target.value)}
+                                            >
+                                                {
+                                                    category.category.length > 0 ?
+                                                        category.category.map((c) => {
+                                                            return (
+                                                                <MenuItem value={c.name}>{c.category}</MenuItem>
+                                                            )
+                                                        })
+                                                        :
+                                                        null
+
+                                                }
+                                            </Select>
+                                            {errors.category && touched.category ? <p>{errors.category}</p> : ''}
                                             <TextField
                                                 value={values.name}
                                                 margin="dense"

@@ -16,7 +16,7 @@ export const GetProduct = () => async (dispatch) => {
         // dispatch(LoadingProduct())
         // setTimeout(function () {
 
-            fetch(Base_url + 'products')
+            // fetch(Base_url + 'products')
         //         .then(response => {
         //             if (response.ok) {
         //                 return response;
