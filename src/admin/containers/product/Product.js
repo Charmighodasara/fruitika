@@ -13,8 +13,6 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import { useDispatch, useSelector } from 'react-redux';
 import { addProduct, deleteProduct, GetProduct, updateProduct } from '../../../redux/Action/Product.getaction';
-import { Autocomplete } from '@mui/material';
-
 
 function Product(props) {
     const [open, setOpen] = useState(false);
@@ -118,8 +116,20 @@ function Product(props) {
         console.log(params.row);
         setEditData(true)
     }
-
+    const category = useSelector(state => state.category)
+    console.log(category.category);
+    // console.log(category.category);
     const columns = [
+        // {
+        //     field: 'category', headerName: 'Product', width: 150,
+        //     renderCell: (params) => {
+        //         c.category.map((c) => {
+        //             if (c.id === params.row.category) {
+        //                 return c.category
+        //             }
+        //         })
+        //     }
+        // },
         { field: 'name', headerName: 'Product Name', width: 150 },
         { field: 'quantity', headerName: 'Quantity', width: 150 },
         { field: 'price', headerName: 'Price', width: 150 },
@@ -159,7 +169,7 @@ function Product(props) {
 
     const dispatch = useDispatch()
     const product = useSelector(state => state.product)
-    const category = useSelector(state => state.category)
+
     useEffect(() => {
         // loadData()
         dispatch(GetProduct())
@@ -178,10 +188,7 @@ function Product(props) {
     }
 
     const finalData = search.length > 0 ? search : data
-    const options = [category.category];
-console.log(options);
-    const [value, setValue] = useState(options['']);
-    const [inputValue, setInputValue] = useState('');
+
 
     return (
         <div>
@@ -227,20 +234,7 @@ console.log(options);
                                     editData ? <DialogTitle> update Product Details</DialogTitle>
                                         : <DialogTitle> Add Product</DialogTitle>
                                 }
-                                <Autocomplete
-                                    value={value}
-                                    onChange={(event, newValue) => {
-                                        setValue(newValue);
-                                    }}
-                                    inputValue={inputValue}
-                                    onInputChange={(event, newInputValue) => {
-                                        setInputValue(newInputValue);
-                                    }}
-                                    id="controllable-states-demo"
-                                    options={options}
-                                    sx={{ width: 300 }}
-                                    renderInput={(params) => <TextField {...params} label="select Category" />}
-                                />
+
 
                                 <Formik values={formik} >
                                     <Form onSubmit={handleSubmit}>

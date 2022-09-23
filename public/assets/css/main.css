@@ -864,7 +864,9 @@ button {
 .search-bar-tablecell input::-webkit-input-placeholder {
   color: #fff;
 }
-
+.search-bar-tablecell input::-webkit-input-placeholder {
+  border:1px solid #F28123;
+}
 .search-bar-tablecell input:-ms-input-placeholder {
   color: #fff;
 }
@@ -2984,4 +2986,19 @@ a span {
 
 .category img {
   border-radius: 50%;
+}
+.login{
+  border: none;
+  background-color: transparent ;
+  border: 2px solid #F28123;
+  padding: 10px 30px !important;
+  cursor: pointer;
+  color: #F28123 !important;
+  display: inline-block;
+  border-radius: 50px;
+  font-weight: 700;
+}
+
+.contact-form form p input[type=text], .contact-form form p input[type=tel], .contact-form form p input[type=email], .contact-form p input{
+  border: 1px solid #F28123;
 }

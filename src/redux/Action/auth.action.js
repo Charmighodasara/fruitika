@@ -26,5 +26,4 @@ export const forgotAction = (data) => (dispatch) => {
 
 export const goggleSignInAction = () => (dispatch) => {
     dispatch({ type : ActionTypes.GOOGLESIGNIN_USER })
-    console.log("hyyy");
 }

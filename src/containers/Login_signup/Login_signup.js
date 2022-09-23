@@ -189,17 +189,20 @@ function Login_signup(props) {
                                             }
                                             {
                                                 forgot === 'true' ?
-                                                    <p><button type="submit">Submit</button></p>
+                                                    <p><button type="submit" className='login'>Submit</button></p>
                                                     :
                                                     user === 'login' ?
                                                         <>
-                                                            <p><button type="submit">Login</button></p>
-                                                            <p >or Login With</p>
-                                                            <div><a type="submit" onClick={() => { googleSignIn() }}> <span  title='google'><GoogleIcon/></span></a></div>
+                                                            <p><button type="submit" className='login'>Login</button></p>
+                                                            {/* <h6 >or </h6> */}
+                                                            <div><button type="submit" className='login' onClick={() => { googleSignIn() }}>Login With <span  title='google'><GoogleIcon/></span></button></div>
                                                             
                                                         </>
                                                         :
-                                                        <p><button type="submit">Signup</button></p>
+                                                        <>
+                                                        <p><button type="submit" className='login'>Signup</button></p>
+                                                        <div><button type="submit" className='login' onClick={() => { googleSignIn() }}>Login With <span><GoogleIcon/></span></ button></div>
+                                                        </>
                                             }
                                             {forgot === 'true' ?
                                                 <p>Go back to login / signup <a type="submit" onClick={() => setForgot('false')}><span> back</span></a>
@@ -209,7 +212,7 @@ function Login_signup(props) {
                                                     <p>create an new account <a type="submit" onClick={() => setUser('signup')}><span>signup</span> </a>
                                                     </p>
                                                     :
-                                                    <p>already an account <a type="submit" onClick={() => setUser('login')}> login</a>
+                                                    <p>already an account <a type="submit" onClick={() => setUser('login')}><span>login</span></a>
                                                     </p>
                                             }
                                         </Form>

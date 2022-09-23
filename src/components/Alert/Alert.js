@@ -20,7 +20,7 @@ function Alert(props) {
                     }
                 })
         }
-        setTimeout(() => {dispatch(resetAlert())}, 2000);
+        setTimeout(() => {dispatch(resetAlert())}, 1000);
     },[alert.text])
 
     return (
