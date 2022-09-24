@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { themeContext } from '../../context/ThemeContext';
+import Category from '../Categories/Category/Category';
 
 function Index(props) {
     const value = useContext(themeContext);
@@ -49,9 +50,11 @@ function Index(props) {
                 </div>
                 {/* end hero area */}
 
+                <Category />
+
                 {/* Fruits Category */}
-                <div className={`product-section mt-100 ${value.theme}`}>
-                    <div className="container">
+                {/* <div className={`product-section mt-100 ${value.theme}`}>
+                    <div className="container"> */}
                         {/* <div className="row">
                             <div className="col-lg-8 offset-lg-2 text-center">
                                 <div className="section-title">
@@ -59,7 +62,7 @@ function Index(props) {
                                 </div>
                             </div>
                         </div> */}
-                        <div className="row justify-content-between">
+                        {/* <div className="row justify-content-between">
                             <div className="col-lg-2 col-md-4 text-center">
                                 <div className={` category ${value.theme}`}>
                                     <div className=" category">
@@ -107,7 +110,7 @@ function Index(props) {
 
                         </div>
                     </div>
-                </div>
+                </div>  */}
                 {/* end Fruits Category */}
 
                 {/* features list section */}

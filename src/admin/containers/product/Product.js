@@ -14,6 +14,7 @@ import EditIcon from '@mui/icons-material/Edit';
 import { useDispatch, useSelector } from 'react-redux';
 import { addProduct, deleteProduct, GetProduct, updateProduct } from '../../../redux/Action/Product.getaction';
 import { InputLabel, MenuItem, Select } from '@mui/material';
+import { GetCategory } from '../../../redux/Action/Category.action';
 
 function Product(props) {
     const [open, setOpen] = useState(false);
@@ -25,8 +26,9 @@ function Product(props) {
 
     const dispatch = useDispatch()
     const product = useSelector(state => state.product)
-    const count = useSelector(state => state.counter)
     const category = useSelector(state => state.category)
+    console.log(category.category.length);
+
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -126,15 +128,7 @@ function Product(props) {
 
     const columns = [
         {
-            field: 'category', headerName: 'Product', width: 150,
-            renderCell: (params) => {
-                category.category.map((c) => {
-                    if (c.id === params.row.category) {
-                        return c.category
-                    }
-                })
-            }
-        },
+            field: 'category', headerName: 'Product category', width: 150 },
         { field: 'name', headerName: 'Product Name', width: 150 },
         { field: 'quantity', headerName: 'Quantity', width: 150 },
         { field: 'price', headerName: 'Price', width: 150 },
@@ -202,7 +196,7 @@ function Product(props) {
                         <p>{product.error}</p>
                         :
                         <div>
-                            <h2>Fruitkha Products {count.counter}</h2>
+                            <h2>Fruitkha Products</h2>
                             <Button variant="outlined" onClick={handleClickOpen}>
                                 Add Product
                             </Button>
@@ -241,10 +235,8 @@ function Product(props) {
                                 <Formik values={formik} >
                                     <Form onSubmit={handleSubmit}>
                                         <DialogContent>
-                                            <InputLabel >Select Product Category</InputLabel>
                                             <Select
                                                 name='category'
-
                                                 fullWidth
                                                 variant="standard"
                                                 onBlur={handleBlur}
@@ -254,12 +246,11 @@ function Product(props) {
                                                     category.category.length > 0 ?
                                                         category.category.map((c) => {
                                                             return (
-                                                                <MenuItem value={c.name}>{c.category}</MenuItem>
+                                                                <MenuItem value={c.name} >{c.name}</MenuItem>
                                                             )
                                                         })
                                                         :
                                                         null
-
                                                 }
                                             </Select>
                                             {errors.category && touched.category ? <p>{errors.category}</p> : ''}

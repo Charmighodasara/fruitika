@@ -23,6 +23,10 @@ function Category(props) {
     const [editData, setEditData] = useState(false)     // edit data 
     const [did, setDid] = useState(0)                   //delete data
 
+    const category = useSelector(state => state.category)
+    const product = useSelector(state => state.product)
+    console.log(product.product);
+
     const handleClickOpen = () => {
         setOpen(true);
     };
@@ -113,8 +117,7 @@ function Category(props) {
         // loadData()
         dispatch(GetCategory())
     }, [])
-    const category = useSelector(state => state.category)
-    // console.log(category.category);
+   
     const { handleSubmit, handleBlur, handleChange, errors, touched, values, setFieldValue } = formik
     return (
         <div>
