@@ -57,7 +57,7 @@ function Header(props) {
                                                 <NavLink className="mobile-hide search-bar-icon" to={'/search'} onClick={() => handleClick()}><i className="fas fa-search" /></NavLink>
 
                                                 {
-                                                    auth.user === '' ?
+                                                    auth.user === null ?
                                                         <NavLink className="shopping-cart" to={'/login-signup'} title="SignUp/Login" onClick={() => handleClick()}><i className="fas fa-user" /></NavLink>
                                                         :
 

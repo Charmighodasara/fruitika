@@ -18,7 +18,7 @@ export const authReducer = (state = initval, action) => {
             return {
                 ...state,
                 isLoading: false,
-                user: '',
+                user: null,
                 error: ''
             }
         default:
