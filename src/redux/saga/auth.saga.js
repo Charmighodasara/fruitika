@@ -20,9 +20,9 @@ function* signUp(action) {
 function* signin(action) {
   try {
     const user = yield call(signInApi, action.payload);
+    yield put(setAlert({ text: user.payload, color: "success" }))
     console.log(user);
     yield put(signedInAction(user))
-    yield put(setAlert({ text: user.payload, color: "success" }))
     history.push('/')
     
   } catch (e) {
@@ -34,9 +34,9 @@ function* signin(action) {
 function* signOut(action) {
   try {
       const user = yield call(signOutApi)
+      yield put(setAlert({ text: user.payload, color: "success" }))
       console.log(user);
       yield put(signedoutInAction(user))
-      yield put(setAlert({ text: user.payload, color: "success" }))
       history.push('/')
 
   } catch (error) {
@@ -48,9 +48,9 @@ function* signOut(action) {
 function* forgot(action) {
   try {
     const user = yield call(forgotApi, action.payload);
+    yield put(setAlert({ text: user.payload, color: "success" }))
     console.log(user);
     yield put(signedInAction(user))
-    yield put(setAlert({ text: user.payload, color: "success" }))
     history.push('/')
     
   } catch (e) {
@@ -61,16 +61,18 @@ function* forgot(action) {
 
 function* googleSignin(action) {
   try {
-    const user = yield call(googleSignInApi, action.payload)
-    yield put(signedInAction(user))
-    history.push('/')
-    yield put(setAlert({ text: "Sign In SuccessFully", color: "success" }))
-    console.log(user);
+      const user = yield call(googleSignInApi, action.payload);
+      yield put(setAlert({ text: "Login Successfully ", color: "success" }))
+      yield put(signedInAction(user))
+      history.push('/')
+      console.log(user);
+
   } catch (e) {
-    yield put(setAlert({ text: "error", color: "error" }))
-    console.log(e);
+      console.log(e);
+      yield put(setAlert({ text: e.payload, color: "error" }))
   }
 }
+
 export function* watchSignup() {
   yield takeEvery(ActionTypes.SIGNUP_USER, signUp);
 }

@@ -7,7 +7,7 @@ function Privateroute({component : Component , ...rest}) {
     const auth = useSelector(state => state.auth)
     return (
         <Route {...rest} render={props =>(
-            auth.user !== '' ?
+            auth.user !== null ?
             <Component {...props}/> 
             :
             <Redirect to={'/login-signup'} />

@@ -13,7 +13,7 @@ export const signUpApi = (data) => {
                 onAuthStateChanged(auth, (user) => {
                     sendEmailVerification(auth.currentUser)
                         .then(() => {
-                            resolve({ payload: "Check your email." });
+                            resolve({ payload: "check your email" });
                         })
                         .catch((e) => {
                             reject({ payload: e });
@@ -25,9 +25,9 @@ export const signUpApi = (data) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
                 if (errorCode.localeCompare("auth/email-already-in-use") === 0) {
-                    reject({ payload: "Email id allready verified." });
+                    reject({ payload: "email id allready verified" });
                 } else {
-                    reject({ payload: errorCode });
+                    reject({ payload: error });
                 }
             });
     })
@@ -42,9 +42,9 @@ export const signInApi = (data) => {
                 const user = userCredential.user;
                 console.log(user);
                 if (user.emailVerified) {
-                    resolve({ payload: "SignIn succesfull" });
+                    resolve({ payload: "signIn succesfull" });
                 } else {
-                    resolve({ payload: "Please varify your email." });
+                    resolve({ payload: "please varify your email." });
                 }
             })
             .catch((error) => {
@@ -53,9 +53,9 @@ export const signInApi = (data) => {
                 const errorMessage = error.message;
 
                 if (errorCode.localeCompare("auth/wrong-password") === 0) {
-                    reject({ payload: " Password was wrong." });
+                    reject({ payload: " password was wrong." });
                 } else if (errorCode.localeCompare("auth/user-not-found") === 0) {
-                    reject({ payload: "Email or password wrong." });
+                    reject({ payload: "email was wrong." });
                 } else {
                     reject({ payload: errorCode });
                 }
@@ -72,7 +72,7 @@ export const signOutApi = () => {
             .then(() => {
                 resolve({ payload: "Sign-out successfull." })
             }).catch((error) => {
-                reject({ payload: " Something wents Wrong." })
+                reject({ payload: " something wents Wrong." })
             });
     })
 }
@@ -82,13 +82,13 @@ export const forgotApi = (data) => {
     return new Promise((resolve, reject) => {
         sendPasswordResetEmail(auth, data.email)
             .then(() => {
-                resolve({ payload: "Please check your email for reset password." })
+                resolve({ payload: "Please check your email." })
             })
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
                 // reject({ payload: errorCode })
-                reject({ payload: " Something went wrong " });
+                reject({ payload: " something went wrong " });
 
             });
     })
@@ -104,13 +104,13 @@ export const googleSignInApi = () => {
                 const credential = GoogleAuthProvider.credentialFromResult(result);
                 const token = credential.accessToken;
                 const user = result.user;
-                resolve({ payload: user })
+                resolve({payload : user})
             }).catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
                 const email = error.customData.email;
                 const credential = GoogleAuthProvider.credentialFromError(error);
-                reject({ payload: errorCode })
+                reject({payload: errorCode})
             });
     })
 }
