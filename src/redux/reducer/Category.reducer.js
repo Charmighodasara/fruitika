@@ -6,7 +6,7 @@ const initval = {
 }
 
 export const categoryReducer = (state = initval, action) => {
-    console.log(action.payload , action.type);
+    // console.log(action.payload , action.type);
     switch (action.type) {
         case ActionTypes.GETDATA_CATEGORY:
             return {
