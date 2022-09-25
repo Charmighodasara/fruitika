@@ -61,7 +61,7 @@ function* forgot(action) {
 
 function* googleSignin(action) {
   try {
-      const user = yield call(googleSignInApi);
+      const user = yield call(googleSignInApi , action.payload);
       yield put(setAlert({ text: "Login Successfully ", color: "success" }))
       yield put(signedInAction(user))
       history.push('/')
