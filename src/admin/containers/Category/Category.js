@@ -25,7 +25,7 @@ function Category(props) {
 
     const category = useSelector(state => state.category)
     const product = useSelector(state => state.product)
-    console.log(product.product);
+    // console.log(product.product);
 
     const handleClickOpen = () => {
         setOpen(true);

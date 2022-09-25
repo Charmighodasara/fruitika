@@ -12,7 +12,7 @@ function Category(props) {
     }
     const dispatch = useDispatch()
     const category = useSelector(state => state.category)
-    console.log(category.category);
+    // console.log(category.category);
 
     useEffect(() => {
         dispatch(GetCategory())
