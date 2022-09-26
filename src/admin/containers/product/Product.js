@@ -236,6 +236,7 @@ function Product(props) {
                                     <Form onSubmit={handleSubmit}>
                                         <DialogContent>
                                             <Select
+                                            value={values.category}
                                                 name='category'
                                                 fullWidth
                                                 variant="standard"

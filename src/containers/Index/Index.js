@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { themeContext } from '../../context/ThemeContext';
 import Category from '../Categories/Category/Category';
+import ProductsView from '../ProductsView/ProductsView';
 
 function Index(props) {
     const value = useContext(themeContext);
@@ -52,66 +53,7 @@ function Index(props) {
 
                 <Category />
 
-                {/* Fruits Category */}
-                {/* <div className={`product-section mt-100 ${value.theme}`}>
-                    <div className="container"> */}
-                        {/* <div className="row">
-                            <div className="col-lg-8 offset-lg-2 text-center">
-                                <div className="section-title">
-                                    <h3><span className="orange-text">Fruits</span> Category</h3>
-                                </div>
-                            </div>
-                        </div> */}
-                        {/* <div className="row justify-content-between">
-                            <div className="col-lg-2 col-md-4 text-center">
-                                <div className={` category ${value.theme}`}>
-                                    <div className=" category">
-                                        <NavLink to={'/winter-fruits'} onClick={() => handleClick()}><img src="assets/img/products/product-img-4.jpg" alt /></NavLink>
-                                    </div>
-                                </div>
-                                <h5 className='mt-3'>Winter Season Fruits</h5>
-                            </div>
-
-                            <div className="col-lg-2 col-md-4 text-center">
-                                <div className={` category ${value.theme}`}>
-                                    <div className=" category">
-                                        <NavLink to={'/spring-fruits'} onClick={() => handleClick()}><img src="assets/img/products/product-img-1.jpg" alt /></NavLink>
-                                    </div>
-                                </div>
-                                <h5 className='mt-3'>Spring Season Fruits</h5>
-                            </div>
-
-                            <div className="col-lg-2 col-md-4 text-center">
-                                <div className={` category ${value.theme}`}>
-                                    <div className=" category">
-                                        <NavLink to={'/summer-fruits'} onClick={() => handleClick()}><img src="assets/img/products/product-img-9.jpg" alt /></NavLink>
-                                    </div>
-                                </div>
-                                <h5 className='mt-3'>Summer Season Fruits</h5>
-                            </div>
-
-                            <div className="col-lg-2 col-md-4 text-center">
-                                <div className={` category ${value.theme}`}>
-                                    <div className=" category">
-                                        <NavLink to={'/fall-fruits'} onClick={() => handleClick()}><img src="assets/img/products/product-img-2.jpg" alt /></NavLink>
-                                    </div>
-                                </div>
-                                <h5 className='mt-3'>Fall Season Fruits</h5>
-                            </div>
-
-                            <div className={` col-lg-2 col-md-4 text-center${value.theme}`}>
-                                <div className=" category">
-                                    <div className=" category">
-                                        <NavLink to={'allseason-fruits'} onClick={() => handleClick()}><img src="assets/img/products/product-img-8.jpg" alt /></NavLink>
-                                    </div>
-                                </div>
-                                <h5 className='mt-3'>All Season Fruits</h5>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>  */}
-                {/* end Fruits Category */}
+                <ProductsView />
 
                 {/* features list section */}
                 <div className={`list-section pt-100 pb-100 my-5 ${value.theme}`}>
@@ -197,6 +139,10 @@ function Index(props) {
                                     <NavLink to={'/cart'} className="cart-btn"><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>
                                 </div>
                             </div>
+                            <div className='text-center mx-auto'>
+                                <NavLink to={'/shop'} className="cart-btn" onClick={() => handleClick()}><i className="fas fa-shopping-cart" /> All Products</NavLink>
+                            </div>
+
                         </div>
                     </div>
                 </div>
