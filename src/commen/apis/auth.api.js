@@ -95,8 +95,8 @@ export const forgotApi = (data) => {
     })
 }
 
-export const googleSignInApi = (data) => {
-    console.log("googleSignInApi", data);
+export const googleSignInApi = () => {
+    console.log("googleSignInApi");
     return new Promise((resolve, reject) => {
         const provider = new GoogleAuthProvider();
 
