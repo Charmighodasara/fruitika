@@ -30,23 +30,24 @@ function Category(props) {
         <div>
             <div className={`product-section mt-100 ${value.theme}`}>
                 <div className="container">
-                    <div className="row justify-content-between">{
-                        category.category.map((c) => (
-                            <div className="col-lg-2 col-md-4 text-center">
-                                <div className={` category ${value.theme}`}>
-                                    <div className=" category">
-                                        {
+                    <div className="row justify-content-between">
+                        {
+                            category.category.map((c) => (
+                                <div className="col-lg-2 col-md-4 text-center">
+                                    <div className={` category ${value.theme}`}>
+                                        <div className=" category">
+                                            {
                                                 <NavLink to={'/winter-fruits'} onClick={() => handleClick()}><img src={c.profile_img} alt /></NavLink>
-                                        }
+                                            }
 
+                                        </div>
                                     </div>
+                                    <h5 className='mt-3'>{c.name}</h5>
                                 </div>
-                                <h5 className='mt-3'>{c.name}</h5>
-                            </div>
 
-                        ))
+                            ))
 
-                    }
+                        }
                     </div>
                     {/* <div className="col-lg-2 col-md-4 text-center">
                             <div className={` category ${value.theme}`}>

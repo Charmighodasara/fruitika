@@ -140,7 +140,7 @@ function Index(props) {
                                 </div>
                             </div>
                             <div className='text-center mx-auto'>
-                                <NavLink to={'/shop'} className="cart-btn" onClick={() => handleClick()}><i className="fas fa-shopping-cart" /> All Products</NavLink>
+                                <NavLink to={'/shop'} className="cart-btn" onClick={() => handleClick()}> All Products</NavLink>
                             </div>
 
                         </div>

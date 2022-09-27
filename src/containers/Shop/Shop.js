@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { themeContext } from '../../context/ThemeContext';
+import Category from '../Categories/Category/Category';
 
 function Shop(props) {
     const value = useContext(themeContext);
@@ -39,21 +40,21 @@ function Shop(props) {
                     </div>
                 </div>
                 {/* end breadcrumb section */}
+                <Category />
                 {/* products */}
-                <div className="product-section mt-150 mb-150">
+                <div className="product-section mt-100 mb-150">
                     <div className="container">
                         <div className="row">
                             <div className="col-md-12">
                                 <div className="product-filters">
                                     <ul>
                                         <li className="active" data-filter="*">All</li>
-                                        {/* <li data-filter=".strawberry">Strawberry</li>
-                                    <li data-filter=".berry">Berry</li>
-                                    <li data-filter=".lemon">Lemon</li> */}
                                     </ul>
                                 </div>
                             </div>
                         </div>
+                       
+
                         <div className="row product-lists">
                             <div className="col-lg-4 col-md-6 text-center strawberry">
                                 <div className="single-product-item">
