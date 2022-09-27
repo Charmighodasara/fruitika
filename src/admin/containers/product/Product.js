@@ -128,7 +128,8 @@ function Product(props) {
 
     const columns = [
         {
-            field: 'category', headerName: 'Product category', width: 150 },
+            field: 'category', headerName: 'Product category', width: 150
+        },
         { field: 'name', headerName: 'Product Name', width: 150 },
         { field: 'quantity', headerName: 'Quantity', width: 150 },
         { field: 'price', headerName: 'Price', width: 150 },
@@ -236,7 +237,7 @@ function Product(props) {
                                     <Form onSubmit={handleSubmit}>
                                         <DialogContent>
                                             <Select
-                                            value={values.category}
+                                                value={values.category}
                                                 name='category'
                                                 fullWidth
                                                 variant="standard"
