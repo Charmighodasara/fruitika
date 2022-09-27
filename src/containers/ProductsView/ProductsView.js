@@ -38,7 +38,7 @@ function ProductsView(props) {
                     </div>
                     <div className="row ">{
                         product.product.map((p) => (
-                            <div className="col-lg-3 col-md-6 text-center">
+                            <div className="col-lg-4 col-md-6 text-center">
                                 <div className={`single-product-item ${value.theme}`}>
                                     <div className="product-image">
                                         <div onClick={() => handlePush(p.name)}><img src={p.profile_img} alt /></div>

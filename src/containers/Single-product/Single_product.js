@@ -68,15 +68,15 @@ function Single_product(props) {
                                         </div>
                                         <div className="col-md-7 ">
                                             <div className="single-product-content">
-                                                <h3>{p.name} have polyphenols</h3>
-                                                <p className="single-product-pricing"><span>Per Kg</span> ${p.price}</p>
-                                                {/* <p>strawberries are a sodium-free, fat-free, cholesterol-free, low-calorie food. They are among the top 20 fruits in antioxidant capacity and are a good source of manganese and potassium.</p> */}
+                                                <h3>Fruit Name : {p.name}</h3>
+                                                <p className="single-product-pricing"><span>Per {p.quantity}</span> ${p.price}</p>
+                                                <p>Fruits are an excellent source of essential vitamins and minerals, and they are high in fiber. Fruits also provide a wide range of health-boosting antioxidants, including flavonoids. Eating a diet high in fruits and vegetables can reduce a person's risk of developing heart disease, cancer, inflammation, and diabetes.</p>
                                                 <div className="single-product-form">
+                                                    <p><strong>Categories: </strong>{p.category}</p>
                                                     <form action="index.html">
                                                         <input type="number" placeholder={1} />
                                                     </form>
-                                                    <NavLink to={'/cart'} className="cart-btn mt-3"><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>
-                                                    <p><strong>Categories: </strong>Fruits, Organic , {p.category}</p>
+                                                    <NavLink to={'/cart'} className="cart-btn mt-3" onClick={() => handleClick()}><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>
                                                 </div>
                                                 {/* <h4>Share:</h4>
                                                 <ul className="product-share ">
