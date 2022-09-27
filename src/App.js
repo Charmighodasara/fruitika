@@ -33,11 +33,11 @@ import Layout from './admin/components/layout/Layout';
 import Product from './admin/containers/product/Product';
 import Counter from './admin/containers/Counter/Counter';
 import Category from './admin/containers/Category/Category';
-import { configureStore } from './redux/store';
+import { persistor, store } from './redux/store';
+
 
 function App() {
 
-  const { store, persistor } = configureStore()
   return (
 
     <div >

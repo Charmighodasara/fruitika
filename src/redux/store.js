@@ -9,7 +9,7 @@ import { rootReducer } from './reducer/root.reducer'
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['auth', 'counter', 'category' , 'product']
+  whitelist: ['auth', 'counter', 'category', 'product']
 }
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)
@@ -17,14 +17,12 @@ const sagaMiddleware = createSagaMiddleware()
 
 const middleware = [thunk, sagaMiddleware]
 
-export const configureStore = () => {
 
-  const store = createStore(
-    persistedReducer,
-    applyMiddleware(...middleware)
-  )
-  let persistor = persistStore(store)
-  sagaMiddleware.run(rootSaga)
-  
-  return { store, persistor };
-}
+export const store = createStore(
+  persistedReducer,
+  applyMiddleware(...middleware)
+)
+
+export let persistor = persistStore(store)
+sagaMiddleware.run(rootSaga)
+
