@@ -2,13 +2,14 @@ import React, { useContext, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { themeContext } from '../../context/ThemeContext';
+import { history } from '../../history';
 import { GetProduct } from '../../redux/Action/Product.getaction';
 
 function ProductsView(props) {
 
     const value = useContext(themeContext);
     const handleClick = () => {
-        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+        window.scrollTo({ top: 250, left: 0, behavior: 'smooth' })
     }
 
     const dispatch = useDispatch()
@@ -20,7 +21,10 @@ function ProductsView(props) {
     useEffect(() => {
         dispatch(GetProduct())
     }, [])
-
+    const handlePush = (name) => {
+        history.push('/single-product' , {name:name} ) 
+        handleClick()
+    }
     return (
         <div>
             <div className={`product-section mt-100 ${value.theme}`}>
@@ -28,7 +32,7 @@ function ProductsView(props) {
                     <div className="row">
                         <div className="col-lg-8 offset-lg-2 text-center">
                             <div className="section-title">
-                                <h3><span className="orange-text">Add</span> Products</h3>
+                                <h3><span className="orange-text">Our</span> Products</h3>
                             </div>
                         </div>
                     </div>
@@ -37,7 +41,7 @@ function ProductsView(props) {
                             <div className="col-lg-3 col-md-6 text-center">
                                 <div className={`single-product-item ${value.theme}`}>
                                     <div className="product-image">
-                                        <NavLink to={'/single-product'}><img src={p.profile_img} alt /></NavLink>
+                                        <div onClick={() => handlePush(p.name)}><img src={p.profile_img} alt /></div>
                                     </div>
                                     <h3>{p.name}</h3>
                                     <p className="product-price"><span>Per {p.quantity}</span> {p.price}$ </p>
@@ -61,7 +65,7 @@ function ProductsView(props) {
                             </div>
                         </div>
                        */}
-                 
+
                 </div>
             </div>
         </div>

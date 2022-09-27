@@ -53,7 +53,7 @@ function Index(props) {
 
                 <Category />
 
-                <ProductsView />
+                {/* <ProductsView /> */}
 
                 {/* features list section */}
                 <div className={`list-section pt-100 pb-100 my-5 ${value.theme}`}>
@@ -112,7 +112,7 @@ function Index(props) {
                             <div className="col-lg-4 col-md-6 text-center">
                                 <div className={`single-product-item ${value.theme}`}>
                                     <div className="product-image">
-                                        <NavLink to={'/single-product'}><img src="assets/img/products/product-img-1.jpg" alt /></NavLink>
+                                        <div><img src="assets/img/products/product-img-1.jpg" alt /></div>
                                     </div>
                                     <h3>Strawberry</h3>
                                     <p className="product-price"><span>Per Kg</span> 85$ </p>
@@ -122,7 +122,7 @@ function Index(props) {
                             <div className={`col-lg-4 col-md-6 text-center ${value.theme}`}>
                                 <div className={`single-product-item ${value.theme}`}>
                                     <div className="product-image">
-                                        <NavLink to={'/single-product'}><img src="assets/img/products/product-img-2.jpg" alt /></NavLink>
+                                    <div><img src="assets/img/products/product-img-2.jpg" alt /></div>
                                     </div>
                                     <h3>Grapes</h3>
                                     <p className="product-price"><span>Per Kg</span> 70$ </p>
@@ -132,7 +132,7 @@ function Index(props) {
                             <div className="col-lg-4 col-md-6 offset-md-3 offset-lg-0 text-center">
                                 <div className={`single-product-item ${value.theme}`}>
                                     <div className="product-image">
-                                        <NavLink to={'/single-product'}><img src="assets/img/products/product-img-3.jpg" alt /></NavLink>
+                                        <div><img src="assets/img/products/product-img-3.jpg" alt /></div>
                                     </div>
                                     <h3>Lemon</h3>
                                     <p className="product-price"><span>Per Kg</span> 35$ </p>

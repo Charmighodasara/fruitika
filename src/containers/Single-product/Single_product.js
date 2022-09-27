@@ -16,6 +16,9 @@ function Single_product(props) {
         dispatch(GetProduct())
     }, [])
 
+    let fData = product.product.filter((l) => l.name === props.location.state.name)
+    console.log(fData);
+
     return (
         <div>
             <div className={`${value.theme}`}>
@@ -56,10 +59,10 @@ function Single_product(props) {
                     <div className="container ">
                         <div className="row ">
                             {
-                                product.product.map((p) => (
+                                fData.map((p) => (
                                     <>
                                         <div className="col-md-5">
-                                            <div className="single-product-img">
+                                            <div className="single-product-img" >
                                                 <img src={p.profile_img} alt />
                                             </div>
                                         </div>
@@ -67,7 +70,7 @@ function Single_product(props) {
                                             <div className="single-product-content">
                                                 <h3>{p.name} have polyphenols</h3>
                                                 <p className="single-product-pricing"><span>Per Kg</span> ${p.price}</p>
-                                                <p>strawberries are a sodium-free, fat-free, cholesterol-free, low-calorie food. They are among the top 20 fruits in antioxidant capacity and are a good source of manganese and potassium.</p>
+                                                {/* <p>strawberries are a sodium-free, fat-free, cholesterol-free, low-calorie food. They are among the top 20 fruits in antioxidant capacity and are a good source of manganese and potassium.</p> */}
                                                 <div className="single-product-form">
                                                     <form action="index.html">
                                                         <input type="number" placeholder={1} />
@@ -75,13 +78,13 @@ function Single_product(props) {
                                                     <NavLink to={'/cart'} className="cart-btn mt-3"><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>
                                                     <p><strong>Categories: </strong>Fruits, Organic , {p.category}</p>
                                                 </div>
-                                                <h4>Share:</h4>
+                                                {/* <h4>Share:</h4>
                                                 <ul className="product-share ">
                                                     <li><a href><i className="fab fa-facebook-f" /></a></li>
                                                     <li><a href><i className="fab fa-twitter" /></a></li>
                                                     <li><a href><i className="fab fa-google-plus-g" /></a></li>
                                                     <li><a href><i className="fab fa-linkedin" /></a></li>
-                                                </ul>
+                                                </ul> */}
                                             </div>
                                         </div>
                                     </>
