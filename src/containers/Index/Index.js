@@ -116,17 +116,17 @@ function Index(props) {
                                     </div>
                                     <h3>Strawberry</h3>
                                     <p className="product-price"><span>Per Kg</span> 85$ </p>
-                                    <NavLink to={'/cart'} className="cart-btn"><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>
+                                    <NavLink to={'/cart'} className="cart-btn" onClick={() => handleClick()}><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>
                                 </div>
                             </div>
                             <div className={`col-lg-4 col-md-6 text-center ${value.theme}`}>
                                 <div className={`single-product-item ${value.theme}`}>
                                     <div className="product-image">
-                                    <div><img src="assets/img/products/product-img-2.jpg" alt /></div>
+                                        <div><img src="assets/img/products/product-img-2.jpg" alt /></div>
                                     </div>
                                     <h3>Grapes</h3>
                                     <p className="product-price"><span>Per Kg</span> 70$ </p>
-                                    <NavLink to={'/cart'} className="cart-btn"><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>
+                                    <NavLink to={'/cart'} className="cart-btn" onClick={() => handleClick()}><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>
                                 </div>
                             </div>
                             <div className="col-lg-4 col-md-6 offset-md-3 offset-lg-0 text-center">
@@ -136,8 +136,37 @@ function Index(props) {
                                     </div>
                                     <h3>Lemon</h3>
                                     <p className="product-price"><span>Per Kg</span> 35$ </p>
-                                    <NavLink to={'/cart'} className="cart-btn"><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>
+                                    <NavLink to={'/cart'} className="cart-btn" onClick={() => handleClick()}><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>
                                 </div>
+                            </div>
+                            <div className="col-lg-4 col-md-6 text-center strawberry">
+                                <div className="single-product-item">
+                                    <div className="product-image">
+                                        <div><img src="assets/img/products/product-img-9.jpg" alt /></div>
+                                    </div>
+                                    <h3>Mango</h3>
+                                    <p className="product-price"><span>Per Kg</span> 90$ </p>
+                                    <NavLink to={'/cart'} className="cart-btn" onClick={() => handleClick()}><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>                            </div>
+                            </div>
+
+                            <div className="col-lg-4 col-md-6 text-center strawberry">
+                                <div className="single-product-item">
+                                    <div className="product-image">
+                                        <div><img src="assets/img/products/product-img-10.jpg" alt /></div>
+                                    </div>
+                                    <h3>Orange</h3>
+                                    <p className="product-price"><span>Per Kg</span> 55$ </p>
+                                    <NavLink to={'/cart'} className="cart-btn" onClick={() => handleClick()}><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>                            </div>
+                            </div>
+
+                            <div className="col-lg-4 col-md-6 text-center strawberry">
+                                <div className="single-product-item">
+                                    <div className="product-image">
+                                        <div><img src="assets/img/products/product-img-11.jpg" alt /></div>
+                                    </div>
+                                    <h3>Watermelon</h3>
+                                    <p className="product-price"><span>Per Kg</span> 60$ </p>
+                                    <NavLink to={'/cart'} className="cart-btn" onClick={() => handleClick()}><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>                            </div>
                             </div>
                             <div className='text-center mx-auto'>
                                 <NavLink to={'/shop'} className="cart-btn" onClick={() => handleClick()}> All Products</NavLink>

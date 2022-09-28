@@ -22,7 +22,7 @@ function ProductsView(props) {
         dispatch(GetProduct())
     }, [])
     const handlePush = (name) => {
-        history.push('/single-product' , {name:name} ) 
+        history.push('/single-product', { name: name })
         handleClick()
     }
     return (
@@ -48,24 +48,9 @@ function ProductsView(props) {
                                     <NavLink to={'/cart'} className="cart-btn"><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>
                                 </div>
                             </div>
-
                         ))
-
                     }
                     </div>
-
-                    {/* <div className={`col-lg-3 col-md-6 text-center ${value.theme}`}>
-                            <div className={`single-product-item ${value.theme}`}>
-                                <div className="product-image">
-                                    <NavLink to={'/single-product'}><img src="assets/img/products/product-img-2.jpg" alt /></NavLink>
-                                </div>
-                                <h3>Grapes</h3>
-                                <p className="product-price"><span>Per Kg</span> 70$ </p>
-                                <NavLink to={'/cart'} className="cart-btn"><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>
-                            </div>
-                        </div>
-                       */}
-
                 </div>
             </div>
         </div>

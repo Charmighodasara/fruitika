@@ -34,6 +34,7 @@ import Product from './admin/containers/product/Product';
 import Counter from './admin/containers/Counter/Counter';
 import Category from './admin/containers/Category/Category';
 import { persistor, store } from './redux/store';
+import SeasonWise from './containers/Categories/SeasonWise';
 
 
 function App() {
@@ -66,6 +67,7 @@ function App() {
                 <Publicroute path={'/summer-fruits'} exact component={SummerFruits} />
                 <Publicroute path={'/fall-fruits'} exact component={FallFruits} />
                 <Publicroute path={'/allseason-fruits'} exact component={AllSeason} />
+                <Publicroute path={'/season-fruits'} exact component={SeasonWise} />
 
                 {/* adminpanel */}
                 <Layout >

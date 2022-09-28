@@ -2973,6 +2973,9 @@ a span {
 
 .category {
   border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  background-color: transparent;
   border: 1px solid #F28123;
   -webkit-box-shadow: 0 0 20px #e4e4e4;
   box-shadow: 0 0 20px #e4e4e4;

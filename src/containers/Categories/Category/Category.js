@@ -3,6 +3,7 @@ import React, { useContext, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { themeContext } from '../../../context/ThemeContext';
+import { history } from '../../../history';
 import { GetCategory } from '../../../redux/Action/Category.action';
 
 function Category(props) {
@@ -26,6 +27,10 @@ function Category(props) {
     //     { to: '/allseason-fruits' }
     // ]
 
+    const handleId = (name)=>{
+        history.push('/season-fruits' , {name:name} )
+        handleClick()
+    }
     return (
         <div>
             <div className={`product-section mt-100 ${value.theme}`}>
@@ -35,9 +40,9 @@ function Category(props) {
                             category.category.map((c) => (
                                 <div className="col-lg-2 col-md-4 text-center">
                                     <div className={` category ${value.theme}`}>
-                                        <div className=" category">
+                                        <div className="category">
                                             {
-                                                <NavLink to={'/winter-fruits'} onClick={() => handleClick()}><img src={c.profile_img} alt /></NavLink>
+                                                <a onClick={()=> handleId(c.name)}><img src={c.profile_img} alt /></a>
                                             }
 
                                         </div>

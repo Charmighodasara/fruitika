@@ -7,7 +7,7 @@ import { GetProduct } from '../../redux/Action/Product.getaction';
 function Single_product(props) {
     const value = useContext(themeContext);
     const handleClick = () => {
-        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+        window.scrollTo({ top: 250, left: 0, behavior: 'smooth' })
     }
     const product = useSelector(state => state.product)
     const dispatch = useDispatch()
@@ -68,9 +68,9 @@ function Single_product(props) {
                                         </div>
                                         <div className="col-md-7 ">
                                             <div className="single-product-content">
-                                                <h3>Fruit Name : {p.name}</h3>
+                                                <h3> {p.name}</h3>
                                                 <p className="single-product-pricing"><span>Per {p.quantity}</span> ${p.price}</p>
-                                                <p>Fruits are an excellent source of essential vitamins and minerals, and they are high in fiber. Fruits also provide a wide range of health-boosting antioxidants, including flavonoids. Eating a diet high in fruits and vegetables can reduce a person's risk of developing heart disease, cancer, inflammation, and diabetes.</p>
+                                                <p>Fruits are an excellent source of essential vitamins and minerals, and they are high in fiber. Fruits also provide a wide range of health-boosting antioxidants, including flavonoids. Eating a diet high in fruits can reduce a person's risk of developing heart disease, cancer, inflammation, and diabetes.</p>
                                                 <div className="single-product-form">
                                                     <p><strong>Categories: </strong>{p.category}</p>
                                                     <form action="index.html">
