@@ -22,11 +22,8 @@ import ToggleContext from './context/ThemeContext';
 import { Provider } from 'react-redux';
 import { SnackbarProvider } from 'notistack';
 import { PersistGate } from 'redux-persist/integration/react'
-import WinterFruites from './containers/Categories/WinterFruites';
-import SpringFruites from './containers/Categories/SpringFruites';
-import SummerFruits from './containers/Categories/SummerFruits';
-import FallFruits from './containers/Categories/FallFruits';
-import AllSeason from './containers/Categories/AllSeason';
+import SeasonWise from './containers/Categories/SeasonWise';
+
 
 //adminpanel
 import Layout from './admin/components/layout/Layout';
@@ -34,7 +31,6 @@ import Product from './admin/containers/product/Product';
 import Counter from './admin/containers/Counter/Counter';
 import Category from './admin/containers/Category/Category';
 import { persistor, store } from './redux/store';
-import SeasonWise from './containers/Categories/SeasonWise';
 
 
 function App() {
@@ -62,11 +58,7 @@ function App() {
                 <Publicroute path={'/search'} exact component={Search} />
                 <Publicroute path={'/login-signup'} exact restricted={true} component={Login_signup} />
                 <Privateroute path={'/cart'} exact component={Cart} />
-                <Publicroute path={'/winter-fruits'} exact component={WinterFruites} />
-                <Publicroute path={'/spring-fruits'} exact component={SpringFruites} />
-                <Publicroute path={'/summer-fruits'} exact component={SummerFruits} />
-                <Publicroute path={'/fall-fruits'} exact component={FallFruits} />
-                <Publicroute path={'/allseason-fruits'} exact component={AllSeason} />
+                
                 <Publicroute path={'/season-fruits'} exact component={SeasonWise} />
 
                 {/* adminpanel */}

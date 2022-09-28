@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { themeContext } from '../../context/ThemeContext';
+import { history } from '../../history';
 import Category from '../Categories/Category/Category';
 import ProductsView from '../ProductsView/ProductsView';
 
@@ -8,6 +9,10 @@ function Index(props) {
     const value = useContext(themeContext);
     const handleClick = () => {
         window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+    }
+    const handlePush = () => {
+        history.push('/shop')
+        handleClick()
     }
     return (
         <div>
@@ -111,28 +116,30 @@ function Index(props) {
                         <div className="row">
                             <div className="col-lg-4 col-md-6 text-center">
                                 <div className={`single-product-item ${value.theme}`}>
-                                    <div className="product-image">
-                                        <div><img src="assets/img/products/product-img-1.jpg" alt /></div>
+                                    <div className="product-image" >
+                                        <div onClick={() => handlePush()}><img src="assets/img/products/product-img-1.jpg" alt /></div>
                                     </div>
                                     <h3>Strawberry</h3>
                                     <p className="product-price"><span>Per Kg</span> 85$ </p>
                                     <NavLink to={'/cart'} className="cart-btn" onClick={() => handleClick()}><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>
                                 </div>
                             </div>
+
                             <div className={`col-lg-4 col-md-6 text-center ${value.theme}`}>
                                 <div className={`single-product-item ${value.theme}`}>
                                     <div className="product-image">
-                                        <div><img src="assets/img/products/product-img-2.jpg" alt /></div>
+                                        <div onClick={() => handlePush()}><img src="assets/img/products/product-img-2.jpg" alt /></div>
                                     </div>
                                     <h3>Grapes</h3>
                                     <p className="product-price"><span>Per Kg</span> 70$ </p>
                                     <NavLink to={'/cart'} className="cart-btn" onClick={() => handleClick()}><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>
                                 </div>
                             </div>
+
                             <div className="col-lg-4 col-md-6 offset-md-3 offset-lg-0 text-center">
                                 <div className={`single-product-item ${value.theme}`}>
                                     <div className="product-image">
-                                        <div><img src="assets/img/products/product-img-3.jpg" alt /></div>
+                                        <div onClick={() => handlePush()}><img src="assets/img/products/product-img-3.jpg" alt /></div>
                                     </div>
                                     <h3>Lemon</h3>
                                     <p className="product-price"><span>Per Kg</span> 35$ </p>
@@ -142,7 +149,7 @@ function Index(props) {
                             <div className="col-lg-4 col-md-6 text-center strawberry">
                                 <div className="single-product-item">
                                     <div className="product-image">
-                                        <div><img src="assets/img/products/product-img-9.jpg" alt /></div>
+                                        <div onClick={() => handlePush()}><img src="assets/img/products/product-img-9.jpg" alt /></div>
                                     </div>
                                     <h3>Mango</h3>
                                     <p className="product-price"><span>Per Kg</span> 90$ </p>
@@ -152,7 +159,7 @@ function Index(props) {
                             <div className="col-lg-4 col-md-6 text-center strawberry">
                                 <div className="single-product-item">
                                     <div className="product-image">
-                                        <div><img src="assets/img/products/product-img-10.jpg" alt /></div>
+                                        <div onClick={() => handlePush()}><img src="assets/img/products/product-img-10.jpg" alt /></div>
                                     </div>
                                     <h3>Orange</h3>
                                     <p className="product-price"><span>Per Kg</span> 55$ </p>
@@ -162,7 +169,7 @@ function Index(props) {
                             <div className="col-lg-4 col-md-6 text-center strawberry">
                                 <div className="single-product-item">
                                     <div className="product-image">
-                                        <div><img src="assets/img/products/product-img-11.jpg" alt /></div>
+                                        <div onClick={() => handlePush()}><img src="assets/img/products/product-img-11.jpg" alt /></div>
                                     </div>
                                     <h3>Watermelon</h3>
                                     <p className="product-price"><span>Per Kg</span> 60$ </p>

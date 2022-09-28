@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { themeContext } from '../../context/ThemeContext';
+import { history } from '../../history';
 import { GetProduct } from '../../redux/Action/Product.getaction';
 
 function SeasonWise(props) {
@@ -17,6 +18,10 @@ function SeasonWise(props) {
     useEffect(() => {
         dispatch(GetProduct())
     }, [])
+    const handlePush = (name) => {
+        history.push('/single-product', { name: name })
+        handleClick()
+    }
     
     let fData = product.product.filter((s) => s.category === props.location.state.name)
     // console.log(fData);
@@ -69,7 +74,7 @@ function SeasonWise(props) {
                                 <div className="col-lg-4 col-md-6 text-center">
                                     <div className={`single-product-item ${value.theme}`}>
                                         <div className="product-image">
-                                            <div ><img src={p.profile_img} alt /></div>
+                                            <div onClick={() => handlePush(p.name)}><img src={p.profile_img} alt /></div>
                                         </div>
                                         <h3>{p.name}</h3>
                                         <p className="product-price"><span>Per {p.quantity}</span> {p.price}$ </p>
