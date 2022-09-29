@@ -1,9 +1,27 @@
 import React, { useContext } from 'react';
+import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { themeContext } from '../../context/ThemeContext';
 
 function Cart(props) {
     const value = useContext(themeContext);
+    const handleClick = () => {
+        window.scrollTo({ top: 50, left: 0, behavior: 'smooth' })
+    }
+
+    const product = useSelector(state => state.product)
+    const cart = useSelector(state => state.cart)
+    console.log(cart.cart);
+
+    const cartData = []
+    product.product.map((p)=>{
+        cart.cart.map((c)=>{
+            if(p.id === c.id){
+                cartData.push({...p, quantity : c.quantity})
+            }
+        })
+    })
+
     return (
         <div>
             <div className={` ${value.theme}`}>
@@ -43,12 +61,12 @@ function Cart(props) {
                 <div className="cart-section mt-150 mb-150">
                     <div className="container">
                         <div className="row">
-                            <div className="col-lg-8 col-md-12">
+                            <div className="col-lg-12 col-md-12">
                                 <div className="cart-table-wrap">
                                     <table className="cart-table">
                                         <thead className="cart-table-head">
                                             <tr className="table-head-row">
-                                                <th className="product-remove" />
+                                                <th className="product-remove">Delete</th>
                                                 <th className="product-image">Product Image</th>
                                                 <th className="product-name">Name</th>
                                                 <th className="product-price">Price</th>
@@ -56,17 +74,22 @@ function Cart(props) {
                                                 <th className="product-total">Total</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody>{
+                                            cartData.map((d)=>(
+                                                
                                             <tr className="table-body-row">
-                                                <td className="product-remove"><a href="#"><i className="far fa-window-close" /></a></td>
-                                                <td className="product-image"><img src="assets/img/products/product-img-1.jpg" alt /></td>
-                                                <td className="product-name">Strawberry</td>
-                                                <td className="product-price">$85</td>
+                                                <td className="product-remove"><a href="#"><i className="fas fa-trash" /></a></td>
+                                                <td className="product-image"><img src={d.profile_img} alt /></td>
+                                                <td className="product-name">{d.name}</td>
+                                                <td className="product-price">${d.price}</td>
                                                 <td className="product-quantity"><input type="number" placeholder={0} /></td>
-                                                <td className="product-total">1</td>
+                                                <td className="product-total">$1</td>
                                             </tr>
-                                            <tr className="table-body-row">
-                                                <td className="product-remove"><a href="#"><i className="far fa-window-close" /></a></td>
+                                            ))
+                                            }
+
+                                            {/* <tr className="table-body-row">
+                                                <td className="product-remove"><a href="#"><i className="fas fa-trash" /></a></td>
                                                 <td className="product-image"><img src="assets/img/products/product-img-2.jpg" alt /></td>
                                                 <td className="product-name">Grapes</td>
                                                 <td className="product-price">$70</td>
@@ -74,18 +97,18 @@ function Cart(props) {
                                                 <td className="product-total">1</td>
                                             </tr>
                                             <tr className="table-body-row">
-                                                <td className="product-remove"><a href="#"><i className="far fa-window-close" /></a></td>
+                                                <td className="product-remove"><a href="#"><i className="fas fa-trash" /></a></td>
                                                 <td className="product-image"><img src="assets/img/products/product-img-3.jpg" alt /></td>
                                                 <td className="product-name">Lemon</td>
                                                 <td className="product-price">$35</td>
                                                 <td className="product-quantity"><input type="number" placeholder={0} /></td>
                                                 <td className="product-total">1</td>
-                                            </tr>
+                                            </tr> */}
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
-                            <div className="col-lg-4">
+                            {/* <div className="col-lg-4">
                                 <div className="total-section">
                                     <table className="total-table">
                                         <thead className="total-table-head">
@@ -113,8 +136,8 @@ function Cart(props) {
                                         <NavLink to={'/cart'} className="boxed-btn">Update Cart</NavLink>
                                         <NavLink to={'/checkout'} className="boxed-btn black">Check Out</NavLink>
                                     </div>
-                                </div>
-                                <div className="coupon-section">
+                                </div> */}
+                                {/* <div className="coupon-section">
                                     <h3>Apply Coupon</h3>
                                     <div className="coupon-form-wrap">
                                         <form action="index.html">
@@ -122,7 +145,12 @@ function Cart(props) {
                                             <p><NavLink className="current-list-item" to={'/'}><input type="submit" defaultValue="submit" /></NavLink></p>
                                         </form>
                                     </div>
-                                </div>
+                                </div> */}
+                            {/* </div> */}
+                        </div>
+                        <div className='row  mt-100'>
+                            <div className='text-center mx-auto mb-100'>
+                                <NavLink to={''} className="cart-btn" onClick={() => handleClick()}>Plase Order</NavLink>
                             </div>
                         </div>
                     </div>

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { themeContext } from '../../context/ThemeContext';
 import { history } from '../../history';
+import { addtoCart } from '../../redux/Action/Cart.action';
 import { GetProduct } from '../../redux/Action/Product.getaction';
 
 function ProductsView(props) {
@@ -16,11 +17,17 @@ function ProductsView(props) {
     const product = useSelector(state => state.product)
     const category = useSelector(state => state.category)
 
-    console.log(product.product);
+    // console.log(product.product);
 
     useEffect(() => {
         dispatch(GetProduct())
     }, [])
+
+    const handleCart = (id)=>{
+        console.log("handleCart");
+        dispatch(addtoCart(id))
+    }
+
     const handlePush = (name) => {
         history.push('/single-product', { name: name })
         handleClick()
@@ -45,7 +52,7 @@ function ProductsView(props) {
                                     </div>
                                     <h3>{p.name}</h3>
                                     <p className="product-price"><span>Per {p.quantity}</span> {p.price}$ </p>
-                                    <NavLink to={'/cart'} className="cart-btn"><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>
+                                    <NavLink to={'/cart'} className="cart-btn" onClick={()=>handleCart(p.id)}><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>
                                 </div>
                             </div>
                         ))
