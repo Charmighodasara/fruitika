@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { themeContext } from '../../context/ThemeContext';
 import { history } from '../../history';
+import { addtoCart } from '../../redux/Action/Cart.action';
 import { GetProduct } from '../../redux/Action/Product.getaction';
 
 function SeasonWise(props) {
@@ -18,11 +19,16 @@ function SeasonWise(props) {
     useEffect(() => {
         dispatch(GetProduct())
     }, [])
+
     const handlePush = (name) => {
         history.push('/single-product', { name: name })
         handleClick()
     }
     
+    const handleCart = (id)=>{
+        dispatch(addtoCart(id))
+    }
+
     let fData = product.product.filter((s) => s.category === props.location.state.name)
     // console.log(fData);
     return (
@@ -78,7 +84,7 @@ function SeasonWise(props) {
                                         </div>
                                         <h3>{p.name}</h3>
                                         <p className="product-price"><span>Per {p.quantity}</span> {p.price}$ </p>
-                                        <NavLink to={'/cart'} className="cart-btn"><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>
+                                        <NavLink to={'/cart'} className="cart-btn"  onClick={() => handleCart(p.id)}><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>
                                     </div>
                                 </div>
                             ))

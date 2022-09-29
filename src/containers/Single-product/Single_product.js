@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { themeContext } from '../../context/ThemeContext';
+import { addtoCart } from '../../redux/Action/Cart.action';
 import { GetProduct } from '../../redux/Action/Product.getaction';
 
 function Single_product(props) {
@@ -15,6 +16,10 @@ function Single_product(props) {
     useEffect(() => {
         dispatch(GetProduct())
     }, [])
+
+    const handleCart = (id)=>{
+        dispatch(addtoCart(id))
+    }
 
     let fData = product.product.filter((l) => l.name === props.location.state.name)
     console.log(fData);
@@ -76,7 +81,7 @@ function Single_product(props) {
                                                     <form action="index.html">
                                                         <input type="number" placeholder={1} />
                                                     </form>
-                                                    <NavLink to={'/cart'} className="cart-btn mt-3" onClick={() => handleClick()}><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>
+                                                    <NavLink to={'/cart'} className="cart-btn mt-3" onClick={() => handleCart(p.id)}><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>
                                                 </div>
                                                 {/* <h4>Share:</h4>
                                                 <ul className="product-share ">

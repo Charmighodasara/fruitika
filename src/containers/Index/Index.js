@@ -8,7 +8,7 @@ import ProductsView from '../ProductsView/ProductsView';
 function Index(props) {
     const value = useContext(themeContext);
     const handleClick = () => {
-        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+        window.scrollTo({ top: 250, left: 0, behavior: 'smooth' })
     }
     const handlePush = () => {
         history.push('/shop')
@@ -121,7 +121,7 @@ function Index(props) {
                                     </div>
                                     <h3>Strawberry</h3>
                                     <p className="product-price"><span>Per Kg</span> 85$ </p>
-                                    <NavLink to={'/cart'} className="cart-btn" onClick={() => handleClick()}><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>
+                                    {/* <NavLink to={'/cart'} className="cart-btn" onClick={() => handleClick()}><i className="fas fa-shopping-cart" /> Add to Cart</NavLink> */}
                                 </div>
                             </div>
 
@@ -132,7 +132,7 @@ function Index(props) {
                                     </div>
                                     <h3>Grapes</h3>
                                     <p className="product-price"><span>Per Kg</span> 70$ </p>
-                                    <NavLink to={'/cart'} className="cart-btn" onClick={() => handleClick()}><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>
+                                    {/* <NavLink to={'/cart'} className="cart-btn" onClick={() => handleClick()}><i className="fas fa-shopping-cart" /> Add to Cart</NavLink> */}
                                 </div>
                             </div>
 
@@ -143,7 +143,7 @@ function Index(props) {
                                     </div>
                                     <h3>Lemon</h3>
                                     <p className="product-price"><span>Per Kg</span> 35$ </p>
-                                    <NavLink to={'/cart'} className="cart-btn" onClick={() => handleClick()}><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>
+                                    {/* <NavLink to={'/cart'} className="cart-btn" onClick={() => handleClick()}><i className="fas fa-shopping-cart" /> Add to Cart</NavLink> */}
                                 </div>
                             </div>
                             <div className="col-lg-4 col-md-6 text-center strawberry">
@@ -153,7 +153,7 @@ function Index(props) {
                                     </div>
                                     <h3>Mango</h3>
                                     <p className="product-price"><span>Per Kg</span> 90$ </p>
-                                    <NavLink to={'/cart'} className="cart-btn" onClick={() => handleClick()}><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>                            </div>
+                                    {/* <NavLink to={'/cart'} className="cart-btn" onClick={() => handleClick()}><i className="fas fa-shopping-cart" /> Add to Cart</NavLink> */}                           </div> 
                             </div>
 
                             <div className="col-lg-4 col-md-6 text-center strawberry">
@@ -163,7 +163,8 @@ function Index(props) {
                                     </div>
                                     <h3>Orange</h3>
                                     <p className="product-price"><span>Per Kg</span> 55$ </p>
-                                    <NavLink to={'/cart'} className="cart-btn" onClick={() => handleClick()}><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>                            </div>
+                                    {/* <NavLink to={'/cart'} className="cart-btn" onClick={() => handleClick()}><i className="fas fa-shopping-cart" /> Add to Cart</NavLink> */}                           
+                                    </div> 
                             </div>
 
                             <div className="col-lg-4 col-md-6 text-center strawberry">
@@ -173,7 +174,8 @@ function Index(props) {
                                     </div>
                                     <h3>Watermelon</h3>
                                     <p className="product-price"><span>Per Kg</span> 60$ </p>
-                                    <NavLink to={'/cart'} className="cart-btn" onClick={() => handleClick()}><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>                            </div>
+                                    {/* <NavLink to={'/cart'} className="cart-btn" onClick={() => handleClick()}><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>                             */}
+                                    </div>
                             </div>
                             <div className='text-center mx-auto'>
                                 <NavLink to={'/shop'} className="cart-btn" onClick={() => handleClick()}> All Products</NavLink>
@@ -207,7 +209,7 @@ function Index(props) {
                                 <div className="text">Quisquam minus maiores repudiandae nobis, minima saepe id, fugit ullam similique! Beatae, minima quisquam molestias facere ea. Perspiciatis unde omnis iste natus error sit voluptatem accusant</div>
                                 {/*Countdown Timer*/}
                                 <div className="time-counter"><div className="time-countdown clearfix" data-countdown="2020/2/01"><div className="counter-column"><div className="inner"><span className="count">00</span>Days</div></div> <div className="counter-column"><div className="inner"><span className="count">00</span>Hours</div></div>  <div className="counter-column"><div className="inner"><span className="count">00</span>Mins</div></div>  <div className="counter-column"><div className="inner"><span className="count">00</span>Secs</div></div></div></div>
-                                <NavLink to={'/cart'} className="cart-btn mt-3"><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>
+                                <NavLink to={'/shop'} className="cart-btn mt-3"> Shop Now</NavLink>
                             </div>
                         </div>
                     </div>
