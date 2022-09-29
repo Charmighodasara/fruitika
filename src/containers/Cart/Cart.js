@@ -82,7 +82,11 @@ function Cart(props) {
                                                     <td className="product-image"><img src={d.profile_img} alt /></td>
                                                     <td className="product-name">{d.name}</td>
                                                     <td className="product-price">${d.price}</td>
-                                                    <td className="product-quantity"><input type="number" placeholder={1} /></td>
+                                                    <td className="product-quantity">
+                                                        <button className='counter-btn'><i class="fas fa-plus"></i></button>
+                                                        <strong>{d.quantity}</strong>
+                                                        <button className='counter-btn'><i class="fas fa-minus"></i></button>
+                                                    </td>
                                                     <td className="product-total">$1</td>
                                                 </tr>
                                             ))

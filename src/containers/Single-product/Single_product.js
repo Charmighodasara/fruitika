@@ -17,7 +17,7 @@ function Single_product(props) {
         dispatch(GetProduct())
     }, [])
 
-    const handleCart = (id)=>{
+    const handleCart = (id) => {
         dispatch(addtoCart(id))
     }
 
@@ -75,12 +75,14 @@ function Single_product(props) {
                                             <div className="single-product-content">
                                                 <h3> {p.name}</h3>
                                                 <p className="single-product-pricing"><span>Per {p.quantity}</span> ${p.price}</p>
-                                                <p>Fruits are an excellent source of essential vitamins and minerals, and they are high in fiber. Fruits also provide a wide range of health-boosting antioxidants, including flavonoids. Eating a diet high in fruits can reduce a person's risk of developing heart disease, cancer, inflammation, and diabetes.</p>
+                                                <p>Fruits are an excellent source of essential vitamins and minerals, and they are high in fiber. Fruits also provide a wide range of health-boosting antioxidants, including flavonoids. </p>
+                                                <p>Eating a diet high in fruits can reduce a person's risk of developing heart disease, cancer, inflammation, and diabetes.</p>
                                                 <div className="single-product-form">
                                                     <p><strong>Categories: </strong>{p.category}</p>
-                                                    <form action="index.html">
-                                                        <input type="number" placeholder={1} />
-                                                    </form>
+                                                    {/* <div>
+                                                        <button className='counter-btn'><i class="fas fa-plus"></i></button>
+                                                        <strong>{p.quantity}</strong>
+                                                        <button className='counter-btn'><i class="fas fa-minus"></i></button>                                                    </div> */}
                                                     <NavLink to={'/cart'} className="cart-btn mt-3" onClick={() => handleCart(p.id)}><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>
                                                 </div>
                                                 {/* <h4>Share:</h4>

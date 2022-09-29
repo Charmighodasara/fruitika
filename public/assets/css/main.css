@@ -2622,7 +2622,7 @@ td.product-image img {
 
 .cart-table-wrap tbody tr td {
   border: 1px solid #efefef;
-  padding: 20px 0;
+  padding: 15px 0;
   color: #051922;
 }
 
@@ -3004,4 +3004,18 @@ a span {
 
 .contact-form form p input[type=text], .contact-form form p input[type=tel], .contact-form form p input[type=email], .contact-form p input{
   border: 1px solid #F28123;
+}
+
+.counter-btn {
+  border: none;
+    background-color: #efefef;
+    padding: 0px 5px;
+    cursor: pointer;
+    display: inline-block;
+    border-radius: 1px;
+    font-weight: 700;
+    margin: 0px 15px;
+}
+.counter-btn i{
+  color: #F28123;
 }
