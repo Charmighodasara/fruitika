@@ -1,7 +1,8 @@
 import React, { useContext } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { themeContext } from '../../context/ThemeContext';
+import { cartDelete } from '../../redux/Action/Cart.action';
 
 function Cart(props) {
     const value = useContext(themeContext);
@@ -9,6 +10,7 @@ function Cart(props) {
         window.scrollTo({ top: 50, left: 0, behavior: 'smooth' })
     }
 
+    const dispatch = useDispatch()
     const product = useSelector(state => state.product)
     const cart = useSelector(state => state.cart)
     console.log(cart.cart);
@@ -21,6 +23,10 @@ function Cart(props) {
             }
         })
     })
+
+    const handleDelete = (id) => {
+        dispatch(cartDelete(id))
+    }
 
     return (
         <div>
@@ -78,7 +84,7 @@ function Cart(props) {
                                             cartData.map((d) => (
 
                                                 <tr className="table-body-row">
-                                                    <td className="product-remove"><a href="#"><i className="fas fa-trash" /></a></td>
+                                                    <td className="product-remove"><div onClick={() => handleDelete(d.id)}><i className="fas fa-trash" /></div></td>
                                                     <td className="product-image"><img src={d.profile_img} alt /></td>
                                                     <td className="product-name">{d.name}</td>
                                                     <td className="product-price">${d.price}</td>

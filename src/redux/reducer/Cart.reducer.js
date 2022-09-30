@@ -2,15 +2,44 @@ import * as ActionTypes from '../ActionTypes'
 
 const initVal = {
     cart: [],
+    countCart: 0
 }
 
 
 export const cartReducer = (state = initVal, action) => {
     switch (action.type) {
         case ActionTypes.ADD_TO_CART:
+            if (state.countCart == 0) {
+                let cartInitval = {
+                    id: action.payload.id,
+                    quantity: 1
+                }
+            } else {
+                let check = false;
+                state.cart.map((c, i) => {
+                    if (c.id === action.payload.id) {
+                        state.cart[i].quantity++;
+                        check = true;
+                    }
+                })
+                if (!check) {
+                    let cartValue = {
+                        id: action.payload.id,
+                        quantity: 1
+                    }
+                    state.cart.push(cartValue)
+                }
+            }
+
+
             return {
                 ...state,
-                cart: state.cart.concat(action.payload),
+                // cart: state.cart.concat(action.payload),
+            }
+        case ActionTypes.DELETE_CART:
+            return {
+                ...state,
+                cart: state.cart.filter((c) => c.id !== action.payload),
             }
         default:
             return state;
