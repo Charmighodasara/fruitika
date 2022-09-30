@@ -8,5 +8,15 @@ export const addtoCart = (data) => (dispatch) => {
 
 export const cartDelete = (data) => (dispatch) => {
     console.log(data);
-    dispatch({type: ActionTypes.DELETE_CART , payload : data})
+    dispatch({ type: ActionTypes.DELETE_CART, payload: data })
+}
+
+export const cartDecrement = (data) => (dispatch) => {
+    console.log("cartDecrement", data);
+    dispatch({ type: ActionTypes.CART_DECREMENT, payload: data })
+}
+
+export const cartIncrement = (data) => (dispatch) => {
+    console.log("cartDecrement", data);
+    dispatch({ type: ActionTypes.CART_INCREMENT, payload: data })
 }

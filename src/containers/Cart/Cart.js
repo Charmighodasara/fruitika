@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { themeContext } from '../../context/ThemeContext';
-import { cartDelete } from '../../redux/Action/Cart.action';
+import { cartDecrement, cartDelete, cartIncrement } from '../../redux/Action/Cart.action';
 
 function Cart(props) {
     const value = useContext(themeContext);
@@ -26,6 +26,16 @@ function Cart(props) {
 
     const handleDelete = (id) => {
         dispatch(cartDelete(id))
+    }
+
+    const handleDecrement = (id) => {
+        console.log(id);
+        dispatch(cartDecrement(id))
+    }
+
+    const handleIncrement = (id) => {
+        console.log(id);
+        dispatch(cartIncrement(id))
     }
 
     return (
@@ -89,9 +99,9 @@ function Cart(props) {
                                                     <td className="product-name">{d.name}</td>
                                                     <td className="product-price">${d.price}</td>
                                                     <td className="product-quantity">
-                                                        <button className='counter-btn'><i class="fas fa-plus"></i></button>
-                                                        <strong>{d.quantity}</strong>
-                                                        <button className='counter-btn'><i class="fas fa-minus"></i></button>
+                                                        <button className='counter-btn' onClick={() => handleDecrement(d.id)}><i class="fas fa-minus"></i></button>
+                                                        <span>{d.quantity}</span>
+                                                        <button className='counter-btn' onClick={() => handleIncrement(d.id)}><i class="fas fa-plus"></i></button>
                                                     </td>
                                                     <td className="product-total">$1</td>
                                                 </tr>
