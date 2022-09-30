@@ -53,8 +53,7 @@ function Header(props) {
 
                                         <li><i class="fa-solid fa-moon-over-sun"></i>
                                             <div className="header-icons">
-                                                <NavLink className="shopping-cart" to={'/cart'} onClick={() => handleClick()}><i className="fas fa-shopping-cart" /><Badge badgeContent={'1'} color="primary">
-                                                </Badge></NavLink>
+                                                <NavLink className="shopping-cart" to={'/cart'} onClick={() => handleClick()}><i className="fas fa-shopping-cart" /><Badge badgeContent={'1'} color="primary"> </Badge></NavLink>
 
                                                 <NavLink className="mobile-hide search-bar-icon" to={'/search'} onClick={() => handleClick()}><i className="fas fa-search" /></NavLink>
 
