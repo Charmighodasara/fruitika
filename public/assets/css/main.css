@@ -577,7 +577,7 @@ ul.navbar-nav li.nav-item.active a.nav-link {
   background-color: #000;
   opacity: 0.8;
   box-shadow: 0 0 20px #555555;
-  padding: 0px ;
+  padding: 0px;
 }
 
 .top-header-area.white ul.navbar-nav li.nav-item a.nav-link,
@@ -864,9 +864,11 @@ button {
 .search-bar-tablecell input::-webkit-input-placeholder {
   color: #fff;
 }
+
 .search-bar-tablecell input::-webkit-input-placeholder {
-  border:1px solid #F28123;
+  border: 1px solid #F28123;
 }
+
 .search-bar-tablecell input:-ms-input-placeholder {
   color: #fff;
 }
@@ -2901,7 +2903,8 @@ a span {
 }
 
 .dark .single-latest-news h3 a,
-.dark a.read-more-btn ,.dark .category .h5{
+.dark a.read-more-btn,
+.dark .category .h5 {
   color: #fff;
 }
 
@@ -2936,16 +2939,18 @@ a span {
 .dark .card-body {
   background-color: #000000;
 }
-.dark h5{
+
+.dark h5 {
   color: #fff !important;
 }
+
 .back-to-top {
   color: #000;
   border: 2px solid #F28123;
   animation: top 1s infinite alternate;
 }
 
-.back-to-top i{
+.back-to-top i {
   color: #F28123;
 }
 
@@ -2990,9 +2995,10 @@ a span {
 .category img {
   border-radius: 50%;
 }
-.login{
+
+.login {
   border: none;
-  background-color: transparent ;
+  background-color: transparent;
   border: 2px solid #F28123;
   padding: 10px 30px !important;
   cursor: pointer;
@@ -3002,20 +3008,35 @@ a span {
   font-weight: 700;
 }
 
-.contact-form form p input[type=text], .contact-form form p input[type=tel], .contact-form form p input[type=email], .contact-form p input{
+.contact-form form p input[type=text],
+.contact-form form p input[type=tel],
+.contact-form form p input[type=email],
+.contact-form p input {
   border: 1px solid #F28123;
 }
 
 .counter-btn {
   border: none;
-    background-color: #efefef;
-    padding: 0px 5px;
-    cursor: pointer;
-    display: inline-block;
-    border-radius: 1px;
-    font-weight: 700;
-    margin: 0px 15px;
+  background-color: #efefef;
+  padding: 0px 5px;
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 1px;
+  font-weight: 700;
+  margin: 0px 15px;
 }
-.counter-btn i{
+
+.counter-btn i {
   color: #F28123;
+}
+
+.css-106c1u2-MuiBadge-badge {
+  background-color: #fff !important;
+  color: #000000 !important;
+  top: -11px !important;
+  right: -6px !important;
+  height: 16px !important;
+  min-width: 16px !important;
+  line-height: 2 !important;
+  padding: 0px !important;
 }
