@@ -26,7 +26,7 @@ function Checkout(props) {
     const handleClick = () => {
         window.scrollTo({ top: 150, left: 0, behavior: 'smooth' })
     }
-    const handleOrder = ()=>{
+    const handleOrder = () => {
         history.push('/order')
         handleClick()
     }
@@ -92,7 +92,7 @@ function Checkout(props) {
                 <div className="checkout-section mt-150 ">
                     <div className="container">
                         <div className="row ">
-  {/* Your order Details */}
+                            {/* Your order Details */}
                             <div className="col-lg-4">
                                 <div className="order-details-wrap">
                                     <table className="order-details">
@@ -105,10 +105,10 @@ function Checkout(props) {
                                         </thead>
 
                                         <tbody className="order-details-body">
-                                            <tr>
+                                            {/* <tr>
                                                 <td>Product</td>
                                                 <td>Total</td>
-                                            </tr>
+                                            </tr> */}
                                             {
                                                 cartData.map((c) => (
 
@@ -129,13 +129,13 @@ function Checkout(props) {
                                                 <td>Shipping</td>
                                                 <td>$10</td>
                                             </tr>
-                                            <tr>
+                                            <tr className='table-total'>
                                                 <td>Total</td>
                                                 <td>$240</td>
                                             </tr>
                                         </tbody>
                                     </table>
-                                    
+
                                     <NavLink className="current-list-item " to={'/cart'}><a onClick={() => handleClick()} className="boxed-btn mt-4">Update Cart</a></NavLink>
 
                                 </div>
@@ -180,7 +180,7 @@ function Checkout(props) {
                                 </div>
                             </div>
 
-                          
+
                         </div>
                     </div>
                 </div>

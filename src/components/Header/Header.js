@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom';
 import { Button } from 'reactstrap';
 import { themeContext } from '../../context/ThemeContext';
 import { SignOutAction } from '../../redux/Action/auth.action';
+import { addtoCart } from '../../redux/Action/Cart.action';
 import Alert from '../Alert/Alert';
 
 function Header(props) {
@@ -17,6 +18,7 @@ function Header(props) {
     const handleClick = () => {
         window.scrollTo({ top: 150, left: 0, behavior: 'smooth' })
     }
+
     return (
         <div>
             <div className="top-header-area" id="sticker">
@@ -53,7 +55,7 @@ function Header(props) {
 
                                         <li><i class="fa-solid fa-moon-over-sun"></i>
                                             <div className="header-icons">
-                                                <NavLink className="shopping-cart" to={'/cart'} onClick={() => handleClick()}><i className="fas fa-shopping-cart" /><Badge badgeContent={'1'} color="primary"> </Badge></NavLink>
+                                                <NavLink className="shopping-cart" to={'/cart'} onClick={() => handleClick()}><i className="fas fa-shopping-cart" /><Badge badgeContent={1} color="primary"> </Badge></NavLink>
 
                                                 <NavLink className="mobile-hide search-bar-icon" to={'/search'} onClick={() => handleClick()}><i className="fas fa-search" /></NavLink>
 

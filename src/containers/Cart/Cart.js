@@ -128,9 +128,9 @@ function Cart(props) {
                                             </tr>
                                             <tr className="total-data">
                                                 <td><strong>Shipping: </strong></td>
-                                                <td>$45</td>
+                                                <td>$10</td>
                                             </tr>
-                                            <tr className="total-data">
+                                            <tr className='table-total total-data'>
                                                 <td><strong>Total: </strong></td>
                                                 <td>$545</td>
                                             </tr>
