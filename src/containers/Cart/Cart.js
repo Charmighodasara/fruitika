@@ -80,10 +80,10 @@ function Cart(props) {
                 </div>
                 {/* end breadcrumb section */}
                 {/* cart */}
-                <div className="cart-section mt-150 mb-150">
+                <div className="cart-section mt-150">
                     <div className="container">
                         <div className="row">
-                            <div className="col-lg-8 col-md-12">
+                            <div className="col-lg-8 col-md-12  mb-150">
                                 <div className="cart-table-wrap">
                                     <table className="cart-table">
                                         <thead className="cart-table-head">
@@ -154,8 +154,8 @@ function Cart(props) {
                                                 <td>$10</td>
                                             </tr>
                                             <tr>
-                                                <td><strong>Total</strong></td>
-                                                <td><strong>${pTotal + 10}</strong></td>
+                                                <td className='table-total'><strong>Total</strong></td>
+                                                <td className='table-total'><strong>${pTotal + 10}</strong></td>
                                             </tr>
                                         </tbody>
                                     </table>
