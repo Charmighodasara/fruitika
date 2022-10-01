@@ -15,7 +15,7 @@ function Header(props) {
     const auth = useSelector(state => state.auth)
 
     const handleClick = () => {
-        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+        window.scrollTo({ top: 150, left: 0, behavior: 'smooth' })
     }
     return (
         <div>
