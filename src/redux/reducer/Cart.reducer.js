@@ -31,8 +31,6 @@ export const cartReducer = (state = initVal, action) => {
                     state.cart.push(cartValue)
                 }
             }
-
-
             return {
                 ...state,
                 // cart: state.cart.concat(action.payload),

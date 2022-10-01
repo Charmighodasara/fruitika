@@ -11,13 +11,20 @@ import Alert from '../Alert/Alert';
 function Header(props) {
     const value = useContext(themeContext);
     console.log(value);
-    const dispatch = useDispatch()
 
+    const dispatch = useDispatch()
     const auth = useSelector(state => state.auth)
+    const cart = useSelector(state => state.cart)
 
     const handleClick = () => {
         window.scrollTo({ top: 150, left: 0, behavior: 'smooth' })
     }
+
+    let sum = 0
+
+    cart.cart.map((s) => {
+        sum = sum + s.quantity
+    })
 
     return (
         <div>
@@ -39,7 +46,7 @@ function Header(props) {
                                 <nav className="main-menu">
                                     <ul className="current-list-item">
                                         <li >
-                                            <NavLink  to={'/'} onClick={() => handleClick()}>Home</NavLink>
+                                            <NavLink to={'/'} onClick={() => handleClick()}>Home</NavLink>
                                         </li>
                                         <li><NavLink to={'/about'} onClick={() => handleClick()}>About</NavLink></li>
 
@@ -55,7 +62,9 @@ function Header(props) {
 
                                         <li><i class="fa-solid fa-moon-over-sun"></i>
                                             <div className="header-icons">
-                                                <NavLink className="shopping-cart" to={'/cart'} onClick={() => handleClick()}><i className="fas fa-shopping-cart" /><Badge badgeContent={1} color="primary"> </Badge></NavLink>
+                                                <NavLink className="shopping-cart" to={'/cart'} onClick={() => handleClick()}><i className="fas fa-shopping-cart" />
+
+                                                    <Badge badgeContent={sum} color="primary"> </Badge></NavLink>
 
                                                 <NavLink className="mobile-hide search-bar-icon" to={'/search'} onClick={() => handleClick()}><i className="fas fa-search" /></NavLink>
 

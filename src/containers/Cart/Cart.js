@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import { number } from 'yup';
 import { themeContext } from '../../context/ThemeContext';
 import { cartDecrement, cartDelete, cartIncrement } from '../../redux/Action/Cart.action';
 
@@ -36,6 +37,11 @@ function Cart(props) {
     const handleIncrement = (id) => {
         console.log(id);
         dispatch(cartIncrement(id))
+    }
+    let pTotal = 0
+    function productTotal(price, quantity) {
+        pTotal = pTotal + Number(price * quantity)
+        return Number(price * quantity).toLocaleString("en-US")
     }
 
     return (
@@ -103,7 +109,7 @@ function Cart(props) {
                                                             <span>{d.quantity}</span>
                                                             <button className='counter-btn' onClick={() => handleIncrement(d.id)}><i class="fas fa-plus"></i></button>
                                                         </td>
-                                                        <td className="product-total">$1</td>
+                                                        <td className="product-total">${productTotal(d.price , d.quantity)}</td>
                                                     </tr>
                                                 </>
                                             ))
@@ -113,6 +119,53 @@ function Cart(props) {
                                 </div>
                             </div>
                             <div className="col-lg-4">
+                                <div className="order-details-wrap">
+                                    <table className="order-details">
+
+                                        <thead>
+                                            <tr>
+                                                <th>Your order Details</th>
+                                                <th>Price</th>
+                                            </tr>
+                                        </thead>
+                                        {/* <tbody className="order-details-body"> */}
+                                        {/* <tr>
+                                                <td>Product</td>
+                                                <td>Total</td>
+                                            </tr> */}
+                                        {/* {
+                                                cartData.map((c) => (
+
+                                                    <tr> */}
+                                        {/* <td>{c.name}</td> */}
+                                        {/* <td>${c.price}</td> */}
+                                        {/* </tr>
+                                                ))
+                                            } */}
+
+                                        {/* </tbody> */}
+                                        <tbody className="checkout-details">
+                                            <tr>
+                                                <td>Subtotal</td>
+                                                <td>{pTotal}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Shipping</td>
+                                                <td>$10</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Total</strong></td>
+                                                <td><strong>${pTotal + 10}</strong></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <div className="cart-buttons">
+                                        <NavLink to={'/checkout'} className="boxed-btn black">Check Out</NavLink>
+                                    </div>
+                                </div>
+                            </div>
+                            {/* <div className="col-lg-4">
                                 <div className="total-section">
                                     <table className="total-table">
                                         <thead className="total-table-head">
@@ -128,9 +181,9 @@ function Cart(props) {
                                             </tr>
                                             <tr className="total-data">
                                                 <td><strong>Shipping: </strong></td>
-                                                <td>$10</td>
+                                                <td>$45</td>
                                             </tr>
-                                            <tr className='table-total total-data'>
+                                            <tr className="total-data">
                                                 <td><strong>Total: </strong></td>
                                                 <td>$545</td>
                                             </tr>
@@ -138,31 +191,14 @@ function Cart(props) {
                                     </table>
                                     <div className="cart-buttons">
                                         {/* <NavLink to={'/cart'} className="boxed-btn">Update Cart</NavLink> */}
-                                        <NavLink to={'/checkout'} className="boxed-btn black">Check Out</NavLink>
-                                    </div>
-                                </div>
-                                {/* <div className="coupon-section">
-                                    <h3>Apply Coupon</h3>
-                                    <div className="coupon-form-wrap">
-                                        <form action="index.html">
-                                            <p><input type="text" placeholder="Coupon" /></p>
-                                            <p><NavLink className="current-list-item" to={'/'}><input type="submit" defaultValue="submit" /></NavLink></p>
-                                        </form>
+                            {/* <NavLink to={'/checkout'} className="boxed-btn black">Check Out</NavLink>
                                     </div>
                                 </div> */}
-                            </div>
+                            {/* </div>  */}
                         </div>
-                        {/* <div className='row  mt-100'>
-                            <div className='text-center mx-auto mb-100'>
-                                <NavLink to={''} className="cart-btn" onClick={() => handleClick()}>Plase Order</NavLink>
-                            </div>
-                        </div> */}
                     </div>
                 </div>
-                {/* end cart */}
-
             </div>
-            {/* end logo carousel */}
         </div>
 
     );

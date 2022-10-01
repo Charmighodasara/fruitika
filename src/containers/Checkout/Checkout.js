@@ -26,7 +26,7 @@ function Checkout(props) {
     const handleClick = () => {
         window.scrollTo({ top: 150, left: 0, behavior: 'smooth' })
     }
-    const handleOrder = () => {
+    const handleOrder = ()=>{
         history.push('/order')
         handleClick()
     }
@@ -92,50 +92,12 @@ function Checkout(props) {
                 <div className="checkout-section mt-150 ">
                     <div className="container">
                         <div className="row ">
-                            {/* Your order Details */}
+  {/* Your order Details */}
                             <div className="col-lg-4">
                                 <div className="order-details-wrap">
                                     <table className="order-details">
-
-                                        <thead>
-                                            <tr>
-                                                <th>Your order Details</th>
-                                                <th>Price</th>
-                                            </tr>
-                                        </thead>
-
-                                        <tbody className="order-details-body">
-                                            {/* <tr>
-                                                <td>Product</td>
-                                                <td>Total</td>
-                                            </tr> */}
-                                            {
-                                                cartData.map((c) => (
-
-                                                    <tr>
-                                                        <td>{c.name}</td>
-                                                        <td>${c.price}</td>
-                                                    </tr>
-                                                ))
-                                            }
-
-                                        </tbody>
-                                        <tbody className="checkout-details">
-                                            <tr>
-                                                <td>Subtotal</td>
-                                                <td>$190</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Shipping</td>
-                                                <td>$10</td>
-                                            </tr>
-                                            <tr className='table-total'>
-                                                <td>Total</td>
-                                                <td>$240</td>
-                                            </tr>
-                                        </tbody>
                                     </table>
-
+                                    
                                     <NavLink className="current-list-item " to={'/cart'}><a onClick={() => handleClick()} className="boxed-btn mt-4">Update Cart</a></NavLink>
 
                                 </div>
@@ -180,7 +142,7 @@ function Checkout(props) {
                                 </div>
                             </div>
 
-
+                          
                         </div>
                     </div>
                 </div>
