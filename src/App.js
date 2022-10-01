@@ -31,6 +31,7 @@ import Product from './admin/containers/product/Product';
 import Counter from './admin/containers/Counter/Counter';
 import Category from './admin/containers/Category/Category';
 import { persistor, store } from './redux/store';
+import Order from './containers/order/Order';
 
 
 function App() {
@@ -58,8 +59,9 @@ function App() {
                 <Publicroute path={'/search'} exact component={Search} />
                 <Publicroute path={'/login-signup'} exact restricted={true} component={Login_signup} />
                 <Privateroute path={'/cart'} exact component={Cart} />
-                
                 <Publicroute path={'/season-fruits'} exact component={SeasonWise} />
+                <Publicroute path={'/order'} exact component={Order} />
+
 
                 {/* adminpanel */}
                 <Layout >

@@ -92,19 +92,20 @@ function Cart(props) {
                                         </thead>
                                         <tbody>{
                                             cartData.map((d) => (
-
-                                                <tr className="table-body-row">
-                                                    <td className="product-remove"><div onClick={() => handleDelete(d.id)}><i className="fas fa-trash" /></div></td>
-                                                    <td className="product-image"><img src={d.profile_img} alt /></td>
-                                                    <td className="product-name">{d.name}</td>
-                                                    <td className="product-price">${d.price}</td>
-                                                    <td className="product-quantity">
-                                                        <button className='counter-btn' onClick={() => handleDecrement(d.id)}><i class="fas fa-minus"></i></button>
-                                                        <span>{d.quantity}</span>
-                                                        <button className='counter-btn' onClick={() => handleIncrement(d.id)}><i class="fas fa-plus"></i></button>
-                                                    </td>
-                                                    <td className="product-total">$1</td>
-                                                </tr>
+                                                <>
+                                                    <tr className="table-body-row">
+                                                        <td className="product-remove"><div onClick={() => handleDelete(d.id)}><i className="fas fa-trash" /></div></td>
+                                                        <td className="product-image"><img src={d.profile_img} alt /></td>
+                                                        <td className="product-name">{d.name}</td>
+                                                        <td className="product-price">${d.price}</td>
+                                                        <td className="product-quantity">
+                                                            <button className='counter-btn' onClick={() => handleDecrement(d.id)}><i class="fas fa-minus"></i></button>
+                                                            <span>{d.quantity}</span>
+                                                            <button className='counter-btn' onClick={() => handleIncrement(d.id)}><i class="fas fa-plus"></i></button>
+                                                        </td>
+                                                        <td className="product-total">$1</td>
+                                                    </tr>
+                                                </>
                                             ))
                                         }
                                         </tbody>

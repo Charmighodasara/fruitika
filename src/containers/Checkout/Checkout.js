@@ -1,10 +1,57 @@
+import { Form, Formik, useFormik } from 'formik';
 import React, { useContext } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { themeContext } from '../../context/ThemeContext';
+import * as yup from 'yup';
+import { history } from '../../history';
+
 
 function Checkout(props) {
     const value = useContext(themeContext);
+    const cart = useSelector(state => state.cart)
+    const product = useSelector(state => state.product)
+    const dispatch = useDispatch()
+    console.log(cart.cart);
 
+    const cartData = []
+    product.product.map((p) => {
+        cart.cart.map((c) => {
+            if (p.id === c.id) {
+                cartData.push({ ...p, quantity: c.quantity })
+            }
+        })
+    })
+
+    const handleClick = () => {
+        window.scrollTo({ top: 150, left: 0, behavior: 'smooth' })
+    }
+    const handleOrder = ()=>{
+        history.push('/order')
+        handleClick()
+    }
+
+    let schema = yup.object().shape({
+        name: yup.string().required("please enter your name."),
+        email: yup.string().required("please enter your email id.").email("please enter valid email id."),
+        Address: yup.string().required("please enter your shipping address."),
+        phone: yup.string().required("please enter your mobile number."),
+    });
+    const formik = useFormik({
+        initialValues: {
+            name: '',
+            email: '',
+            Address: '',
+            phone: '',
+        },
+        validationSchema: schema,
+        onSubmit: values => {
+            alert(JSON.stringify(values, null, 2));
+            handleOrder()
+        },
+    });
+
+    const { errors, handleBlur, handleSubmit, handleChange, touched } = formik;
     return (
         <div>
             <div className={`${value.theme}`}>
@@ -40,96 +87,38 @@ function Checkout(props) {
                     </div>
                 </div>
                 {/* end breadcrumb section */}
+
                 {/* check out section */}
-                <div className="checkout-section mt-150 mb-150">
+                <div className="checkout-section mt-150 ">
                     <div className="container">
-                        <div className="row">
-                            <div className="col-lg-8">
-                                <div className="checkout-accordion-wrap">
-                                    <div className="accordion" id="accordionExample">
-                                        <div className="card single-accordion">
-                                            <div className="card-header" id="headingOne">
-                                                <h5 className="mb-0">
-                                                    <button className="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                        Billing Address
-                                                    </button>
-                                                </h5>
-                                            </div>
-                                            <div id="collapseOne" className="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-                                                <div className="card-body">
-                                                    <div className="billing-address-form">
-                                                        <form action="index.html">
-                                                            <p><input type="text" placeholder="Name" /></p>
-                                                            <p><input type="email" placeholder="Email" /></p>
-                                                            <p><input type="text" placeholder="Address" /></p>
-                                                            <p><input type="tel" placeholder="Phone" /></p>
-                                                            <p><textarea name="bill" id="bill" cols={30} rows={10} placeholder="Say Something" defaultValue={""} /></p>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="card single-accordion">
-                                            <div className="card-header" id="headingTwo">
-                                                <h5 className="mb-0">
-                                                    <button className="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                                        Shipping Address
-                                                    </button>
-                                                </h5>
-                                            </div>
-                                            <div id="collapseTwo" className="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                                                <div className="card-body">
-                                                    <div className="shipping-address-form">
-                                                        <p>Your shipping address form is here.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="card single-accordion">
-                                            <div className="card-header" id="headingThree">
-                                                <h5 className="mb-0">
-                                                    <button className="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                                        Card Details
-                                                    </button>
-                                                </h5>
-                                            </div>
-                                            <div id="collapseThree" className="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                                                <div className="card-body">
-                                                    <div className="card-details">
-                                                        <p>Your card details goes here.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div className="row ">
+  {/* Your order Details */}
                             <div className="col-lg-4">
                                 <div className="order-details-wrap">
                                     <table className="order-details">
+
                                         <thead>
                                             <tr>
                                                 <th>Your order Details</th>
                                                 <th>Price</th>
                                             </tr>
                                         </thead>
+
                                         <tbody className="order-details-body">
                                             <tr>
                                                 <td>Product</td>
                                                 <td>Total</td>
                                             </tr>
-                                            <tr>
-                                                <td>Strawberry</td>
-                                                <td>$85.00</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Grapes</td>
-                                                <td>$70.00</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Lemon</td>
-                                                <td>$35.00</td>
-                                            </tr>
+                                            {
+                                                cartData.map((c) => (
+
+                                                    <tr>
+                                                        <td>{c.name}</td>
+                                                        <td>${c.price}</td>
+                                                    </tr>
+                                                ))
+                                            }
+
                                         </tbody>
                                         <tbody className="checkout-details">
                                             <tr>
@@ -138,7 +127,7 @@ function Checkout(props) {
                                             </tr>
                                             <tr>
                                                 <td>Shipping</td>
-                                                <td>$50</td>
+                                                <td>$10</td>
                                             </tr>
                                             <tr>
                                                 <td>Total</td>
@@ -146,41 +135,55 @@ function Checkout(props) {
                                             </tr>
                                         </tbody>
                                     </table>
-                                    <NavLink className="current-list-item " to={'/'}><a href="#" className="boxed-btn mt-4">Place Order</a></NavLink>
                                     
+                                    <NavLink className="current-list-item " to={'/cart'}><a onClick={() => handleClick()} className="boxed-btn mt-4">Update Cart</a></NavLink>
+
                                 </div>
                             </div>
+                            <div className="col-lg-8 mb-150" >
+                                <div className="checkout-accordion-wrap">
+                                    <div className="accordion" id="accordionExample">
+                                        <div className="card single-accordion">
+                                            <div className="card-header" id="headingOne">
+                                                <h5 className="mb-0">
+                                                    <button className="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                        Shipping Address
+                                                    </button>
+                                                </h5>
+                                            </div>
+                                            <div id="collapseOne" className="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                                <div className="card-body">
+                                                    <div className="billing-address-form">
+
+                                                        <Formik>
+                                                            <Form type="POST" id="fruitkha-contact" onSubmit={handleSubmit}>
+                                                                <p><input type="text" placeholder="Name" name="name" id="name" onChange={handleChange} onBlur={handleBlur} /></p>
+                                                                <p>{errors.name && touched.name ? errors.name : ''}</p>
+
+                                                                <p><input type="text" placeholder="Email" name="email" id="email" onChange={handleChange} onBlur={handleBlur} /></p>
+                                                                <p>{errors.email && touched.email ? errors.email : ''}</p>
+
+                                                                <p><input type="text" placeholder="Address" name="Address" id="Address" onChange={handleChange} onBlur={handleBlur} /></p>
+                                                                <p>{errors.Address && touched.Address ? errors.Address : ''}</p>
+
+                                                                <p><input type="tel" placeholder="Contact Number" name="phone" id="phone" onChange={handleChange} onBlur={handleBlur} /></p>
+                                                                <p>{errors.phone && touched.phone ? errors.phone : ''}</p>
+
+                                                                <p><button className="boxed-btn mt-4" >Place Order</button></p>
+                                                            </Form>
+                                                        </Formik>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                          
                         </div>
                     </div>
                 </div>
-                {/* end check out section */}
-                {/* logo carousel */}
-                {/* <div className="logo-carousel-section">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-lg-12">
-                                <div className="logo-carousel-inner">
-                                    <div className="single-logo-item">
-                                        <img src="assets/img/company-logos/1.png" alt />
-                                    </div>
-                                    <div className="single-logo-item">
-                                        <img src="assets/img/company-logos/2.png" alt />
-                                    </div>
-                                    <div className="single-logo-item">
-                                        <img src="assets/img/company-logos/3.png" alt />
-                                    </div>
-                                    <div className="single-logo-item">
-                                        <img src="assets/img/company-logos/4.png" alt />
-                                    </div>
-                                    <div className="single-logo-item">
-                                        <img src="assets/img/company-logos/5.png" alt />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> */}
-                {/* end logo carousel */}
             </div>
 
         </div>
