@@ -161,7 +161,7 @@ function Cart(props) {
                                     </table>
 
                                     <div className="cart-buttons">
-                                        <NavLink to={'/checkout'} className="boxed-btn black">Check Out</NavLink>
+                                        <NavLink to={'/checkout'} className="boxed-btn black">Order Now</NavLink>
                                     </div>
                                 </div>
                             </div>
