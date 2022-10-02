@@ -35,7 +35,7 @@ function Checkout(props) {
 
     let schema = yup.object().shape({
         name: yup.string().required("please enter your name."),
-        email: yup.string().required("please enter your email id.").email("please enter valid email id."),
+        // email: yup.string().required("please enter your email id.").email("please enter valid email id."),
         Address: yup.string().required("please enter your shipping address."),
         phone: yup.string().required("please enter your mobile number."),
         radioGroup: yup.string().required("select any payment method.")
@@ -43,7 +43,7 @@ function Checkout(props) {
     const formik = useFormik({
         initialValues: {
             name: '',
-            email: '',
+            // email: '',
             Address: '',
             phone: '',
             radioGroup: ''
@@ -173,7 +173,7 @@ function Checkout(props) {
                                                                     aria-labelledby="demo-radio-buttons-group-label"
                                                                     name="radioGroup" onChange={handleChange} onBlur={handleBlur}
                                                                 >
-                                                                    <FormControlLabel value="Case" control={<Radio />} label="Cash On Delivery" />
+                                                                    <FormControlLabel value="Case On Delivery" control={<Radio />} label="Cash On Delivery" />
                                                                     <FormControlLabel value="other" control={<Radio />} label="Other" />
                                                                 </RadioGroup>
                                                                 </p>
@@ -214,8 +214,8 @@ function Checkout(props) {
                                                                 <p><input type="text" placeholder="Name" name="name" id="name" onChange={handleChange} onBlur={handleBlur} /></p>
                                                                 <p>{errors.name && touched.name ? errors.name : ''}</p>
 
-                                                                <p><input type="text" placeholder="Email" name="email" id="email" onChange={handleChange} onBlur={handleBlur} /></p>
-                                                                <p>{errors.email && touched.email ? errors.email : ''}</p>
+                                                                {/* <p><input type="text" placeholder="Email" name="email" id="email" onChange={handleChange} onBlur={handleBlur} /></p>
+                                                                <p>{errors.email && touched.email ? errors.email : ''}</p> */}
 
                                                                 <p><input type="text" placeholder="Address" name="Address" id="Address" onChange={handleChange} onBlur={handleBlur} /></p>
                                                                 <p>{errors.Address && touched.Address ? errors.Address : ''}</p>
@@ -223,8 +223,8 @@ function Checkout(props) {
                                                                 <p><input type="tel" placeholder="Contact Number" name="phone" id="phone" onChange={handleChange} onBlur={handleBlur} /></p>
                                                                 <p>{errors.phone && touched.phone ? errors.phone : ''}</p>
 
-                                                                <p>{errors.radioGroup && touched.radioGroup ? errors.radioGroup : ''}</p>
-                                                                <p><button className="boxed-btn mt-4" >Place Order</button></p>
+                                                               
+                                                                <p><button className="boxed-btn mt-4" >Place Order</button></p> <p>{errors.radioGroup && touched.radioGroup ? errors.radioGroup : ''}</p>
                                                             </Form>
                                                         </Formik>
                                                     </div>

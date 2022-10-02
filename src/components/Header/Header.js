@@ -17,7 +17,7 @@ function Header(props) {
     const cart = useSelector(state => state.cart)
 
     const handleClick = () => {
-        window.scrollTo({ top: 150, left: 0, behavior: 'smooth' })
+        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
     }
 
     let sum = 0
@@ -63,8 +63,13 @@ function Header(props) {
                                         <li><i class="fa-solid fa-moon-over-sun"></i>
                                             <div className="header-icons">
                                                 <NavLink className="shopping-cart" to={'/cart'} onClick={() => handleClick()}><i className="fas fa-shopping-cart" />
-
-                                                    <Badge badgeContent={sum} color="primary"> </Badge></NavLink>
+                                                    {
+                                                        auth.user === null ?
+                                                            ''
+                                                            :
+                                                            <Badge badgeContent={sum} color="primary"> </Badge>
+                                                    }
+                                                </NavLink>
 
                                                 <NavLink className="mobile-hide search-bar-icon" to={'/search'} onClick={() => handleClick()}><i className="fas fa-search" /></NavLink>
 
