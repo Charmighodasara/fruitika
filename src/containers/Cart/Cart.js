@@ -82,7 +82,7 @@ function Cart(props) {
                 <div className="cart-section mt-150">
                     <div className="container">
                         <div className="row">
-                            <div className="col-lg-8 col-md-12  mb-150">
+                            <div className="col-lg-8 col-md-12 ">
                                 <div className="cart-table-wrap">
                                     <table className="cart-table">
                                         <thead className="cart-table-head">
@@ -117,7 +117,7 @@ function Cart(props) {
                                     </table>
                                 </div>
                             </div>
-                            <div className="col-lg-4">
+                            <div className="col-lg-4 mb-150">
                                 <div className="order-details-wrap">
                                     <table className="order-details">
 
