@@ -7,8 +7,6 @@ import { GetProduct } from '../../../redux/Action/Product.getaction';
 
 function OrderData(props) {
     
-    const dispatch = useDispatch()
-    const category = useSelector(state => state.category)
     const product = useSelector(state => state.product)
     const cart = useSelector(state => state.cart)
     // console.log(product.product);
