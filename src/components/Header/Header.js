@@ -13,10 +13,14 @@ function Header(props) {
     const dispatch = useDispatch()
 
     const auth = useSelector(state => state.auth)
-
+const cart = useSelector(state=> state.cart)
     const handleClick = () => {
         window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
     }
+    let cartIcon = 0
+    cart.cart.map((c)=>{
+        cartIcon = cartIcon + c.quantity
+    })
     return (
         <div>
             <div className="top-header-area" id="sticker">
@@ -53,7 +57,7 @@ function Header(props) {
 
                                         <li><i class="fa-solid fa-moon-over-sun"></i>
                                             <div className="header-icons">
-                                                <NavLink className="shopping-cart" to={'/cart'} onClick={() => handleClick()}><i className="fas fa-shopping-cart" /><Badge badgeContent={'1'} color="primary"> </Badge></NavLink>
+                                                <NavLink className="shopping-cart" to={'/cart'} onClick={() => handleClick()}><i className="fas fa-shopping-cart" /><Badge badgeContent={cartIcon} color="primary"> </Badge></NavLink>
 
                                                 <NavLink className="mobile-hide search-bar-icon" to={'/search'} onClick={() => handleClick()}><i className="fas fa-search" /></NavLink>
 
