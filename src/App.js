@@ -32,6 +32,7 @@ import Counter from './admin/containers/Counter/Counter';
 import Category from './admin/containers/Category/Category';
 import { persistor, store } from './redux/store';
 import Order from './containers/order/Order';
+import OrderData from './admin/containers/Order/OrderData';
 
 
 function App() {
@@ -68,7 +69,9 @@ function App() {
                   <Switch>
                     <Route path={'/product'} exact component={Product}></Route>
                     <Route path={'/category'} exact component={Category}></Route>
+                    <Route path={'/orderdata'} exact component={OrderData}></Route>
                     <Route path={'/counter'} exact component={Counter}></Route>
+
                   </Switch>
                 </Layout>
               </Switch>
