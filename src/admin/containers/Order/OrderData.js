@@ -2,16 +2,26 @@ import React, { useEffect, useState } from 'react';
 import { DataGrid } from '@mui/x-data-grid';
 import { useDispatch, useSelector } from 'react-redux';
 import {  GetCategory, } from '../../../redux/Action/Category.action';
+import { GetProduct } from '../../../redux/Action/Product.getaction';
 
 
 function OrderData(props) {
-
+    
+    const dispatch = useDispatch()
     const category = useSelector(state => state.category)
     const product = useSelector(state => state.product)
     const cart = useSelector(state => state.cart)
     // console.log(product.product);
+    const cartData = []
+    product.product.map((p) => {
+        cart.cart.map((c) => {
+            if (p.id === c.id) {
+                cartData.push({ ...p, quantity: c.quantity })
+            }
+        })
+    })
 
-    const dispatch = useDispatch()
+ 
     const columns = [
         { field: 'name', headerName: 'Categoty Name', width: 150 },
         {
@@ -23,10 +33,7 @@ function OrderData(props) {
             )
         },
     ];
-    useEffect(() => {
-        // loadData()
-        dispatch(GetCategory())
-    }, [])
+
 
     return (
         <div>
@@ -34,7 +41,7 @@ function OrderData(props) {
                 <h2>Order Details</h2>
                 <div style={{ height: 400, width: '100%' }}>
                     <DataGrid
-                        rows={cart.cart}
+                        rows={cartData}
                         columns={columns}
                         pageSize={6}
                         rowsPerPageOptions={[6]}
