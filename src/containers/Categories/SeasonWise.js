@@ -24,13 +24,14 @@ function SeasonWise(props) {
         history.push('/single-product', { name: name })
         handleClick()
     }
-    
-    const handleCart = (id)=>{
+
+    const handleCart = (id) => {
         dispatch(addtoCart(id))
     }
 
     let fData = product.product.filter((s) => s.category === props.location.state.name)
     // console.log(fData);
+    let cData = category.category.filter((c)=> c.name === props.location.state.name)
     return (
         <div>
             <div className={`${value.theme}`}>
@@ -69,14 +70,19 @@ function SeasonWise(props) {
                 <div className={`product-section mt-100 ${value.theme}`}>
                     <div className="container">
                         <div className="row">
-                            <div className="col-lg-8 offset-lg-2 text-center">
-                                <div className="section-title">
-                                    <h3><span className="orange-text"></span>Products</h3>
-                                </div>
+                            <div className="col-lg-8 offset-lg-2 text-center">{
+                                cData.map((p) => {
+                                        return (
+                                            <div className="section-title">
+                                                <h3><span className="orange-text"></span>{p.name}</h3>
+                                            </div>
+                                        )
+                                })
+                            }
                             </div>
                         </div>
                         <div className="row ">{
-                           fData.map((p) => (
+                            fData.map((p) => (
                                 <div className="col-lg-4 col-md-6 text-center">
                                     <div className={`single-product-item ${value.theme}`}>
                                         <div className="product-image">
@@ -84,7 +90,7 @@ function SeasonWise(props) {
                                         </div>
                                         <h3>{p.name}</h3>
                                         <p className="product-price"><span>Per {p.quantity}</span> {p.price}$ </p>
-                                        <NavLink to={'/cart'} className="cart-btn"  onClick={() => handleCart(p.id)}><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>
+                                        <NavLink to={'/cart'} className="cart-btn" onClick={() => handleCart(p.id)}><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>
                                     </div>
                                 </div>
                             ))
