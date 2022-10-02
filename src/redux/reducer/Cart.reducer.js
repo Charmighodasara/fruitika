@@ -5,8 +5,8 @@ const initVal = {
     countCart: 0
 }
 
-
 export const cartReducer = (state = initVal, action) => {
+    console.log(action.type , action.payload , state);
     switch (action.type) {
 
         case ActionTypes.ADD_TO_CART:
@@ -38,7 +38,7 @@ export const cartReducer = (state = initVal, action) => {
         case ActionTypes.DELETE_CART:
             return {
                 ...state,
-                cart: state.cart.filter((c) => c.id !== action.payload),
+                cart: state.cart.filter((c) => c.id !== action.payload)
             }
         case ActionTypes.CART_DECREMENT:
             state.countCart--
@@ -71,6 +71,7 @@ export const cartReducer = (state = initVal, action) => {
                     }
                 }).filter((c) => c.quantity !== 0)
             }
+        
         default:
             return state;
     }
