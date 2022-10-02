@@ -4,6 +4,7 @@ import { authReducer } from "./auth.reducer";
 import { cartReducer } from "./Cart.reducer";
 import { categoryReducer } from "./Category.reducer";
 import { counterReducer } from "./Counter_Reducer";
+import { orderReducer } from "./Order.reducer";
 import { productReducer } from "./ProductGet.reducer";
 
 export const rootReducer = combineReducers({
@@ -12,5 +13,6 @@ export const rootReducer = combineReducers({
     counter: counterReducer,
     product: productReducer,
     category: categoryReducer,
-    cart: cartReducer
+    cart: cartReducer,
+    order :  orderReducer
 })

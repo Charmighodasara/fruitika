@@ -1,9 +1,10 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { themeContext } from '../../context/ThemeContext';
+import { getOrderAction } from '../../redux/Action/Order.action';
 
 function Order(props) {
     const value = useContext(themeContext);
-
     return (
         <div>
             <div className={`${value.theme}`}>
@@ -42,8 +43,8 @@ function Order(props) {
                     <div className="container">
                         <div className="row ">
                             <div className="col-lg-12 text-center">
-                            <h4 className='order'>Order Placed Successfully</h4>
-                                <img src='assets/img/products/tick.gif'/>
+                                <h4 className='order'>Order Placed Successfully</h4>
+                                <img src='assets/img/products/tick.gif' />
                             </div>
                         </div>
                     </div>

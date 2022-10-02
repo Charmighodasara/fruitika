@@ -6,15 +6,20 @@ import { themeContext } from '../../context/ThemeContext';
 import * as yup from 'yup';
 import { history } from '../../history';
 import { FormControlLabel, Radio, RadioGroup } from '@mui/material';
+import { getOrderAction } from '../../redux/Action/Order.action';
 
 
 function Checkout(props) {
-
+    const handleClick = () => {
+        window.scrollTo({ top: 150, left: 0, behavior: 'smooth' })
+    }
     const value = useContext(themeContext);
     const cart = useSelector(state => state.cart)
     const product = useSelector(state => state.product)
+    const auth = useSelector(state => state.auth)
+    const order = useSelector(state => state.order)
+    console.log(order.order);
     const dispatch = useDispatch()
-    console.log(cart.cart);
 
     const cartData = []
     product.product.map((p) => {
@@ -25,17 +30,29 @@ function Checkout(props) {
         })
     })
 
-    const handleClick = () => {
-        window.scrollTo({ top: 150, left: 0, behavior: 'smooth' })
+    let pTotal = 0
+    function productTotal(price, quantity) {
+        pTotal = pTotal + Number(price * quantity)
+        return Number(price * quantity).toLocaleString("en-US")
     }
-    const handleOrder = () => {
+
+
+    const handleOrder = (values) => {
+        let orderData = {
+            userId: auth.user,
+            product: cartData,
+            totalcart: pTotal
+        }
+        console.log(orderData);
+        dispatch(getOrderAction(orderData))
         history.push('/order')
         handleClick()
     }
 
+
     let schema = yup.object().shape({
         name: yup.string().required("please enter your name."),
-        // email: yup.string().required("please enter your email id.").email("please enter valid email id."),
+        email: yup.string().required("please enter your email id.").email("please enter valid email id."),
         Address: yup.string().required("please enter your shipping address."),
         phone: yup.string().required("please enter your mobile number."),
         radioGroup: yup.string().required("select any payment method.")
@@ -43,7 +60,7 @@ function Checkout(props) {
     const formik = useFormik({
         initialValues: {
             name: '',
-            // email: '',
+            email: '',
             Address: '',
             phone: '',
             radioGroup: ''
@@ -51,15 +68,9 @@ function Checkout(props) {
         validationSchema: schema,
         onSubmit: values => {
             alert(JSON.stringify(values, null, 2));
-            handleOrder()
+            handleOrder(values)
         },
     });
-
-    let pTotal = 0
-    function productTotal(price, quantity) {
-        pTotal = pTotal + Number(price * quantity)
-        return Number(price * quantity).toLocaleString("en-US")
-    }
 
 
     const { errors, handleBlur, handleSubmit, handleChange, touched } = formik;
@@ -120,9 +131,9 @@ function Checkout(props) {
                                                 <td>Total Price</td>
                                             </tr>
                                             {
-                                                cartData.map((c) => (
+                                                cartData.map((c, i) => (
 
-                                                    <tr>
+                                                    <tr key={i}>
                                                         <td>{c.name}</td>
                                                         <td>${productTotal(c.price, c.quantity)}</td>
                                                     </tr>
@@ -214,8 +225,8 @@ function Checkout(props) {
                                                                 <p><input type="text" placeholder="Name" name="name" id="name" onChange={handleChange} onBlur={handleBlur} /></p>
                                                                 <p>{errors.name && touched.name ? errors.name : ''}</p>
 
-                                                                {/* <p><input type="text" placeholder="Email" name="email" id="email" onChange={handleChange} onBlur={handleBlur} /></p>
-                                                                <p>{errors.email && touched.email ? errors.email : ''}</p> */}
+                                                                <p><input type="text" placeholder="Email" name="email" id="email" onChange={handleChange} onBlur={handleBlur} /></p>
+                                                                <p>{errors.email && touched.email ? errors.email : ''}</p>
 
                                                                 <p><input type="text" placeholder="Address" name="Address" id="Address" onChange={handleChange} onBlur={handleBlur} /></p>
                                                                 <p>{errors.Address && touched.Address ? errors.Address : ''}</p>
@@ -223,7 +234,7 @@ function Checkout(props) {
                                                                 <p><input type="tel" placeholder="Contact Number" name="phone" id="phone" onChange={handleChange} onBlur={handleBlur} /></p>
                                                                 <p>{errors.phone && touched.phone ? errors.phone : ''}</p>
 
-                                                               
+
                                                                 <p><button className="boxed-btn mt-4" >Place Order</button></p> <p>{errors.radioGroup && touched.radioGroup ? errors.radioGroup : ''}</p>
                                                             </Form>
                                                         </Formik>
