@@ -10,14 +10,14 @@ function OrderData(props) {
     const product = useSelector(state => state.product)
     const cart = useSelector(state => state.cart)
     // console.log(product.product);
-    const cartData = []
-    product.product.map((p) => {
-        cart.cart.map((c) => {
-            if (p.id === c.id) {
-                cartData.push({ ...p, quantity: c.quantity })
-            }
-        })
-    })
+    // const cartData = []
+    // product.product.map((p) => {
+    //     cart.cart.map((c) => {
+    //         if (p.id === c.id) {
+    //             cartData.push({ ...p, quantity: c.quantity })
+    //         }
+    //     })
+    // })
 
  
     const columns = [
@@ -39,7 +39,7 @@ function OrderData(props) {
                 <h2>Order Details</h2>
                 <div style={{ height: 400, width: '100%' }}>
                     <DataGrid
-                        rows={cartData}
+                        rows={product.product}
                         columns={columns}
                         pageSize={6}
                         rowsPerPageOptions={[6]}

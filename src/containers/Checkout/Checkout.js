@@ -17,8 +17,6 @@ function Checkout(props) {
     const cart = useSelector(state => state.cart)
     const product = useSelector(state => state.product)
     const auth = useSelector(state => state.auth)
-    const order = useSelector(state => state.order)
-    console.log(order.order);
     const dispatch = useDispatch()
 
     const cartData = []
@@ -38,6 +36,8 @@ function Checkout(props) {
 
 
     const handleOrder = (values) => {
+        history.push('/order')
+        handleClick()
         let orderData = {
             userId: auth.user,
             product: cartData,
@@ -45,8 +45,6 @@ function Checkout(props) {
         }
         console.log(orderData);
         dispatch(getOrderAction(orderData))
-        history.push('/order')
-        handleClick()
     }
 
 
