@@ -8,8 +8,9 @@ const initVal = {
 
 export const cartReducer = (state = initVal, action) => {
     switch (action.type) {
+
         case ActionTypes.ADD_TO_CART:
-            if (state.countCart === 0) {
+            if (state.countCart == 0) {
                 let cartInitval = {
                     id: action.payload.id,
                     quantity: 1

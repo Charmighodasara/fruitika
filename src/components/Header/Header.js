@@ -5,7 +5,6 @@ import { NavLink } from 'react-router-dom';
 import { Button } from 'reactstrap';
 import { themeContext } from '../../context/ThemeContext';
 import { SignOutAction } from '../../redux/Action/auth.action';
-import { addtoCart } from '../../redux/Action/Cart.action';
 import Alert from '../Alert/Alert';
 
 function Header(props) {

@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import { number } from 'yup';
 import { themeContext } from '../../context/ThemeContext';
 import { cartDecrement, cartDelete, cartIncrement } from '../../redux/Action/Cart.action';
 
