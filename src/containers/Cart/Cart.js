@@ -41,7 +41,7 @@ function Cart(props) {
     let pTotal = 0
     function productTotal(price, quantity) {
         pTotal = pTotal + Number(price * quantity)
-        return Number(price * quantity).toLocaleString("en-US")
+        return Number(price * quantity).toLocaleString()
     }
 
     return (
@@ -97,9 +97,9 @@ function Cart(props) {
                                             </tr>
                                         </thead>
                                         <tbody>{
-                                            cartData.map((d) => (
+                                            cartData.map((d , i) => (
                                                 <>
-                                                    <tr className="table-body-row">
+                                                    <tr className="table-body-row" key={i}>
                                                         <td className="product-remove"><div onClick={() => handleDelete(d.id)}><i className="fas fa-trash" /></div></td>
                                                         <td className="product-image"><img src={d.profile_img} alt /></td>
                                                         <td className="product-name">{d.name}</td>
