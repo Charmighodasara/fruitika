@@ -1,27 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import { DataGrid } from '@mui/x-data-grid';
 import { useDispatch, useSelector } from 'react-redux';
-import {  GetCategory, } from '../../../redux/Action/Category.action';
-import { GetProduct } from '../../../redux/Action/Product.getaction';
+import { getOrderAction } from '../../../redux/Action/Order.action';
 
 
 function OrderData(props) {
-    
+    const dispatch  = useDispatch()
     const product = useSelector(state => state.product)
     const cart = useSelector(state => state.cart)
-    console.log(product.product);
-    const cartData = []
-    product.product.map((p) => {
-        cart.cart.map((c) => {
-            if (p.id === c.id) {
-                cartData.push({ ...p, quantity: c.quantity })
-            }
-        })
-    })
+    const order = useSelector(state =>state.order)
+    console.log(order.order);
+
+
+    useEffect(()=>{
+        dispatch(getOrderAction())
+    },[])
 
  
     const columns = [
-        { field: 'name', headerName: 'Categoty Name', width: 150 },
+        { field: 'id', headerName: 'user id', width: 200 },
+        { field: 'totalcart', headerName: 'Total', width: 150 },
+        { field: 'quantity', headerName: 'Categoty Name', width: 150 },
         {
             field: 'profile_img',
             headerName: 'Profile Image',
@@ -39,7 +38,7 @@ function OrderData(props) {
                 <h2>Order Details</h2>
                 <div style={{ height: 400, width: '100%' }}>
                     <DataGrid
-                        rows={cartData}
+                        rows={order.order}
                         columns={columns}
                         pageSize={6}
                         rowsPerPageOptions={[6]}

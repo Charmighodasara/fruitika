@@ -6,7 +6,7 @@ import { themeContext } from '../../context/ThemeContext';
 import * as yup from 'yup';
 import { history } from '../../history';
 import { FormControlLabel, Radio, RadioGroup } from '@mui/material';
-import { getOrderAction } from '../../redux/Action/Order.action';
+import { addOrderAction, getOrderAction } from '../../redux/Action/Order.action';
 
 
 function Checkout(props) {
@@ -44,7 +44,7 @@ function Checkout(props) {
             totalcart: pTotal
         }
         console.log(orderData);
-        dispatch(getOrderAction(orderData))
+        dispatch(addOrderAction(orderData))
     }
 
 

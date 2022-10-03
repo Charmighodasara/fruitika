@@ -6,7 +6,7 @@ const initVal = {
 }
 
 export const cartReducer = (state = initVal, action) => {
-    console.log(action.type , action.payload , state);
+    console.log(action.type , action.payload );
     switch (action.type) {
 
         case ActionTypes.ADD_TO_CART:
