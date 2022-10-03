@@ -6,7 +6,7 @@ const initVal = {
 }
 
 export const cartReducer = (state = initVal, action) => {
-    console.log(action.type , action.payload );
+    console.log(action.type, action.payload);
     switch (action.type) {
 
         case ActionTypes.ADD_TO_CART:
@@ -71,7 +71,13 @@ export const cartReducer = (state = initVal, action) => {
                     }
                 }).filter((c) => c.quantity !== 0)
             }
-        
+        case ActionTypes.CART_EMPTY:
+
+            return {
+                ...state,
+                cart: []
+            }
+
         default:
             return state;
     }

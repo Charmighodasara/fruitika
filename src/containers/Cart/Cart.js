@@ -79,92 +79,96 @@ function Cart(props) {
                 </div>
                 {/* end breadcrumb section */}
                 {/* cart */}
-                <div className="cart-section mt-150">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-lg-8 col-md-12 mb-100">
-                                <div className="cart-table-wrap">
-                                    <table className="cart-table">
-                                        <thead className="cart-table-head">
-                                            <tr className="table-head-row">
-                                                <th className="product-remove">Delete</th>
-                                                <th className="product-image">Product Image</th>
-                                                <th className="product-name">Name</th>
-                                                <th className="product-price">Price</th>
-                                                <th className="product-quantity">Quantity</th>
-                                                <th className="product-total">Total</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>{
-                                            cartData.map((d) => (
-                                                <>
-                                                    <tr className="table-body-row">
-                                                        <td className="product-remove"><div onClick={() => handleDelete(d.id)}><i className="fas fa-trash" /></div></td>
-                                                        <td className="product-image"><img src={d.profile_img} alt /></td>
-                                                        <td className="product-name">{d.name}</td>
-                                                        <td className="product-price">${d.price}</td>
-                                                        <td className="product-quantity">
-                                                            <button className='counter-btn' onClick={() => handleDecrement(d.id)}><i class="fas fa-minus"></i></button>
-                                                            <span>{d.quantity}</span>
-                                                            <button className='counter-btn' onClick={() => handleIncrement(d.id)}><i class="fas fa-plus"></i></button>
-                                                        </td>
-                                                        <td className="product-total">${productTotal(d.price , d.quantity)}</td>
+                {
+                    cart.cart.length > 0 ?
+                        <div className="cart-section mt-150">
+                            <div className="container">
+                                <div className="row">
+                                    <div className="col-lg-8 col-md-12 mb-100">
+                                        <div className="cart-table-wrap">
+                                            <table className="cart-table">
+                                                <thead className="cart-table-head">
+                                                    <tr className="table-head-row">
+                                                        <th className="product-remove">Delete</th>
+                                                        <th className="product-image">Product Image</th>
+                                                        <th className="product-name">Name</th>
+                                                        <th className="product-price">Price</th>
+                                                        <th className="product-quantity">Quantity</th>
+                                                        <th className="product-total">Total</th>
                                                     </tr>
-                                                </>
-                                            ))
-                                        }
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                            <div className="col-lg-4 mb-150">
-                                <div className="order-details-wrap">
-                                    <table className="order-details">
+                                                </thead>
+                                                <tbody>
+                                                    {
 
-                                        <thead>
-                                            <tr>
-                                                <th>Your order Details</th>
-                                                <th>Price</th>
-                                            </tr>
-                                        </thead>
-                                        {/* <tbody className="order-details-body"> */}
-                                        {/* <tr>
+                                                        cartData.map((d) => (
+                                                            <>
+                                                                <tr className="table-body-row">
+                                                                    <td className="product-remove"><div onClick={() => handleDelete(d.id)}><i className="fas fa-trash" /></div></td>
+                                                                    <td className="product-image"><img src={d.profile_img} alt /></td>
+                                                                    <td className="product-name">{d.name}</td>
+                                                                    <td className="product-price">${d.price}</td>
+                                                                    <td className="product-quantity">
+                                                                        <button className='counter-btn' onClick={() => handleDecrement(d.id)}><i class="fas fa-minus"></i></button>
+                                                                        <span>{d.quantity}</span>
+                                                                        <button className='counter-btn' onClick={() => handleIncrement(d.id)}><i class="fas fa-plus"></i></button>
+                                                                    </td>
+                                                                    <td className="product-total">${productTotal(d.price, d.quantity)}</td>
+                                                                </tr>
+                                                            </>
+                                                        ))
+                                                    }
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div className="col-lg-4 mb-150">
+                                        <div className="order-details-wrap">
+                                            <table className="order-details">
+
+                                                <thead>
+                                                    <tr>
+                                                        <th>Your order Details</th>
+                                                        <th>Price</th>
+                                                    </tr>
+                                                </thead>
+                                                {/* <tbody className="order-details-body"> */}
+                                                {/* <tr>
                                                 <td>Product</td>
                                                 <td>Total</td>
                                             </tr> */}
-                                        {/* {
+                                                {/* {
                                                 cartData.map((c) => (
 
                                                     <tr> */}
-                                        {/* <td>{c.name}</td> */}
-                                        {/* <td>${c.price}</td> */}
-                                        {/* </tr>
+                                                {/* <td>{c.name}</td> */}
+                                                {/* <td>${c.price}</td> */}
+                                                {/* </tr>
                                                 ))
                                             } */}
 
-                                        {/* </tbody> */}
-                                        <tbody className="checkout-details">
-                                            <tr>
-                                                <td>Subtotal</td>
-                                                <td>{pTotal}</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Shipping</td>
-                                                <td>$10</td>
-                                            </tr>
-                                            <tr>
-                                                <td className='table-total'><strong>Total</strong></td>
-                                                <td className='table-total'><strong>${pTotal + 10}</strong></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                                {/* </tbody> */}
+                                                <tbody className="checkout-details">
+                                                    <tr>
+                                                        <td>Subtotal</td>
+                                                        <td>{pTotal}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Shipping</td>
+                                                        <td>$10</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td className='table-total'><strong>Total</strong></td>
+                                                        <td className='table-total'><strong>${pTotal + 10}</strong></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
 
-                                    <div className="cart-buttons">
-                                        <NavLink to={'/checkout'} className="boxed-btn black">Order Now</NavLink>
+                                            <div className="cart-buttons">
+                                                <NavLink to={'/checkout'} className="boxed-btn black">Order Now</NavLink>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            {/* <div className="col-lg-4">
+                                    {/* <div className="col-lg-4">
                                 <div className="total-section">
                                     <table className="total-table">
                                         <thead className="total-table-head">
@@ -190,13 +194,19 @@ function Cart(props) {
                                     </table>
                                     <div className="cart-buttons">
                                         {/* <NavLink to={'/cart'} className="boxed-btn">Update Cart</NavLink> */}
-                            {/* <NavLink to={'/checkout'} className="boxed-btn black">Check Out</NavLink>
+                                    {/* <NavLink to={'/checkout'} className="boxed-btn black">Check Out</NavLink>
                                     </div>
                                 </div> */}
-                            {/* </div>  */}
+                                    {/* </div>  */}
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
+                        :
+                        <div className='mb-150 mt-150'>
+                        <h5 className='col-lg-10  text-center'>cart is Empty</h5>
+                        </div>
+                }
+
             </div>
         </div>
 

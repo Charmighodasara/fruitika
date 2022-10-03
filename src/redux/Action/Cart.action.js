@@ -20,3 +20,7 @@ export const cartIncrement = (data) => (dispatch) => {
     console.log("cartDecrement", data);
     dispatch({ type: ActionTypes.CART_INCREMENT, payload: data })
 }
+
+export const cartEmpty = ()=> (dispatch) => {
+    dispatch({type: ActionTypes.CART_EMPTY})
+}

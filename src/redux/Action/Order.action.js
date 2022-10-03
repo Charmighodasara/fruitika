@@ -35,6 +35,7 @@ export const addOrderAction = (data) => async (dispatch) => {
                         const docRef = await addDoc(collection(db, "Order"), {
                             ...data,
                             profile_img: url,
+                            fileName: rendomNum
                         });
                         dispatch({
                             type: ActionTypes.ADD_ORDER_DATA, payload:
@@ -42,6 +43,7 @@ export const addOrderAction = (data) => async (dispatch) => {
                                 id: docRef.id,
                                 ...data,
                                 profile_img: url,
+                                fileName: rendomNum
                             }
                         })
                     })

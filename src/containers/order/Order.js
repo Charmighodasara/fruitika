@@ -1,10 +1,17 @@
 import React, { useContext, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { themeContext } from '../../context/ThemeContext';
+import { cartEmpty } from '../../redux/Action/Cart.action';
 import { getOrderAction } from '../../redux/Action/Order.action';
 
 function Order(props) {
     const value = useContext(themeContext);
+    const dispatch = useDispatch()
+
+    useEffect(()=>{
+        dispatch(cartEmpty())
+    },[])
+
     return (
         <div>
             <div className={`${value.theme}`}>

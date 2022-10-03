@@ -5,30 +5,41 @@ import { getOrderAction } from '../../../redux/Action/Order.action';
 
 
 function OrderData(props) {
-    const dispatch  = useDispatch()
+    const dispatch = useDispatch()
     const product = useSelector(state => state.product)
     const cart = useSelector(state => state.cart)
-    const order = useSelector(state =>state.order)
+    const order = useSelector(state => state.order)
     console.log(order.order);
 
 
-    useEffect(()=>{
+    useEffect(() => {
         dispatch(getOrderAction())
-    },[])
+    }, [])
 
- 
+
     const columns = [
-        { field: 'id', headerName: 'user id', width: 200 },
-        { field: 'totalcart', headerName: 'Total', width: 150 },
-        { field: 'quantity', headerName: 'Categoty Name', width: 150 },
+        { field: 'id', headerName: 'user id', width: 170},
         {
-            field: 'profile_img',
-            headerName: 'Profile Image',
-            width: 100,
+            field: 'product',
+            headerName: 'product',
+            width: 700,
             renderCell: (params) => (
-                <img src={params.row.profile_img} width={50} height={50} />
+                params.row.product.map((p)=>(
+                    <>
+                    <img src={p.profile_img} width={50} height={50}/> <br />
+                   
+                    <span>{p.name}, </span>
+                    <span> Quantity:{p.quantity},</span>
+                    <span> Price:{p.price},</span>
+                    </>
+                ))
             )
         },
+        { field: 'phone', headerName: 'contact', width: 150 },
+        { field: 'email', headerName: 'email', width: 150 },
+        { field: 'radioGroup', headerName: 'radioGroup', width: 150 },
+        { field: 'Address', headerName: 'Address', width: 150 },
+        { field: 'totalcart', headerName: 'Total', width: 150 },
     ];
 
 

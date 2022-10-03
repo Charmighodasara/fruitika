@@ -39,11 +39,15 @@ function Checkout(props) {
         history.push('/order')
         handleClick()
         let orderData = {
+            email: values.email,
+            Address : values.Address,
+            phone: values.phone,
+            radioGroup: values.radioGroup,
             userId: auth.user,
             product: cartData,
-            totalcart: pTotal
+            totalcart: pTotal,
         }
-        console.log(orderData);
+        console.log(values.email);
         dispatch(addOrderAction(orderData))
     }
 
