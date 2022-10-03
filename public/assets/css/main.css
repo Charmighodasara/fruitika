@@ -2780,7 +2780,8 @@ table.order-details tbody td {
   border: 1px solid #efefef;
   padding: 15px;
 }
- .table-total{
+
+.table-total {
   color: #F28123;
   font-weight: 700;
 }
@@ -3046,6 +3047,7 @@ a span {
   padding: 0px !important;
 }
 
-.order{
+.order {
   color: #74b13d;
 }
+

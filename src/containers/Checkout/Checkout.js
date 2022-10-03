@@ -233,7 +233,8 @@ function Checkout(props) {
                                                                 <p>{errors.phone && touched.phone ? errors.phone : ''}</p>
 
 
-                                                                <p><button className="boxed-btn mt-4" >Place Order</button></p> <p>{errors.radioGroup && touched.radioGroup ? errors.radioGroup : ''}</p>
+                                                                <p><button className="boxed-btn mt-4" >Place Order</button></p> 
+                                                                <p>{errors.radioGroup && touched.radioGroup ? errors.radioGroup : ''}</p>
                                                             </Form>
                                                         </Formik>
                                                     </div>

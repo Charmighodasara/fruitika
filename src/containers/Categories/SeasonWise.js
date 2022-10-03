@@ -90,7 +90,7 @@ function SeasonWise(props) {
                                         </div>
                                         <h3>{p.name}</h3>
                                         <p className="product-price"><span>Per {p.quantity}</span> {p.price}$ </p>
-                                        <NavLink to={'/cart'} className="cart-btn" onClick={() => handleCart(p.id)}><i className="fas fa-shopping-cart" /> Add to Cart</NavLink>
+                                        <a className="cart-btn" onClick={() => handleCart(p.id)}><i className="fas fa-shopping-cart" /> Add to Cart</a>
                                     </div>
                                 </div>
                             ))
