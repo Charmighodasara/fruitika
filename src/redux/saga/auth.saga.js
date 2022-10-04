@@ -20,7 +20,7 @@ function* signUp(action) {
 function* signin(action) {
   try {
     const user = yield call(signInApi, action.payload);
-    yield put(setAlert({ text: user.payload, color: "success" }))
+    yield put(setAlert({ text: user.msg, color: "success" }))
     console.log(user);
     yield put(signedInAction(user))
     history.push('/')

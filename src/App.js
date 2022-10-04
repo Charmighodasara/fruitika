@@ -1,8 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
-import { Route, Router, Switch } from 'react-router-dom';
+import ToggleContext from './context/ThemeContext';
+import { Provider } from 'react-redux';
+import { SnackbarProvider } from 'notistack';
+import { PersistGate } from 'redux-persist/integration/react'
+import { persistor, store } from './redux/store';
+import AppRoute from './Route/AppRoute';
 import Index from './containers/Index/Index';
 import Index2 from './containers/Index2/Index2';
 import About from './containers/About/About';
@@ -18,70 +20,31 @@ import Login_signup from './containers/Login_signup/Login_signup';
 import Publicroute from './Route/Publicroute';
 import Privateroute from './Route/Privateroute';
 import Search from './containers/search/Search';
-import ToggleContext from './context/ThemeContext';
-import { Provider } from 'react-redux';
-import { SnackbarProvider } from 'notistack';
-import { PersistGate } from 'redux-persist/integration/react'
 import SeasonWise from './containers/Categories/SeasonWise';
-
-
-//adminpanel
-import Layout from './admin/components/layout/Layout';
+import { history } from './history';
 import Product from './admin/containers/product/Product';
 import Counter from './admin/containers/Counter/Counter';
 import Category from './admin/containers/Category/Category';
-import { persistor, store } from './redux/store';
 import Order from './containers/order/Order';
 import OrderData from './admin/containers/Order/OrderData';
+import ClientRoute from './Route/ClientRoute';
 
+import { BrowserRouter, Route, Router, Switch } from 'react-router-dom';
 
 function App() {
 
   return (
-
-    <div >
-      <SnackbarProvider maxSnack={3}>
-        <Provider store={store}>
-          <ToggleContext>
-            <PersistGate loading={null} persistor={persistor}>
-              <Header />
-              <Switch>
-                <Publicroute path={'/'} exact component={Index} />
-                <Publicroute path={'/index'} exact component={Index} />
-                <Publicroute path={'/index2'} exact component={Index2} />
-                <Publicroute path={'/about'} exact component={About} />
-                <Publicroute path={'/checkout'} exact component={Checkout} />
-                <Publicroute path={'/contact'} exact component={Contact} />
-                <Publicroute path={'/news'} exact component={News} />
-                <Publicroute path={'/shop'} exact component={Shop} />
-                <Publicroute path={'/fruit'} exact component={Fruit} />
-                <Publicroute path={'/single-new'} exact component={Single_news} />
-                <Publicroute path={'/single-product'} exact component={Single_product} />
-                <Publicroute path={'/search'} exact component={Search} />
-                <Publicroute path={'/login-signup'} exact restricted={true} component={Login_signup} />
-                <Privateroute path={'/cart'} exact component={Cart} />
-                <Publicroute path={'/season-fruits'} exact component={SeasonWise} />
-                <Publicroute path={'/order'} exact component={Order} />
-
-
-                {/* adminpanel */}
-                <Layout >
-                  <Switch>
-                    <Route path={'/product'} exact component={Product}></Route>
-                    <Route path={'/category'} exact component={Category}></Route>
-                    <Route path={'/orderdata'} exact component={OrderData}></Route>
-                    <Route path={'/counter'} exact component={Counter}></Route>
-
-                  </Switch>
-                </Layout>
-              </Switch>
-              <Footer />
-            </PersistGate>
-          </ToggleContext>
-        </Provider>
-      </SnackbarProvider>
-
-    </div>
+    <SnackbarProvider maxSnack={3}>
+      <Provider store={store}>
+        <ToggleContext>
+          <PersistGate loading={null} persistor={persistor}>
+          <Router history={history}>
+            <AppRoute />
+            </Router>
+          </PersistGate>
+        </ToggleContext>
+      </Provider>
+    </SnackbarProvider>
   );
 }
 
