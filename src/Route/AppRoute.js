@@ -32,7 +32,7 @@ function AppRoute(props) {
                 <Publicroute path={'/index'} exact component={Index} />
                 <Publicroute path={'/index2'} exact component={Index2} />
                 <Publicroute path={'/about'} exact component={About} />
-                <Publicroute path={'/checkout'} exact component={Checkout} />
+                <ClientRoute path={'/checkout'} exact component={Checkout} />
                 <Publicroute path={'/contact'} exact component={Contact} />
                 <Publicroute path={'/news'} exact component={News} />
                 <Publicroute path={'/shop'} exact component={Shop} />
@@ -43,7 +43,7 @@ function AppRoute(props) {
                 <Publicroute path={'/login-signup'} exact restricted={true} component={Login_signup} />
                 <ClientRoute path={'/cart'} exact component={Cart} />
                 <Publicroute path={'/season-fruits'} exact component={SeasonWise} />
-                <Publicroute path={'/order'} exact component={Order} />
+                <ClientRoute path={'/order'} exact component={Order} />
                 <Privateroute path={'/product'} exact component={Product} />
                 <Privateroute path={'/category'} exact component={Category} />
                 <Privateroute path={'/orderdata'} exact component={OrderData} />

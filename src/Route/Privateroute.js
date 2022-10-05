@@ -5,10 +5,10 @@ import Layout from '../admin/components/layout/Layout';
 
 function Privateroute({ component: Component, ...rest }) {
     const auth = useSelector(state => state.auth)
-    console.log("prrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",auth.user.role);
+    console.log("prrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",auth.user);
     return (
         <Route {...rest} render={props => (
-            auth.user !== null && auth.user.role === "admin" ?
+            auth.user !== null && auth.user.role === 'admin' ?
                 <>
                     <Layout>
                         <Component {...props} />
