@@ -35,16 +35,14 @@ function App() {
 
   return (
     <SnackbarProvider maxSnack={3}>
-      <Provider store={store}>
-        <ToggleContext>
-          <PersistGate loading={null} persistor={persistor}>
-          <Router history={history}>
-            <AppRoute />
-            </Router>
-          </PersistGate>
-        </ToggleContext>
-      </Provider>
-    </SnackbarProvider>
+        <Provider store={store}>
+          <ToggleContext>
+            <PersistGate loading={null} persistor={persistor}>
+              <AppRoute />
+            </PersistGate>
+          </ToggleContext>
+        </Provider>
+      </SnackbarProvider>
   );
 }
 

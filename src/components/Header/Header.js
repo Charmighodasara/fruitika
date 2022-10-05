@@ -45,11 +45,11 @@ function Header(props) {
                                 <nav className="main-menu">
                                     <ul className="current-list-item">
                                         <li >
-                                            <NavLink exact to={'/'} >Home</NavLink>
+                                            <NavLink exact to={'/'} onClick={() => handleClick()}>Home</NavLink>
                                         </li>
-                                        <li><NavLink exact to={'/about'}>About</NavLink></li>
+                                        <li><NavLink exact to={'/about'} onClick={() => handleClick()}>About</NavLink></li>
 
-                                        <li><NavLink exact to={'/news'} >News</NavLink></li>
+                                        <li><NavLink exact to={'/news'} onClick={() => handleClick()}>News</NavLink></li>
 
                                         <li><NavLink exact to={'/contact'} onClick={() => handleClick()}>Contact</NavLink></li>
 

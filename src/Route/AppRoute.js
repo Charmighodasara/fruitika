@@ -25,8 +25,8 @@ import OrderData from '../admin/containers/Order/OrderData';
 import ClientRoute from './ClientRoute';
 
 function AppRoute(props) {
-    return (
-        <Router history={history}>
+    return ( 
+        <div>
             <Switch>
                 <Publicroute path={'/'} exact component={Index} />
                 <Publicroute path={'/index'} exact component={Index} />
@@ -49,7 +49,7 @@ function AppRoute(props) {
                 <Privateroute path={'/orderdata'} exact component={OrderData} />
                 <Privateroute path={'/counter'} exact component={Counter} />
             </Switch>
-        </Router>
+        </div>
     );
 }
 
