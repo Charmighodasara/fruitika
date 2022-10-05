@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import { themeContext } from '../../context/ThemeContext';
 import { cartEmpty } from '../../redux/Action/Cart.action';
 import { getOrderAction } from '../../redux/Action/Order.action';
@@ -8,9 +9,9 @@ function Order(props) {
     const value = useContext(themeContext);
     const dispatch = useDispatch()
 
-    useEffect(()=>{
+    useEffect(() => {
         dispatch(cartEmpty())
-    },[])
+    }, [])
 
     return (
         <div>
@@ -52,6 +53,9 @@ function Order(props) {
                             <div className="col-lg-12 text-center">
                                 <h4 className='order'>Order Placed Successfully</h4>
                                 <img src='assets/img/products/tick.gif' />
+                            </div>
+                            <div className="col-lg-12 text-center mt-100">
+                                <NavLink to={'/'} className="boxed-btn"> Home</NavLink>
                             </div>
                         </div>
                     </div>
