@@ -53,10 +53,10 @@ function Checkout(props) {
 
 
     let schema = yup.object().shape({
-        name: yup.string().required("please enter your name."),
+        name: yup.string().required("please enter your name.").matches(/^[aA-zZ\s]+$/, 'Please enter valid name'),
         email: yup.string().required("please enter your email id.").email("please enter valid email id."),
         Address: yup.string().required("please enter your shipping address."),
-        phone: yup.string().required("please enter your mobile number."),
+        phone: yup.string().matches(/^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/, 'Phone number is not valid').required("please enter your mobile number.").min(10).max(10),
         radioGroup: yup.string().required("select any payment method.")
     });
     const formik = useFormik({
