@@ -43,7 +43,7 @@ function Checkout(props) {
             Address : values.Address,
             phone: values.phone,
             radioGroup: values.radioGroup,
-            userId: auth.user,
+            userId: auth.user.role,
             product: cartData,
             totalcart: pTotal,
         }
