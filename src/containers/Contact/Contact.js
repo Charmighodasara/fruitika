@@ -77,21 +77,21 @@ function Contact(props) {
                                         <Form type="POST" id="fruitkha-contact" onSubmit={handleSubmit}>
                                             <p>
                                                 <input type="text" placeholder="Name" name="name" id="name" onChange={handleChange} onBlur={handleBlur} />
-                                                <p>{errors.name && touched.name ? errors.name : ''}</p>
+                                                <p className='error'>{errors.name && touched.name ? errors.name : ''}</p>
                                             </p>
                                             <p>
                                                 <input type="email" placeholder="Email" name="email" id="email" onChange={handleChange} onBlur={handleBlur} />
-                                                <p>{errors.email && touched.email ? errors.email : ''}</p>
+                                                <p className='error'>{errors.email && touched.email ? errors.email : ''}</p>
 
                                             </p>
                                             <p>
                                                 <input type="tel" placeholder="Phone" name="phone" id="phone" maxLength={10} onChange={handleChange} onBlur={handleBlur} />
-                                                <p>{errors.phone && touched.phone ? errors.phone : ''}</p>
+                                                <p className='error'>{errors.phone && touched.phone ? errors.phone : ''}</p>
 
                                             </p>
                                             <p>
                                                 <input type="text" placeholder="Subject" name="subject" id="subject" onChange={handleChange} onBlur={handleBlur} />
-                                                <p>{errors.subject && touched.subject ? errors.subject : ''}</p>
+                                                <p className='error'>{errors.subject && touched.subject ? errors.subject : ''}</p>
 
                                             </p>
                                             <p><textarea name="message" id="message" cols={30} rows={10} placeholder="Message" defaultValue={""} /></p>

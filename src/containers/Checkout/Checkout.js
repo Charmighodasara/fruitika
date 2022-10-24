@@ -169,7 +169,7 @@ function Checkout(props) {
                                     <div className="accordion" id="accordionExample">
 
                                         {/* payment details  */}
-                                        <div className="card single-accordion">
+                                        {/* <div className="card single-accordion">
                                             <div className="card-header" id="headingTwo">
                                                 <h5 className="mb-0">
                                                     <button className="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
@@ -190,14 +190,14 @@ function Checkout(props) {
                                                                     <FormControlLabel value="other" control={<Radio />} label="Other" />
                                                                 </RadioGroup>
                                                                 </p>
-                                                                <p>{errors.radioGroup && touched.radioGroup ? errors.radioGroup : ''}</p>
+                                                                <p className='error'>{errors.radioGroup && touched.radioGroup ? errors.radioGroup : ''}</p>
                                                             </Form>
                                                         </Formik>
 
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> */}
                                         {/* shipping address  */}
                                         <div className="card single-accordion">
                                             <div className="card-header" id="headingOne">
@@ -225,26 +225,58 @@ function Checkout(props) {
                                                                 <p>{errors.radioGroup && touched.radioGroup ? errors.radioGroup : ''}</p> */}
 
                                                                 <p><input type="text" placeholder="Name" name="name" id="name" onChange={handleChange} onBlur={handleBlur} /></p>
-                                                                <p>{errors.name && touched.name ? errors.name : ''}</p>
+                                                                <p className='error'>{errors.name && touched.name ? errors.name : ''}</p>
 
                                                                 <p><input type="text" placeholder="Email" name="email" id="email" onChange={handleChange} onBlur={handleBlur} /></p>
-                                                                <p>{errors.email && touched.email ? errors.email : ''}</p>
+                                                                <p className='error'>{errors.email && touched.email ? errors.email : ''}</p>
 
                                                                 <p><input type="text" placeholder="Address" name="Address" id="Address" onChange={handleChange} onBlur={handleBlur} /></p>
-                                                                <p>{errors.Address && touched.Address ? errors.Address : ''}</p>
+                                                                <p className='error'>{errors.Address && touched.Address ? errors.Address : ''}</p>
 
                                                                 <p><input type="tel" placeholder="Contact Number" name="phone" id="phone" onChange={handleChange} onBlur={handleBlur} /></p>
-                                                                <p>{errors.phone && touched.phone ? errors.phone : ''}</p>
+                                                                <p className='error'>{errors.phone && touched.phone ? errors.phone : ''}</p>
 
 
-                                                                <p><button className="boxed-btn mt-4" >Place Order</button></p> 
-                                                                <p>{errors.radioGroup && touched.radioGroup ? errors.radioGroup : ''}</p>
+                                                                {/* <p><button className="boxed-btn mt-4" >Place Order</button></p> 
+                                                                <p className='error'>{errors.radioGroup && touched.radioGroup ? errors.radioGroup : ''}</p> */}
                                                             </Form>
                                                         </Formik>
                                                     </div>
                                                 </div>
                                             </div>
 
+                                        </div>
+                                        <div className="card single-accordion">
+                                            <div className="card-header" id="headingTwo">
+                                                <h5 className="mb-0">
+                                                    <button className="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                                        Payment Details
+                                                    </button>
+                                                </h5>
+                                            </div>
+                                            <div id="collapseTwo" className="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                                <div className="card-body">
+                                                    <div className="shipping-address-form">
+                                                        <Formik>
+                                                            <Form type="POST" id="fruitkha-contact" onSubmit={handleSubmit}>
+                                                                <p><RadioGroup
+                                                                    aria-labelledby="demo-radio-buttons-group-label"
+                                                                    name="radioGroup" onChange={handleChange} onBlur={handleBlur}
+                                                                >
+                                                                    <FormControlLabel value="Case On Delivery" control={<Radio />} label="Cash On Delivery" />
+                                                                    <FormControlLabel value="other" control={<Radio />} label="Other" />
+                                                                </RadioGroup>
+                                                                </p>
+                                                                <p className='error'>{errors.radioGroup && touched.radioGroup ? errors.radioGroup : ''}</p>
+
+                                                                <p><button className="boxed-btn mt-4" >Place Order</button></p> 
+                                                               
+                                                            </Form>
+                                                        </Formik>
+
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

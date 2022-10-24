@@ -147,25 +147,25 @@ function Login_signup(props) {
                                                         :
                                                         <p>
                                                             <input type="text" placeholder="Name" name="name" id="name" onChange={handleChange} onBlur={handleBlur} />
-                                                            <p>{errors.name && touched.name ? errors.name : ''}</p>
+                                                            <p className='error'>{errors.name && touched.name ? errors.name : ''}</p>
                                                         </p>
                                             }
                                             {
                                                 forgot === 'true' ?
                                                     <p>
                                                         <input type="email" placeholder="Email" name="email" id="email" onChange={handleChange} onBlur={handleBlur} />
-                                                        <p>{errors.email && touched.email ? errors.email : ''}</p>
+                                                        <p className='error'>{errors.email && touched.email ? errors.email : ''}</p>
                                                     </p>
                                                     :
                                                     user === 'login' ?
                                                         <p>
                                                             <input type="email" placeholder="Email" name="email" id="email" onChange={handleChange} onBlur={handleBlur} />
-                                                            <p>{errors.email && touched.email ? errors.email : ''}</p>
+                                                            <p className='error'>{errors.email && touched.email ? errors.email : ''}</p>
                                                         </p>
                                                         :
                                                         <p>
                                                             <input type="email" placeholder="Email" name="email" id="email" onChange={handleChange} onBlur={handleBlur} />
-                                                            <p>{errors.email && touched.email ? errors.email : ''}</p>
+                                                            <p className='error'>{errors.email && touched.email ? errors.email : ''}</p>
                                                         </p>
                                             }
                                             {forgot === 'true' ?
@@ -175,7 +175,7 @@ function Login_signup(props) {
                                                     < >
                                                         <p>
                                                             <input type="password" placeholder="password" name="password" id="password" onChange={handleChange} onBlur={handleBlur} />
-                                                            <p>{errors.password && touched.password ? errors.password : ''}</p>
+                                                            <p className='error'>{errors.password && touched.password ? errors.password : ''}</p>
                                                         </p>
                                                         <div>
                                                             <input id="checkbox2" type="checkbox" onClick={() => setForgot('true')} /> <label > Forgot your password ? </label>
@@ -184,7 +184,7 @@ function Login_signup(props) {
                                                     :
                                                     <p>
                                                         <input type="password" placeholder="password" name="password" id="password" onChange={handleChange} onBlur={handleBlur} />
-                                                        <p>{errors.password && touched.password ? errors.password : ''}</p>
+                                                        <p className='error'>{errors.password && touched.password ? errors.password : ''}</p>
                                                     </p>
                                             }
                                             {
